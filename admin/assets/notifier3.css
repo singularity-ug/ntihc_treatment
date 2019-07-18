@@ -1,0 +1,159 @@
+
+
+<a class="button" href=<button class="small-box-footer" data-toggle="modal"  data-target="#notificationModal"></button>Click me!</a>
+ 
+
+              <a class="button1" href=<button class="small-box-footer" data-toggle="modal"  data-target="#notificationModal"></button>Click me!</a>
+<button type="submit" class="button">Click me2!</button>
+@charset "utf-8";
+/* CSS Document */
+<style>
+ body {
+  background: white;
+}
+.button {
+ background-color: #000;
+-webkit-border-radius: 10px;
+border-radius: 1px;
+border: none;
+color: #FFFFFF;
+cursor: pointer;
+display: inline-block;
+font-family: Arial;
+font-size: 12px;
+padding: 4px 7px;
+text-align: center;
+text-decoration: none;
+}
+@-webkit-keyframes glowing {
+  0% { background-color: #B20000; -webkit-box-shadow: 0 0 3px #B20000; }
+  50% { background-color: #FF0000; -webkit-box-shadow: 0 0 40px #FF0000; }
+  100% { background-color: #B20000; -webkit-box-shadow: 0 0 3px #B20000; }
+}
+
+@-moz-keyframes glowing {
+  0% { background-color: #B20000; -moz-box-shadow: 0 0 3px #B20000; }
+  50% { background-color: #FF0000; -moz-box-shadow: 0 0 40px #FF0000; }
+  100% { background-color: #B20000; -moz-box-shadow: 0 0 3px #B20000; }
+}
+
+@-o-keyframes glowing {
+  0% { background-color: #B20000; box-shadow: 0 0 3px #B20000; }
+  50% { background-color: #FF0000; box-shadow: 0 0 40px #FF0000; }
+  100% { background-color: #B20000; box-shadow: 0 0 3px #B20000; }
+}
+
+@keyframes glowing {
+  0% { background-color: #B20000; box-shadow: 0 0 3px #B20000; }
+  50% { background-color: #FF0000; box-shadow: 0 0 40px #FF0000; }
+  100% { background-color: #B20000; box-shadow: 0 0 3px #B20000; }
+}
+
+.button {
+  -webkit-animation: glowing 1500ms infinite;
+  -moz-animation: glowing 1500ms infinite;
+  -o-animation: glowing 1500ms infinite;
+  animation: glowing 1500ms infinite;
+}
+</style>
+
+<style>
+ body {
+  background: white;
+}
+.button1 {
+ background-color: #000;
+-webkit-border-radius: 10px;
+border-radius: 1px;
+border: none;
+color: #FFFFFF;
+cursor: pointer;
+display: inline-block;
+font-family: Arial;
+font-size: 12px;
+padding: 4px 7px;
+text-align: center;
+text-decoration: none;
+}
+@-webkit-keyframes glowing {
+  0% { background-color: #B20000; -webkit-box-shadow: 0 0 3px #B20000; }
+  50% { background-color: #FF0000; -webkit-box-shadow: 0 0 40px #FF0000; }
+  100% { background-color: #B20000; -webkit-box-shadow: 0 0 3px #B20000; }
+}
+
+@-moz-keyframes glowing {
+  0% { background-color: #B20000; -moz-box-shadow: 0 0 3px #B20000; }
+  50% { background-color: #FF0000; -moz-box-shadow: 0 0 40px #FF0000; }
+  100% { background-color: #B20000; -moz-box-shadow: 0 0 3px #B20000; }
+}
+
+@-o-keyframes glowing {
+  0% { background-color: #B20000; box-shadow: 0 0 3px #B20000; }
+  50% { background-color: #FF0000; box-shadow: 0 0 40px #FF0000; }
+  100% { background-color: #B20000; box-shadow: 0 0 3px #B20000; }
+}
+
+@keyframes glowing {
+  0% { background-color: #B20000; box-shadow: 0 0 3px #B20000; }
+  50% { background-color: #FF0000; box-shadow: 0 0 40px #FF0000; }
+  100% { background-color: #B20000; box-shadow: 0 0 3px #B20000; }
+}
+
+.button1 {
+  -webkit-animation: glowing 1500ms infinite;
+  -moz-animation: glowing 1500ms infinite;
+  -o-animation: glowing 1500ms infinite;
+  animation: glowing 9500ms infinite;
+}
+</style>
+
+<style>
+ body {
+  background: white;
+}
+.button 5 {
+ background-color: #000;
+-webkit-border-radius: 10px;
+border-radius: 1px;
+border: none;
+color: #FFFFFF;
+cursor: pointer;
+display: inline-block;
+font-family: Arial;
+font-size: 12px;
+padding: 4px 7px;
+text-align: center;
+text-decoration: none;
+}
+@-webkit-keyframes glowing {
+  0% { background-color: #B20000; -webkit-box-shadow: 0 0 3px #B20000; }
+  50% { background-color: #FF0000; -webkit-box-shadow: 0 0 40px #FF0000; }
+  100% { background-color: #B20000; -webkit-box-shadow: 0 0 3px #B20000; }
+}
+
+@-moz-keyframes glowing {
+  0% { background-color: #B20000; -moz-box-shadow: 0 0 3px #B20000; }
+  50% { background-color: #FF0000; -moz-box-shadow: 0 0 40px #FF0000; }
+  100% { background-color: #B20000; -moz-box-shadow: 0 0 3px #B20000; }
+}
+
+@-o-keyframes glowing {
+  0% { background-color: #B20000; box-shadow: 0 0 3px #B20000; }
+  50% { background-color: #FF0000; box-shadow: 0 0 40px #FF0000; }
+  100% { background-color: #B20000; box-shadow: 0 0 3px #B20000; }
+}
+
+@keyframes glowing {
+  0% { background-color: #B20000; box-shadow: 0 0 3px #B20000; }
+  50% { background-color: #FF0000; box-shadow: 0 0 40px #FF0000; }
+  100% { background-color: #B20000; box-shadow: 0 0 3px #B20000; }
+}
+
+.button 5 {
+  -webkit-animation: glowing 1500ms infinite;
+  -moz-animation: glowing 1500ms infinite;
+  -o-animation: glowing 1500ms infinite;
+  animation: glowing 1500ms infinite;
+}
+</style>
+

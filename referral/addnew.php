@@ -1,0 +1,12 @@
+<?php
+	include('conn.php');
+	
+	$MEDICALREFERRAL=$_POST['MEDICALREFERRAL'];
+	$CONTACTADDRESS=$_POST['CONTACTADDRESS'];
+	$LOCATION=$_POST['LOCATION'];
+	$CONTACTPERSON=$_POST['CONTACTPERSON'];
+	
+	mysqli_query($conn,"insert into referraldetails (MEDICALREFERRAL, CONTACTADDRESS, LOCATION, CONTACTPERSON) values ('$MEDICALREFERRAL', '$CONTACTADDRESS', '$LOCATION',  '$CONTACTPERSON')");
+	header('location:index.php');
+
+?>

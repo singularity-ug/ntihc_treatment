@@ -1,0 +1,11 @@
+.print{
+	float: right;
+	border: 1px solid  #4caf50;
+	padding: 2px 10px 2px 10px;
+	text-decoration: none;
+	color: #000;
+	background-color: #f44336;
+}
+.scroll {
+	overflow-x: scroll;
+}

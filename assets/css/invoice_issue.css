@@ -1,0 +1,113 @@
+﻿
+/*=============================================================
+    Authour URI: www.binarytheme.com
+    License: Commons Attribution 3.0
+
+    http://creativecommons.org/licenses/by/3.0/
+
+    100% To use For Personal And Commercial Use.
+    IN EXCHANGE JUST GIVE US CREDITS AND TELL YOUR FRIENDS ABOUT US
+   
+    ========================================================  */
+/* =============================================================
+   INVOICE STYLES
+ ============================================================ */
+.pad-top-botm {
+    padding-bottom:40px;
+    padding-top:60px;
+}
+h4 {
+    text-transform:uppercase;
+}
+h7 {
+    text-transform:uppercase;
+	margin-left:4px;
+	padding:2px;
+}
+.contact-info span {
+    font-size:14px;
+    padding:0px 50px 0px 50px;
+}
+
+.contact-info hr {
+    margin-top: 0px;
+margin-bottom: 0px;
+}
+
+.client-info {
+    font-size:15px;
+}
+
+.ttl-amts {
+    text-align:right;
+    padding-right:50px;
+}
+.page-head-line {
+   font-size: 18px;
+text-transform: uppercase;
+color: #000;
+font-weight: 800;
+padding-bottom: 11px;
+border-bottom: 3px solid #00CA79;
+margin-bottom: 356px;
+width: 981px;
+margin-top: 2px;
+text-align: center;
+margin-left: 29px;
+} 
+ strong1 {
+    font-weight: bold;
+    font-size: 20px;
+    text-align: left;
+    margin-left: 109px;
+}
+ strong2 {
+    font-weight:normal;
+	 font-size: 17px;  
+    margin-left: 13px; 
+}
+
+ strong3 {
+    font-weight:normal;
+    font-size: 17px; 
+	margin-left: 118px;
+}
+
+ strong4 {
+    font-weight:normal;
+    font-size: 17px;  
+}
+ strong5 {
+    font-weight:normal;
+    font-size: 20px;
+    text-align: left;
+    margin-left: 109px;
+}
+ 
+ strong {
+ font-weight: bold;
+ font-size: 16px;    
+     
+}
+
+strong4 {
+ font-weight: bold;
+ font-size: 16px;     
+}
+ 
+.page-head-line2 {
+   font-size: 18px;
+text-transform: uppercase;
+color: #000;
+font-weight: 800;
+padding-bottom: 11px;
+border-bottom: 3px solid #00CA79;
+margin-bottom: 356px;
+width: 1288px;
+margin-top: 2px;
+text-align: center;
+margin-left: 29px;
+} 
+
+
+

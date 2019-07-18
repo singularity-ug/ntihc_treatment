@@ -1,0 +1,2 @@
+<iframe id="dynamic-content" src="home-auto.php"/>
+<meta http-equiv="refresh" content="<?php echo $sec ?>; URL='<?php echo $page; ?>' ">

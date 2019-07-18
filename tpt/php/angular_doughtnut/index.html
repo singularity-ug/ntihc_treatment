@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html ng-app="app">
+<head>
+	<title>Pie/Doughnut Chart using ChartJS, AngularJS and PHP/MySQLi</title>
+	<meta charset="utf-8">
+	<link href="bootstrap.min.css" rel="stylesheet">
+	<script src="angular.min.js"></script>
+	<script src="Chart.bundle.min.js"></script>
+	<style type="text/css">
+		canvas{
+			margin:auto;
+		}
+		.alert{
+			margin-top:20px;
+		}
+	</style>
+</head>
+<body ng-controller="myCtrl">
+<div class="container">
+	<div class="row">
+		 
+		<div class="col-sm-7" ng-init="fetchsales()">
+			<h3 class="page-header text-center">Sales Chart</h3>
+			<canvas id="dvCanvas" height="600" width="600"></canvas>
+	    </div>
+	</div>
+</div>
+<script src="app.js"></script>
+</body>
+</html>

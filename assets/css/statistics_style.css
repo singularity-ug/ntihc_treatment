@@ -1,0 +1,37 @@
+ body
+{
+ margin:0 auto;
+ padding:0px;
+ text-align:center;
+ width:100%;
+ font-family: "Myriad Pro","Helvetica Neue",Helvetica,Arial,Sans-Serif;
+ background-color:#A9BCF5;
+}
+#wrapper
+{
+ margin:0 auto;
+ padding:0px;
+ text-align:center;
+ width:995px;
+}
+#stat_div li
+{
+ list-style-type:none;
+ display:inline-block;
+ color:#084B8A;
+ margin:20px;
+ font-weight:bold;
+}
+#stat_div li p
+{
+ font-size:30px;
+}
+#stat_div li span
+{
+ padding:40px;
+ background-color:#084B8A;
+ color:white;
+ border-radius:50%;
+ font-size:30px;
+}
+

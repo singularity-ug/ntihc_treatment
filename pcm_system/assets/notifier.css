@@ -1,0 +1,309 @@
+@charset "utf-8";
+/* CSS Document */
+<style>
+ body {
+  background: #ecf0f5;
+}
+.button {
+  background-color: #ecf0f5000;
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
+  border: none;
+  color: #000000;
+  cursor: pointer;
+  display: inline-block;
+  font-family: Arial;
+  font-size: 15px;
+  padding: 2px 8px;
+  text-align: left;
+  text-decoration: none;
+  width: 100%;
+
+}
+@-webkit-keyframes glowing {
+  0% { background-color: #ecf0f5ecf0f5; -webkit-box-shadow: 0 0 3px #ecf0f5; }
+  50% { background-color: #ecf0f5ecf0f5; -webkit-box-shadow: 0 0 40px #ecf0f5; }
+  100% { background-color: #ecf0f5ecf0f5; -webkit-box-shadow: 0 0 3px #ecf0f5; }
+}
+
+@-moz-keyframes glowing {
+  0% { background-color: #ecf0f5ecf0f5; -moz-box-shadow: 0 0 3px #ecf0f5; }
+  50% { background-color: #ecf0f5ecf0f5; -moz-box-shadow: 0 0 40px #ecf0f5; }
+  100% { background-color: #ecf0f5ecf0f5; -moz-box-shadow: 0 0 3px #ecf0f5; }
+}
+
+@-o-keyframes glowing {
+  0% { background-color: #ecf0f5ecf0f5; box-shadow: 0 0 3px #ecf0f5; }
+  50% { background-color: #ecf0f5ecf0f5; box-shadow: 0 0 40px #ecf0f5; }
+  100% { background-color: #ecf0f5ecf0f5; box-shadow: 0 0 3px #ecf0f5; }
+}
+
+@keyframes glowing {
+  0% { background-color: #ecf0f5ecf0f5; box-shadow: 0 0 3px #ecf0f5; }
+  50% { background-color: #ecf0f5ecf0f5; box-shadow: 0 0 40px #ecf0f5; }
+  100% { background-color: #ecf0f5ecf0f5; box-shadow: 0 0 3px #ecf0f5; }
+}
+
+.button {
+  -webkit-animation: glowing 1500ms infinite;
+  -moz-animation: glowing 1500ms infinite;
+  -o-animation: glowing 1500ms infinite;
+  animation: glowing 6000ms infinite;
+}
+</style>
+
+<style>
+ body {
+  background: white;
+}
+.button1 {
+  background-color: #ecf0f5000;
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
+  border: none;
+  color: #000000;
+  cursor: pointer;
+  display: inline-block;
+  font-family: Arial;
+   font-size: 15px;
+padding: 2px 8px;
+text-align: left;
+text-decoration: none;
+width: 100%;
+}
+@-webkit-keyframes glowing {
+  0% { background-color: #ecf0f5B20000; -webkit-box-shadow: 0 0 3px #B20000; }
+  50% { background-color: #ecf0f5FF0000; -webkit-box-shadow: 0 0 40px #FF0000; }
+  100% { background-color: #ecf0f5B20000; -webkit-box-shadow: 0 0 3px #B20000; }
+}
+
+@-moz-keyframes glowing {
+  0% { background-color: #ecf0f5B20000; -moz-box-shadow: 0 0 3px #B20000; }
+  50% { background-color: #ecf0f5FF0000; -moz-box-shadow: 0 0 40px #FF0000; }
+  100% { background-color: #ecf0f5B20000; -moz-box-shadow: 0 0 3px #B20000; }
+}
+
+@-o-keyframes glowing {
+  0% { background-color: #ecf0f5B20000; box-shadow: 0 0 3px #B20000; }
+  50% { background-color: #ecf0f5FF0000; box-shadow: 0 0 40px #FF0000; }
+  100% { background-color: #ecf0f5B20000; box-shadow: 0 0 3px #B20000; }
+}
+
+@keyframes glowing {
+  0% { background-color: #ecf0f5B20000; box-shadow: 0 0 3px #B20000; }
+  50% { background-color: #ecf0f5FF0000; box-shadow: 0 0 40px #FF0000; }
+  100% { background-color: #ecf0f5B20000; box-shadow: 0 0 3px #B20000; }
+}
+
+.button1 {
+  -webkit-animation: glowing 1500ms infinite;
+  -moz-animation: glowing 1500ms infinite;
+  -o-animation: glowing 1500ms infinite;
+  animation: glowing 9500ms infinite;
+}
+</style>
+
+
+
+<style>
+ body {
+  background: black;
+}
+.button2 {
+  background-color: #ecf0f5000000;
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
+  border: none;
+  color: #000000;
+  cursor: pointer;
+  display: inline-block;
+  font-family: Arial;
+   font-size: 15px;
+padding: 2px 8px;
+text-align: left;
+text-decoration: none;
+width: 100%;
+}
+@-webkit-keyframes glowing {
+  0% { background-color: #ecf0f5B20000; -webkit-box-shadow: 0 0 3px #B20000; }
+  50% { background-color: #ecf0f5FF0000; -webkit-box-shadow: 0 0 40px #FF0000; }
+  100% { background-color: #ecf0f5B20000; -webkit-box-shadow: 0 0 3px #B20000; }
+}
+
+@-moz-keyframes glowing {
+  0% { background-color: #ecf0f5B20000; -moz-box-shadow: 0 0 3px #B20000; }
+  50% { background-color: #ecf0f5FF0000; -moz-box-shadow: 0 0 40px #FF0000; }
+  100% { background-color: #ecf0f5B20000; -moz-box-shadow: 0 0 3px #B20000; }
+}
+
+@-o-keyframes glowing {
+  0% { background-color: #ecf0f5B20000; box-shadow: 0 0 3px #B20000; }
+  50% { background-color: #ecf0f5FF0000; box-shadow: 0 0 40px #FF0000; }
+  100% { background-color: #ecf0f5B20000; box-shadow: 0 0 3px #B20000; }
+}
+
+@keyframes glowing {
+  0% { background-color: #ecf0f5B20000; box-shadow: 0 0 3px #B20000; }
+  50% { background-color: #ecf0f5FF0000; box-shadow: 0 0 40px #FF0000; }
+  100% { background-color: #ecf0f5B20000; box-shadow: 0 0 3px #B20000; }
+}
+
+.button2 {
+  -webkit-animation: glowing 1500ms infinite;
+  -moz-animation: glowing 1500ms infinite;
+  -o-animation: glowing 1500ms infinite;
+  animation: glowing 9500ms infinite;
+}
+</style>
+
+<style>
+ body {
+  background: white;
+}
+.button3 {
+  background-color: #ecf0f5000;
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
+  border: none;
+  color: #000000;
+  cursor: pointer;
+  display: inline-block;
+  font-family: Arial;
+   font-size: 15px;
+padding: 2px 8px;
+text-align: left;
+text-decoration: none;
+width: 100%;
+}
+@-webkit-keyframes glowing {
+  0% { background-color: #ecf0f5B20000; -webkit-box-shadow: 0 0 3px #B20000; }
+  50% { background-color: #ecf0f5FF0000; -webkit-box-shadow: 0 0 40px #FF0000; }
+  100% { background-color: #ecf0f5B20000; -webkit-box-shadow: 0 0 3px #B20000; }
+}
+
+@-moz-keyframes glowing {
+  0% { background-color: #ecf0f5B20000; -moz-box-shadow: 0 0 3px #B20000; }
+  50% { background-color: #ecf0f5FF0000; -moz-box-shadow: 0 0 40px #FF0000; }
+  100% { background-color: #ecf0f5B20000; -moz-box-shadow: 0 0 3px #B20000; }
+}
+
+@-o-keyframes glowing {
+  0% { background-color: #ecf0f5B20000; box-shadow: 0 0 3px #B20000; }
+  50% { background-color: #ecf0f5FF0000; box-shadow: 0 0 40px #FF0000; }
+  100% { background-color: #ecf0f5B20000; box-shadow: 0 0 3px #B20000; }
+}
+
+@keyframes glowing {
+  0% { background-color: #ecf0f5B20000; box-shadow: 0 0 3px #B20000; }
+  50% { background-color: #ecf0f5FF0000; box-shadow: 0 0 40px #FF0000; }
+  100% { background-color: #ecf0f5B20000; box-shadow: 0 0 3px #B20000; }
+}
+
+.button3 {
+  -webkit-animation: glowing 1500ms infinite;
+  -moz-animation: glowing 1500ms infinite;
+  -o-animation: glowing 1500ms infinite;
+  animation: glowing 700ms infinite;
+}
+</style>
+
+<style>
+ body {
+  background: black;
+}
+.button5 {
+  background-color: #ecf0f5000000;
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
+  border: none;
+  color: #000000;
+  cursor: pointer;
+  display: inline-block;
+  font-family: Arial;
+   font-size: 15px;
+padding: 2px 8px;
+text-align: left;
+text-decoration: none;
+width: auto;
+}
+@-webkit-keyframes glowing {
+  0% { background-color: #fafcfe; -webkit-box-shadow: 0 0 3px #fafcfe; }
+  50% { background-color: #fafcfe; -webkit-box-shadow: 0 0 40px #fafcfe; }
+  100% { background-color: #fafcfe; -webkit-box-shadow: 0 0 3px #fafcfe; }
+}
+
+@-moz-keyframes glowing {
+  0% { background-color: #fafcfe; -moz-box-shadow: 0 0 3px #fafcfe; }
+  50% { background-color: #fafcfe; -moz-box-shadow: 0 0 40px #fafcfe; }
+  100% { background-color: #fafcfe; -moz-box-shadow: 0 0 3px #fafcfe; }
+}
+
+@-o-keyframes glowing {
+  0% { background-color: #fafcfe; box-shadow: 0 0 3px #fafcfe; }
+  50% { background-color: #fafcfe; box-shadow: 0 0 40px #fafcfe; }
+  100% { background-color: #fafcfe; box-shadow: 0 0 3px #fafcfe; }
+}
+
+@keyframes glowing {
+  0% { background-color: #fafcfe; box-shadow: 0 0 3px #fafcfe; } 
+}
+
+.button5 {
+  -webkit-animation: glowing 150000ms infinite;
+  -moz-animation: glowing 150000ms infinite;
+  -o-animation: glowing 150000ms infinite;
+  animation: glowing 950000ms infinite;
+}
+</style>
+
+
+<style>
+ body {
+  background: black;
+}
+.button6 {
+  background-color: #ecf0f5000000;
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
+  border: none;
+  color: #000000;
+  cursor: pointer;
+  display: inline-block;
+  font-family: Arial;
+   font-size: 13px;
+padding: 2px 8px;
+text-align: left;
+text-decoration: none;
+width: 40%;
+}
+@-webkit-keyframes glowing {
+  0% { background-color: #ecf0f5B20000; -webkit-box-shadow: 0 0 3px #B20000; }
+  50% { background-color: #ecf0f5FF0000; -webkit-box-shadow: 0 0 40px #FF0000; }
+  100% { background-color: #ecf0f5B20000; -webkit-box-shadow: 0 0 3px #B20000; }
+}
+
+@-moz-keyframes glowing {
+  0% { background-color: #ecf0f5B20000; -moz-box-shadow: 0 0 3px #B20000; }
+  50% { background-color: #ecf0f5FF0000; -moz-box-shadow: 0 0 40px #FF0000; }
+  100% { background-color: #ecf0f5B20000; -moz-box-shadow: 0 0 3px #B20000; }
+}
+
+@-o-keyframes glowing {
+  0% { background-color: #ecf0f5B20000; box-shadow: 0 0 3px #B20000; }
+  50% { background-color: #ecf0f5FF0000; box-shadow: 0 0 40px #FF0000; }
+  100% { background-color: #ecf0f5B20000; box-shadow: 0 0 3px #B20000; }
+}
+
+@keyframes glowing {
+  0% { background-color: #ecf0f5B20000; box-shadow: 0 0 3px #B20000; }
+  50% { background-color: #ecf0f5FF0000; box-shadow: 0 0 40px #FF0000; }
+  100% { background-color: #ecf0f5B20000; box-shadow: 0 0 3px #B20000; }
+}
+
+.button6 {
+  -webkit-animation: glowing 1500ms infinite;
+  -moz-animation: glowing 1500ms infinite;
+  -o-animation: glowing 1500ms infinite;
+  animation: glowing 9500ms infinite;
+}
+</style>

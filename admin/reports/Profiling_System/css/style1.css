@@ -1,0 +1,149 @@
+.head img{
+	width: 150px;
+	height: 150px;
+}
+.name{
+	position: absolute;
+	display: inline-block;
+}
+.name1{
+	position: absolute;
+	display: inline-block;
+	margin-top: 15px;
+	margin-left: 15px;
+}
+.plantilla {
+	position: inherit;
+	display: inline-block;
+
+}
+
+.plantilla1 {
+	position: absolute;
+	display: inline-block;
+	margin-left: auto;
+	margin-top:80px;
+}
+.position{
+	position: absolute;
+	display: inline-block;
+	margin-left: 200px;
+}
+.position1{
+	position: absolute;
+	display: inline-block;
+	margin-left: 210px;
+	margin-top: 15px;
+}
+.birth {
+	position: inherit;
+	display: inline-block;
+	margin-left: 200px;
+}
+.birth1 {
+	position: absolute;
+	display: inline-block;
+	margin-left: -60px;
+	margin-top: 80px;
+}
+.department{
+	position: absolute;
+	display: inline-block;
+	margin-left: 200px;
+}
+.department1{
+	position: absolute;
+	display: inline-block;
+	margin-left: 200px;
+	margin-top: 15px;
+}
+.appointment {
+	position: inherit;
+	display: inline-block;
+	margin-left: 200px;
+}
+.appointment1 {
+	position: absolute;
+	display: inline-block;
+	margin-left: -60px;
+	margin-top:80px;
+}
+.address{
+	position: absolute;
+	display: inline-block;
+}
+.address1{
+	position: absolute;
+	display: inline-block;
+	margin-top: 15px;
+	margin-left: 15px;
+}
+.gender{
+	position: absolute;
+	display: inline-block;
+	margin-left: 300px;
+}
+.gender1{
+	position: absolute;
+	display: inline-block;
+	margin-left: 310px;
+	margin-top: 15px;
+}
+.status {
+	position: absolute;
+	display: inline-block;
+	margin-left: 500px;
+}
+.status1 {
+	position: absolute;
+	display: inline-block;
+	margin-left: 510px;
+	margin-top:15px;
+}
+.designation {
+	position: absolute;
+	display: inline-block;
+	margin-left: 700px;
+
+}
+
+.designation1 {
+	position: absolute;
+	display: inline-block;
+	margin-left: 710px;
+	margin-top:15px;
+}
+.order-table th {
+	border: 1px solid #000;
+	text-align: center;
+	width: 190px;
+}
+.order-table td {
+	border: 1px solid #000;
+	text-align: center;
+	width: 190px;
+}
+.main1 {
+	border: 1px solid;
+}
+.navbar-brand {
+	color: #fff !important;
+}
+a .print{
+	 float:right; 
+	 margin-top: -35px; 
+	 background-color: #fff; 
+	 padding: 5px;
+	 color: #000;
+	 border: none;
+	 width: 50px;
+	 font-weight: bold;
+}
+span .excel input #btnExport {
+	background-color: #fff;
+    margin-top: -35px;
+    height: 30px;
+    margin-right: 60px;
+    border-color: #fff;
+    font-weight: bold;
+}

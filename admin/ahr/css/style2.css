@@ -1,0 +1,22 @@
+.page-header {
+	background-color: #dddddd;
+}
+.navbar-brand {
+	color: #fff !important;
+}
+.dashboard-top {
+	margin-top: 100px;
+	margin-bottom: -50px;
+	width:70%;
+	float: right;
+	margin-right: 40px;
+}
+.main-container {
+	background-color: #fff;
+}
+.file {
+	margin-top: -25px;
+}
+.input-group .input-group-addon {
+	font-size: 12px !important;
+}

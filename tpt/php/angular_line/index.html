@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html ng-app="app">
+<head>
+	<title>Line Chart using ChartJS, AngularJS and PHP/MySQLi</title>
+	<meta charset="utf-8">
+	<link href="bootstrap.min.css" rel="stylesheet">
+	<script src="angular.min.js"></script>
+	<script src="Chart.bundle.min.js"></script>
+	<style type="text/css">
+		canvas{
+			margin:auto;
+		}
+		.alert{
+			margin-top:20px;
+		}
+	</style>
+</head>
+<body ng-controller="myCtrl">
+<div class="container">
+	<div class="row">
+		<div class="col-sm-3" ng-init="fetchfruit()">
+			<h3 class="page-header text-center">Add Purchase</h3>
+			<div class="form-group">
+				<label>Amount:</label>
+				<input type="text" class="form-control" ng-model="buy.amount">
+			</div>
+			<div class="form-group">
+				<label>Date:</label>
+				<input type="date" class="form-control" ng-model="buy.date">
+			</div>
+			<button type="button" ng-click="purchase()" class="btn btn-primary">Buy</button>
+			<div class="alert alert-success text-center" ng-show="success">
+				<button type="button" class="close" aria-hidden="true" ng-click="clear()">&times;</button>
+				{{ message }}
+			</div>
+			<div class="alert alert-danger text-center" ng-show="error">
+				<button type="button" class="close" aria-hidden="true" ng-click="clear()">&times;</button>
+				{{ message }}
+			</div>
+		</div>
+		<div class="col-sm-9" ng-init="fetchsales()">
+			<h3 class="page-header text-center">Sales Chart</h3>
+			<canvas id="dvCanvas" height="150" width="300"></canvas>
+	    </div>
+	</div>
+</div>
+<script src="app.js"></script>
+</body>
+</html>
