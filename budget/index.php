@@ -1,7 +1,6 @@
 <?php
 	include_once 'dbcon.php';
 ?>
-
 <!doctype html>
 <html>
 
