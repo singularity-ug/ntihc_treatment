@@ -496,7 +496,7 @@ var t = setInterval(function(){
      <tr>
               <th style="width:40%;  border:0px;background-color:transparent;">Visit date  </th>
                <td style="width:60%;border:0px; background-color:transparent;">
-                 <input type="date"  name="EXAMDATE"  id="EXAMDATE" value="<?php echo $DATECREATED; ?>" required="required"
+                 <input type="date"  name="EXAMDATE"  id="EXAMDATE" value="<?php echo (new DateTime())->format('Y-m-d'); ?>" required="required"
          style="font-size:10px;width:100%; background-color:transparent; " /> </td> 
                 
       </tr>             
