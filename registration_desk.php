@@ -167,8 +167,6 @@ else{
         }
     }
 
-
-
     function agecalc() {
         var pn = $("#datepicker1").val();
         var dataString = "d=" + pn;
@@ -182,9 +180,6 @@ else{
             }
         });
     }
-
-
-
 
     function upt(idxx) {
         var separatedDataArray = idxx.split("__");
@@ -244,8 +239,6 @@ else{
         document.getElementById("msg").style.display = 'inline';
     }
     </script>
-
-
 
     <script>
     var x = 0,
@@ -326,8 +319,6 @@ else{
     style="background:url(assets/img/pattern/4326703-white-background-wallpapero.jpg);">
 
     </header>
-
-
 
     <!-- Main content -->
     <section class="content">
@@ -562,7 +553,7 @@ else{
                                     <select name="SERVICETYPE" id="cboOptions" onChange="showDiv('div',this)"
                                         required="required"
                                         style="font-size:10px; width:100%; background-color:transparent; " />
-                                    <option value="1"> </option>
+                                    <option value=""></option>
                                     <option value="MEDICAL SERVICES">MEDICAL SERVICES</option>
                                     <option value="COUNSELLING SERVICES">COUNSELLING SERVICES</option>
                                     <option value="PREGNANCY RELATED SERVICES">MATERNAL HEALTH SERVICES </option>
