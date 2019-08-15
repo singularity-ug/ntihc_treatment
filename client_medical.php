@@ -102,7 +102,9 @@ $connect->close();
 $connect = new mysqli("localhost", "root", "toor2", "patientmgt");
 $sed ="";
 if( $result = $connect->query("SELECT * FROM medicalproblems WHERE MEDICALTOPIC ='SIDE EFFECTS DRUG TOXICITIES ON ART'"))
-{ while ($row = $result->fetch_assoc() ) {   $sed=$sed. "<option>" . $row['MEDICALPROBLEM'] . "</option>";   }
+{ 
+  while ($row = $result->fetch_assoc() ) { 
+    $sed=$sed. "<option>" . $row['MEDICALPROBLEM'] . "</option>";   }
   }
 $connect->close();
 ?>
@@ -111,7 +113,9 @@ $connect->close();
 $connect = new mysqli("localhost", "root", "toor2", "patientmgt");
 $sti ="";
 if( $result = $connect->query("SELECT * FROM medicalproblems WHERE MEDICALTOPIC ='STI/STD'"))
-{ while ($row = $result->fetch_assoc() ) {   $sti=$sti. "<option>" . $row['MEDICALPROBLEM'] . "</option>";   }
+{ 
+  while ($row = $result->fetch_assoc() ) {  
+   $sti=$sti. "<option>" . $row['MEDICALPROBLEM'] . "</option>";   }
   }
 $connect->close();
 ?>
@@ -1396,10 +1400,6 @@ $result = mysqli_query($mysqli, "SELECT * FROM  clientsexamination WHERE TIMESTA
                     </tr>
             </table>
             <p></p>
-
-
-
-
 
             <div id="div2" class="text" style="display:none;"> </div>
             <div id="divPREGNANCY" class="text" style="display:none;">
@@ -2757,9 +2757,6 @@ $result = mysqli_query($mysqli, "SELECT * FROM  cmpatientsregistration WHERE SER
             '<option><?php echo $sti; ?></option>' +
             '</optgroup>' +
             '</Select>';
-
-
-
 
         var row1 = '<td><input type="checkbox" checked=""></td>' +
             '<td>' + selects + ' </td>' +
