@@ -25,22 +25,29 @@ else{
 $connect = new mysqli("localhost", "root", "toor2", "patientmgt");
 $stss ="";
 if( $result = $connect->query("SELECT * FROM labtesttypes"))
-{ while ($row = $result->fetch_assoc() ) {   $stss=$stss. "<option>" . $row['TESTTYPE'] . "</option>";   }
-  }
+{ 
+    while ($row = $result->fetch_assoc() ) 
+    {  
+         $stss=$stss. "<option>" . $row['TESTTYPE'] . "</option>";  
+    }
+}
 $connect->close();
 ?>
 
-
-
+<!-- Return Other Medical Category-->
 <?php
 $connect = new mysqli("localhost", "root", "toor2", "patientmgt");
 $stssb ="";
 if( $result = $connect->query("SELECT MEDICALTOPIC FROM medicalproblems GROUP BY MEDICALTOPIC"))
-{ while ($row = $result->fetch_assoc() ) {   $stssb=$stssb. "<option>" . $row['MEDICALTOPIC'] . "</option>";   }
-  }
+{ 
+  while ($row = $result->fetch_assoc() ) {  
+       $stssb=$stssb. "<option>" . $row['MEDICALTOPIC'] . "</option>";   
+    }
+}
 $connect->close();
 ?>
 
+<!-- Return SIDE EFFECTS Medical Category Options-->
 <?php
 $connect = new mysqli("localhost", "root", "toor2", "patientmgt");
 $art ="";
@@ -49,17 +56,19 @@ if( $result = $connect->query("SELECT * FROM medicalproblems WHERE MEDICALTOPIC 
   }
 $connect->close();
 ?>
-
+<!-- Return SIDE EFFECTS Medical Category Options-->
 <?php
 $connect = new mysqli("localhost", "root", "toor2", "patientmgt");
 $bcs ="";
 if( $result = $connect->query("SELECT * FROM medicalproblems WHERE MEDICALTOPIC ='BODY CHANGES'"))
-{ while ($row = $result->fetch_assoc() ) {   $bcs=$bcs. "<option>" . $row['MEDICALPROBLEM'] . "</option>";   }
+{ while ($row = $result->fetch_assoc() ) {  
+     $bcs=$bcs. "<option>" . $row['MEDICALPROBLEM'] . "</option>"; 
+      }
   }
 $connect->close();
 ?>
 
-
+<!-- Return SIDE EFFECTS Medical Category Options-->
 <?php
 $connect = new mysqli("localhost", "root", "toor2", "patientmgt");
 $genn ="";
@@ -69,7 +78,7 @@ if( $result = $connect->query("SELECT * FROM medicalproblems WHERE MEDICALTOPIC 
 $connect->close();
 ?>
 
-
+<!-- Return SIDE EFFECTS Medical Category Options-->
 <?php
 $connect = new mysqli("localhost", "root", "toor2", "patientmgt");
 $gyn ="";
@@ -79,6 +88,7 @@ if( $result = $connect->query("SELECT * FROM medicalproblems WHERE MEDICALTOPIC 
 $connect->close();
 ?>
 
+<!-- Return SIDE EFFECTS Medical Category Options-->
 <?php
 $connect = new mysqli("localhost", "root", "toor2", "patientmgt");
 $pre ="";
@@ -88,6 +98,7 @@ if( $result = $connect->query("SELECT * FROM medicalproblems WHERE MEDICALTOPIC 
 $connect->close();
 ?>
 
+<!-- Return SIDE EFFECTS Medical Category Options-->
 <?php
 $connect = new mysqli("localhost", "root", "toor2", "patientmgt");
 $sgb ="";
@@ -97,7 +108,7 @@ if( $result = $connect->query("SELECT * FROM medicalproblems WHERE MEDICALTOPIC 
 $connect->close();
 ?>
 
-
+<!-- Return SIDE EFFECTS Medical Category Options-->
 <?php
 $connect = new mysqli("localhost", "root", "toor2", "patientmgt");
 $sed ="";
@@ -109,6 +120,7 @@ if( $result = $connect->query("SELECT * FROM medicalproblems WHERE MEDICALTOPIC 
 $connect->close();
 ?>
 
+<!-- Return STI/STD Medical Category Options-->
 <?php
 $connect = new mysqli("localhost", "root", "toor2", "patientmgt");
 $sti ="";
