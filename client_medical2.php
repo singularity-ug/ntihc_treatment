@@ -30,7 +30,7 @@ if( $result = $connect->query("SELECT * FROM ntihcdrugs"))
 $connect->close();
 ?>
 
-
+z
 
 <!DOCTYPE html>
 <html>
