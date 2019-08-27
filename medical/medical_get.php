@@ -417,7 +417,7 @@ else{
    $DATECREATED      = $row['DATECREATED'];  
      $prob[]    = $row['MEDICALPROBLEM']; 
    $top[]    = $row['MEDICALTOPIC'];
-     $catg[]       = $row['PROBLEMCATEGORY'];   
+     //$catg[]       = $row['PROBLEMCATEGORY'];   
      $NTIHCNO  = $row['NTIHCNO'];
    $COUNSELLINGDONE = $row['COUNSELLINGDONE'];
      $URGENCYTYPE    = $row['URGENCYTYPE'];

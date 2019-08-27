@@ -1954,15 +1954,7 @@ mysqli_close($link);
                         <td style="width:60%;border:0px;"> <Select id="SERVICEPROVIDER" name="SERVICEPROVIDER"
                                 required="required"
                                 style="width:100%; font-weight:normal; background-color:transparent;">
-                                <option> </option>
-                                <option> HAJARAH NAMIREMBE </option>
-                                <option> MADINAH NAKIYEMBA </option>
-                                <option> GORRETH NAKIWALA </option>
-                                <option> JOLLYROSE KUSEMERERWE </option>
-                                <option> CHRISTINE KYAMULABI </option>
-                                <option> BETRIECE NAMUWONGE </option>
-                                <option> JANET NYAKANA </option>
-                                <option> VELLA TINAGARUKAYO NANGIRO </option>
+                                <option> <?php echo $nameofuser ?> </option>
                             </select>
                         </td>
                     </tr>
