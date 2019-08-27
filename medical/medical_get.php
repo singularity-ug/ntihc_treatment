@@ -417,7 +417,8 @@ else{
    $DATECREATED      = $row['DATECREATED'];  
      $prob[]    = $row['MEDICALPROBLEM']; 
    $top[]    = $row['MEDICALTOPIC'];
-     $catg[]       = $row['PROBLEMCATEGORY'];   
+     //-> theres is no index with this problem category index in this table 
+     //$catg[]       = $row['PROBLEMCATEGORY'];   
      $NTIHCNO  = $row['NTIHCNO'];
    $COUNSELLINGDONE = $row['COUNSELLINGDONE'];
      $URGENCYTYPE    = $row['URGENCYTYPE'];

@@ -30,8 +30,6 @@ if( $result = $connect->query("SELECT * FROM ntihcdrugs"))
 $connect->close();
 ?>
 
-
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -1572,8 +1570,6 @@ border-bottom: 3px solid; border-top: 1px solid;">
             </tbody>
         </table>
                   
-
-
 
 
 
