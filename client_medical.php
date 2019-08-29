@@ -1770,6 +1770,7 @@ $result = mysqli_query($mysqli, "SELECT * FROM  clientsexamination WHERE TIMESTA
                             <Select name="ACTIONTAKEN" id="ACTIONTAKEN" required="required"
                                 style="width:100%; font-weight:normal; background-color:transparent;">
                                 <option value=""> </option>
+                                <option> PENDING LAB REQUEST </option>
                                 <option> TREATED </option>
                                 <option> REFERRED </option>
                                 <option> TREATED AND REFERRED </option>
