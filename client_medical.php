@@ -2732,9 +2732,8 @@ $result = mysqli_query($mysqli, "SELECT * FROM  cmpatientsregistration WHERE SER
     </script>
 
 <script>
-    function filterProblemDescriptions(prob){
+    function filterProblemDescriptions(problem){
         var desc = document.getElementById("p_art");;
-        var problem = prob.toUpperCase();
         switch(problem){
             case "ART":
                 desc = document.getElementById("p_art");
@@ -2766,7 +2765,7 @@ $result = mysqli_query($mysqli, "SELECT * FROM  cmpatientsregistration WHERE SER
         if (desc.style.display === "inline") {
             desc.style.display = "none"; 
         } else {
-            optGroup.style.display = "inline"; 
+            desc.style.display = "inline"; 
         }
     }
 </script>
@@ -2775,7 +2774,7 @@ $result = mysqli_query($mysqli, "SELECT * FROM  cmpatientsregistration WHERE SER
         var table = document.getElementById(tableId);
         var rowCount = table.rows.length;
 
-        var selects = '<select  onchange='filterProblemDescriptions(this.value)' name="c_' + rowCount + '" id="c_' + rowCount + '" required="required" ' +
+        var selects = '<select  onchange="filterProblemDescriptions(this.value)" name="c_' + rowCount + '" id="c_' + rowCount + '" required="required" ' +
             'style= "margin-left: 0px;margin-top: 5px;height:20px; width:100%; background-color:transparent;" >' +
             '<?php echo $stssb; ?>' +
             '</select>';
