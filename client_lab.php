@@ -127,7 +127,6 @@ $connect->close();
     }
     </script>
 
-
     <script>
     $(document).ready(function() {
         $('#exaoffsite').DataTable({
@@ -1481,9 +1480,6 @@ $result = mysqli_query($mysqli, "SELECT * FROM  cmpatientsregistration WHERE
                                 <option>POSTIVE</option>
                             </select>
                         </td>
-
-
-
                     </tr>
                     <tr>
                         <td><input type="checkbox" checked="checked"></td>
@@ -1502,16 +1498,9 @@ $result = mysqli_query($mysqli, "SELECT * FROM  cmpatientsregistration WHERE
                                 <option>POSTIVE</option>
                             </select>
                         </td>
-
-
-
                     </tr>
                 </tbody>
             </table>
-
-
-
-
             <input type="hidden" name="RSVNID" value="5d676a24a97b5">
             <input type="hidden" name="NTIHCNO" value="IS/45">
             <input type="hidden" name="TESTSTATUS" value="COMPLETED">
@@ -1598,17 +1587,12 @@ $result = mysqli_query($mysqli, "SELECT * FROM  cmpatientsregistration WHERE
        
     </td>'; 
      echo "<td><a href=\"client_lab_hist.php?NTIHCNO=$res[NTIHCNO]\">Add results</a>  </td>";       
-  }
-     
-    ?>
+  }?>
                 </tbody>
             </table>
 
-
         </div>
     </div>
-
-
 
     <div class="row">
         <div class="col-lg-12">
@@ -1621,7 +1605,6 @@ $result = mysqli_query($mysqli, "SELECT * FROM  cmpatientsregistration WHERE
                             <h4 class="modal-title" id="myModalLabel"> </h4>
                         </div>
                         <div class="modal-body">
-
 
                             <div class="" id="getvist"> </div>
                             <script>
@@ -1639,11 +1622,7 @@ $result = mysqli_query($mysqli, "SELECT * FROM  cmpatientsregistration WHERE
                             </script>
                             <div class="col-sm-12">
                                 <BR>
-
-
-
                             </div>
-
 
                         </div>
                         <div class="modal-footer">
@@ -1654,14 +1633,11 @@ $result = mysqli_query($mysqli, "SELECT * FROM  cmpatientsregistration WHERE
             </div>
         </div>
 
-
-
         <!-- /.content -->
     </div>
     <!-- /.content-wrapper -->
 
     <!-- Control Sidebar -->
-
 
     <!-- jQuery 2.2.3 -->
 
@@ -1697,7 +1673,6 @@ $result = mysqli_query($mysqli, "SELECT * FROM  cmpatientsregistration WHERE
         });
     }
 
-
     function getstuff(jose) {
         var odno = ((jose.split("__")[1]).split("***"))[1];
         $.ajax({
@@ -1709,7 +1684,6 @@ $result = mysqli_query($mysqli, "SELECT * FROM  cmpatientsregistration WHERE
             }
         });
     }
-
 
     function gettestresults(jose) {
         var odno = ((jose.split("__")[1]).split("***"))[1];
@@ -1736,7 +1710,6 @@ $result = mysqli_query($mysqli, "SELECT * FROM  cmpatientsregistration WHERE
     }, 2000);
     </script>
 
-
 </body>
 
 </html>
@@ -1752,8 +1725,6 @@ function calcsubtt(tableId) {
     document.getElementById("SUBTOTAL").value = '' + sum;
 
 }
-
-
 function addRow16(tableId) {
 
     var table = document.getElementById(tableId);
@@ -1826,8 +1797,6 @@ function addRow16(tableId) {
         '<option>POSITIVE </option>' +
         '<option>NEGATIVE</option>' +
         '</select>';
-
-
 
     var row = table.insertRow(rowCount);
     var row2 = '<td><input type="checkbox" ></td>' +
