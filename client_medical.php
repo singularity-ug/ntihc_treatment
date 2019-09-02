@@ -49,13 +49,18 @@ $connect->close();
 
 <!-- Return SIDE EFFECTS Medical Category Options-->
 <?php
-$connect = new mysqli("localhost", "root", "toor2", "patientmgt");
-$art ="";
-if( $result = $connect->query("SELECT * FROM medicalproblems WHERE MEDICALTOPIC ='ART'"))
-{ while ($row = $result->fetch_assoc() ) {   $art=$art. "<option>" . $row['MEDICALPROBLEM'] . "</option>";   }
-  }
-$connect->close();
+    $connect = new mysqli("localhost", "root", "toor2", "patientmgt");
+    $art ="";
+    if( $result = $connect->query("SELECT * FROM medicalproblems WHERE MEDICALTOPIC ='ART'"))
+    { 
+        while ($row = $result->fetch_assoc() ) 
+        {   
+            $art=$art. "<option>" . $row['MEDICALPROBLEM'] . "</option>";   
+        }
+    }
+    $connect->close();
 ?>
+
 <!-- Return SIDE EFFECTS Medical Category Options-->
 <?php
 $connect = new mysqli("localhost", "root", "toor2", "patientmgt");
@@ -1327,13 +1332,11 @@ $result = mysqli_query($mysqli, "SELECT * FROM  clientsexamination WHERE TIMESTA
             </table>
             <P></P>
 
-
-
             <table border="1" cellpadding="4" cellspacing="0"
                 style="font-family: arial; font-size: 12px; text-align:left;border: 0px;" width="100%">
                 <thead>
                     <tr>
-                        <th style="width:40%;border:0px;">Problem category </th>
+                        <th style="width:40%;border:0px;">Problem Type  </th>
                         <th style="width:60%;border:0px;"> <select name="EXAMPICKERDESC" id="cboOptions"
                                 onChange="showDiv2('div',this)" required="required"
                                 style="width:100%; font-weight:normal; background-color:transparent;">
@@ -2740,8 +2743,8 @@ $result = mysqli_query($mysqli, "SELECT * FROM  cmpatientsregistration WHERE SER
 
         var s1 = '<select  name="p_' + rowCount + '" id="p_' + rowCount + '" required="required" ' +
             ' style= "margin-left: 0px;margin-top: 5px;height:20px; width:100%; background-color:transparent" >' +
-            '<optgroup label="ART"> </option>' +
-            '<option><?php echo $art; ?></option>' +
+            '<optgroup label="ART">' +
+            '<?php echo $art; ?>' +
             '</optgroup>' +
             '<optgroup label="BODY CHANGES"> </option>' +
             '<option><?php echo $bcs; ?></option>' +
