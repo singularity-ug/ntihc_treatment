@@ -2762,9 +2762,9 @@ $result = mysqli_query($mysqli, "SELECT * FROM  cmpatientsregistration WHERE SER
                 break;
         }
 
-        var nodes = event.getElementsByTagName("optgroup");
+        var nodes = event.getElementById("p_descs").getElementsByTagName("optgroup");
 
-        for(var i=0; i < nodes.length; i++){
+        for(var i=0; i<nodes.length; i++){
             nodes[i].style.display = "none";
         }
 
@@ -2781,7 +2781,7 @@ $result = mysqli_query($mysqli, "SELECT * FROM  cmpatientsregistration WHERE SER
             '<?php echo $stssb; ?>' +
             '</select>';
 
-        var s1 = '<select  name="p_' + rowCount + '" id="p_' + rowCount + '" required="required" ' +
+        var s1 = '<select id="p_descs" "name="p_' + rowCount + '" id="p_' + rowCount + '" required="required" ' +
             ' style= "margin-left: 0px;margin-top: 5px;height:20px; width:100%; background-color:transparent" >' +
             '<optgroup label="ART" id="p_art"> <?php echo $art; ?> </optgroup>' +
             '<optgroup label="BODY CHANGES" id="p_bcs"> <?php echo $bcs; ?> </optgroup>' +
