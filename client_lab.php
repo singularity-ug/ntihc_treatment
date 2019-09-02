@@ -1168,9 +1168,7 @@ $result = mysqli_query($mysqli, "SELECT * FROM  cmpatientsregistration WHERE
     <div class="col-md-1" style=" background-color:transparent;"></div>
     <div class="col-md-7" style=" background-color:transparent;">
 
-
-        <center
-            style="color:#000; font-weight:bold; font-size:12px;font:bold 16px 'Aleo'; text-shadow:1px 1px 3px #000; color:#fff;">
+        <center style="color:#000; font-weight:bold; font-size:12px;font:bold 16px 'Aleo'; text-shadow:1px 1px 3px #000; color:#fff;">
             Clients Management - Laboratory</center><br>
 
         <div class="" id="dem"> </div>
