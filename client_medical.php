@@ -38,10 +38,10 @@ $connect->close();
 <?php
 $connect = new mysqli("localhost", "root", "toor2", "patientmgt");
 $stssb ="";
-if( $result = $connect->query("SELECT MEDICALTOPIC FROM medicalproblems GROUP BY MEDICALTOPIC"))
+if( $result = $connect->query("SELECT DISTINCT MEDICALTOPIC FROM medicalproblems"))
 { 
   while ($row = $result->fetch_assoc() ) {  
-       $stssb=$stssb. "<option>" . $row['MEDICALTOPIC'] . "</option>";   
+       $stssb=$stssb. "<option onclick='filterProblemDescriptions(this.innerHTML)'>" . $row['MEDICALTOPIC'] . "</option>";   
     }
 }
 $connect->close();
@@ -147,6 +147,7 @@ $connect->close();
     <!-- Tell the browser to be responsive to screen width -->
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
     <!-- Bootstrap 3.3.6 -->
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <link rel="stylesheet" href="admin/assets/bootstrap/css/bootstrap.css">
     <!-- Bootstrap 3.3.6 -->
     <link rel="stylesheet" href="admin/bootstrap/css/bootstrap.min.css">
@@ -2730,6 +2731,45 @@ $result = mysqli_query($mysqli, "SELECT * FROM  cmpatientsregistration WHERE SER
     }, 2000);
     </script>
 
+<script>
+    function filterProblemDescriptions(prob){
+        var desc = document.getElementById("p_art");;
+        var problem = prob.toUpperCase();
+        switch(problem){
+            case "ART":
+                desc = document.getElementById("p_art");
+                break;
+            case "GYNAECOLOGICAL CONDITIONS":
+                desc = document.getElementById("p_gyn");
+                break;
+            case "BODY CHANGES":
+                desc = document.getElementById("p_bcs");
+                break;
+            case "SGBV CASES":
+                desc = document.getElementById("p_sgb");
+                break;
+            case "GENERAL":
+                desc = document.getElementById("p_genn");
+                break;
+            case "PREGNANCY":
+                desc = document.getElementById("p_pre");
+                break;
+            case "STI/STD":
+                desc = document.getElementById("p_sti");
+                break;
+            case "SIDE EFFECTS DRUG TOXICITIES ON ART":
+                desc = document.getElementById("p_sed");
+                break;
+        }
+
+        desc.style.display = "inline";
+        if (desc.style.display === "inline") {
+            desc.style.display = "none"; 
+        } else {
+            optGroup.style.display = "inline"; 
+        }
+    }
+</script>
     <script>
     function addRow12(tableId) {
         var table = document.getElementById(tableId);
@@ -2737,20 +2777,20 @@ $result = mysqli_query($mysqli, "SELECT * FROM  cmpatientsregistration WHERE SER
 
         var selects = '<select  name="c_' + rowCount + '" id="c_' + rowCount + '" required="required" ' +
             'style= "margin-left: 0px;margin-top: 5px;height:20px; width:100%; background-color:transparent;" >' +
-            '<option><?php echo $stssb; ?> </option>' +
+            '<?php echo $stssb; ?>' +
             '</select>';
 
 
         var s1 = '<select  name="p_' + rowCount + '" id="p_' + rowCount + '" required="required" ' +
             ' style= "margin-left: 0px;margin-top: 5px;height:20px; width:100%; background-color:transparent" >' +
-            '<optgroup label="ART"> <?php echo $art; ?> </optgroup>' +
-            '<optgroup label="BODY CHANGES"> <?php echo $bcs; ?> </optgroup>' +
-            '<optgroup label="GENERAL"> <?php echo $genn; ?> </optgroup>' +
-            '<optgroup label="GYNAECOLOGICAL CONDITIONS"> <?php echo $gyn; ?> </optgroup>' +
-            '<optgroup label="PREGNANCY"> <?php echo $pre; ?> </optgroup>' +
-            '<optgroup label="SGBV CASES"> <?php echo $sgb; ?> </optgroup>' +
-            '<optgroup label="SIDE EFFECTS DRUG TOXICITIES ON ART"> <?php echo $sed; ?> </optgroup>' +
-            '<optgroup label="STI/STD"> <?php echo $sti; ?> </optgroup>' +
+            '<optgroup label="ART" id="p_art"> <?php echo $art; ?> </optgroup>' +
+            '<optgroup label="BODY CHANGES" id="p_bcs"> <?php echo $bcs; ?> </optgroup>' +
+            '<optgroup label="GENERAL" id="p_genn"> <?php echo $genn; ?> </optgroup>' +
+            '<optgroup label="GYNAECOLOGICAL CONDITIONS" id="p_gyn"> <?php echo $gyn; ?> </optgroup>' +
+            '<optgroup label="PREGNANCY" id="p_pre"> <?php echo $pre; ?> </optgroup>' +
+            '<optgroup label="SGBV CASES" id="p_sgb"> <?php echo $sgb; ?> </optgroup>' +
+            '<optgroup label="SIDE EFFECTS DRUG TOXICITIES ON ART"  id="p_sed"> <?php echo $sed; ?> </optgroup>' +
+            '<optgroup label="STI/STD" id="p_sti"> <?php echo $sti; ?> </optgroup>' +
             '</Select>';
 
         var row1 = '<td><input type="checkbox" checked=""></td>' +
