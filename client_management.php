@@ -134,7 +134,7 @@ else{
       <!-- USER PROFILE BLOCK -->
         <div class="col-sm-4">
       		<div class="half-unit">  
-                <h1>Registration Desk</h1> 
+          <a href="registration_desk.php"><h1>Registration Desk</h1> </a>
 				<div class="thumbnail"> 
 				<a href="registration_desk.php"><img src="database icons/social_network-512.png" width="140" height="200" alt="Marcel Newman" class="img-circle">
 				</div><!-- /thumbnail --> 
@@ -144,7 +144,7 @@ else{
       <!-- DONUT CHART BLOCK -->
         <div class="col-sm-4">
       		<div class="half-unit"> 
-		  		    <h1>Treatment Room</h1> 
+          <a href="client_medical.php"><h1>Treatment Room</h1> </a>
 				<div class="thumbnail">
 				<a href="client_medical.php"><img src="database icons/images.jpg" width="140" height="200" alt="Marcel Newman" class="img-circle">
 				</div><!-- /thumbnail -->  
@@ -154,7 +154,7 @@ else{
       <!-- DONUT CHART BLOCK -->
         <div class="col-sm-4">
       		<div class="half-unit">   
-		  		    <h1>Counselling Room</h1> 
+          <a href="counsellingroom.php"><h1>Counselling Room</h1> </a>
 				<div class="thumbnail">
 				<a href="counsellingroom.php"><img src="database icons/press-nozbe.png" width="140" height="200" alt="Marcel Newman" class="img-circle">
 				</div><!-- /thumbnail -->  
@@ -165,7 +165,7 @@ else{
         <!-- DONUT CHART BLOCK -->
         <div class="col-sm-4">
       		<div class="half-unit">   
-		  		    <h1>Laboratory</h1> 
+          <a href="client_lab.php"><h1>Laboratory</h1> </a>
 				<div class="thumbnail">
 				<a href="laboratory.php"><a href="client_lab.php"><img src="database icons/microfinance-product-management-system.jpg" width="140" height="200" alt="Marcel Newman" class="img-circle">
 				</div><!-- /thumbnail -->  
@@ -175,7 +175,7 @@ else{
       <!-- DONUT CHART BLOCK -->
         <div class="col-sm-4">
       		<div class="half-unit"> 
-		  		    <h1>Antenatal Care</h1> 
+          <a href="admin/anc/anc_home.php"><h1>Antenatal Care</h1> </a>
 				<div class="thumbnail">
 					<a href="admin/anc/anc_home.php"><img src="database icons/icon-resources-staffing.png" width="140" height="200" alt="Marcel Newman" class="img-circle">
 				</div><!-- /thumbnail --> 
@@ -185,7 +185,7 @@ else{
 	  <!-- LAST MONTH REVENUE -->     
         <div class="col-sm-4">
       		<div class="half-unit">  
-	      		<h1>Postnatal Care</h1>  
+          <a href="postnatalcare.php"><h1>Postnatal Care</h1> </a> 
 				<div class="thumbnail">
 				<a href="postnatalcare.php"><img src="database icons/guests.jpg" width="140" height="200" alt="" class="img-circle">
 				</div><!-- /thumbnail -->  
@@ -195,7 +195,7 @@ else{
 	  <!-- 30 DAYS STATS - CAROUSEL FLEXSLIDER -->     
         <div class="col-sm-4">
       		<div class="half-unit">  
-                <h1>Post Abortion Care</h1> 
+          <a href="abortioncare.php"><h1>Post Abortion Care</h1> </a>
 				<div class="thumbnail">
 				<a href="abortioncare.php"><img src="database icons/20151012_561baec335c5f.png" width="140" height="200" alt="Marcel Newman" class="img-circle">
 			   
@@ -207,7 +207,7 @@ else{
 	  <!-- THIRD ROW OF BLOCKS --> 
 	    <div class="col-sm-4">
       		<div class="half-unit">  
-	      		<h1>Family Planning</h1>  
+          <a href="family_planning.php"><h1>Family Planning</h1></a>  
 				<div class="thumbnail">
 					<a href="family_planning.php"><img src="database icons/queue-512.png" width="140" height="200" alt="" class="img-circle">
 				</div><!-- /thumbnail --> 
@@ -217,7 +217,7 @@ else{
 	  <!-- TO DO LIST -->     
       		<div class="col-sm-4">
       		<div class="half-unit">  
-	      		<h1>Dispensing</h1>  
+          <a href="dispenser/drugs_mgr.php"><h1>Dispensing</h1>  </a>
 				<div class="thumbnail">
 				<a href="dispenser/drugs_mgr.php"><img src="database icons/Subscribe-HR-Human-Resource-Management-Software-Core-HR-Large.png" width="140" height="200" alt="" class="img-circle">
 				</div><!-- /thumbnail -->   
@@ -227,7 +227,7 @@ else{
          
       <div class="col-sm-3" style="height:auto;">   
       <div class="half-unit">   
-        <h1>Toll free</h1>  
+      <a href="tollfree.php"><h1>Toll free</h1></a>
         <div class="thumbnail">
         <a href="tollfree.php"><img src="database icons/toll-free.png" width="140" height="200" alt="" class="img-circle">
         </div>  
@@ -243,7 +243,7 @@ else{
               
                 
         <div class="half-unit">   
-        <h1>Reports</h1>  
+        <a href="admin/reports/medical_rpt.php"><h1>Reports</h1>  </a>
         <div class="thumbnail">
         <a href="admin/reports/medical_rpt.php">
         <img src="database icons/59449894425chart-512.png" width="140" height="200" alt="" class="img-circle">
