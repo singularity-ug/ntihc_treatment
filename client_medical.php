@@ -2764,10 +2764,10 @@ $result = mysqli_query($mysqli, "SELECT * FROM  cmpatientsregistration WHERE SER
 
         var nodes = event.getElementsByTagName("optgroup");
 
-        for(var i=0; i < nodes.lenght; i++){
+        for(var i=0; i < nodes.length; i++){
             nodes[i].style.display = "none";
         }
-        
+
         desc.style.display = "inline"; 
     }
 </script>
