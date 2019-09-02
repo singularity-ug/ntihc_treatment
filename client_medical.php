@@ -2743,30 +2743,14 @@ $result = mysqli_query($mysqli, "SELECT * FROM  cmpatientsregistration WHERE SER
 
         var s1 = '<select  name="p_' + rowCount + '" id="p_' + rowCount + '" required="required" ' +
             ' style= "margin-left: 0px;margin-top: 5px;height:20px; width:100%; background-color:transparent" >' +
-            '<optgroup label="ART">' +
-            '<?php echo $art; ?>' +
-            '</optgroup>' +
-            '<optgroup label="BODY CHANGES"> </option>' +
-            '<option><?php echo $bcs; ?></option>' +
-            '</optgroup>' +
-            '<optgroup label="GENERAL"> </option>' +
-            '<option><?php echo $genn; ?></option>' +
-            '</optgroup>' +
-            '<optgroup label="GYNAECOLOGICAL CONDITIONS"> </option>' +
-            '<option><?php echo $gyn; ?></option>' +
-            '</optgroup>' +
-            '<optgroup label="PREGNANCY"> </option>' +
-            '<option><?php echo $pre; ?></option>' +
-            '</optgroup>' +
-            '<optgroup label="SGBV CASES"> </option>' +
-            '<option><?php echo $sgb; ?></option>' +
-            '</optgroup>' +
-            '<optgroup label="SIDE EFFECTS DRUG TOXICITIES ON ART"> </option>' +
-            '<option><?php echo $sed; ?></option>' +
-            '</optgroup>' +
-            '<optgroup label="STI/STD"> </option>' +
-            '<option><?php echo $sti; ?></option>' +
-            '</optgroup>' +
+            '<optgroup label="ART"> <?php echo $art; ?> </optgroup>' +
+            '<optgroup label="BODY CHANGES"> <?php echo $bcs; ?> </optgroup>' +
+            '<optgroup label="GENERAL"> <?php echo $genn; ?> </optgroup>' +
+            '<optgroup label="GYNAECOLOGICAL CONDITIONS"> <?php echo $gyn; ?> </optgroup>' +
+            '<optgroup label="PREGNANCY"> <?php echo $pre; ?> </optgroup>' +
+            '<optgroup label="SGBV CASES"> <?php echo $sgb; ?> </optgroup>' +
+            '<optgroup label="SIDE EFFECTS DRUG TOXICITIES ON ART"> <?php echo $sed; ?> </optgroup>' +
+            '<optgroup label="STI/STD"> <?php echo $sti; ?> </optgroup>' +
             '</Select>';
 
         var row1 = '<td><input type="checkbox" checked=""></td>' +
