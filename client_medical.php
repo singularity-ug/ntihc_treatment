@@ -2732,9 +2732,10 @@ $result = mysqli_query($mysqli, "SELECT * FROM  cmpatientsregistration WHERE SER
     </script>
 
 <script>
-    function filterProblemDescriptions(problem){
-        var desc = document.getElementById("p_art");;
-        switch(problem){
+    function filterProblemDescriptions(event){
+        var desc = document.getElementById("p_art");
+        var value = event.value;
+        switch(value){
             case "ART":
                 desc = document.getElementById("p_art");
                 break;
@@ -2774,11 +2775,10 @@ $result = mysqli_query($mysqli, "SELECT * FROM  cmpatientsregistration WHERE SER
         var table = document.getElementById(tableId);
         var rowCount = table.rows.length;
 
-        var selects = '<select  onchange="filterProblemDescriptions(this.value)" name="c_' + rowCount + '" id="c_' + rowCount + '" required="required" ' +
+        var selects = '<select onchange="filterProblemDescriptions(this)" name="c_' + rowCount + '" id="c_' + rowCount + '" required="required" ' +
             'style= "margin-left: 0px;margin-top: 5px;height:20px; width:100%; background-color:transparent;" >' +
             '<?php echo $stssb; ?>' +
             '</select>';
-
 
         var s1 = '<select  name="p_' + rowCount + '" id="p_' + rowCount + '" required="required" ' +
             ' style= "margin-left: 0px;margin-top: 5px;height:20px; width:100%; background-color:transparent" >' +
@@ -2799,7 +2799,6 @@ $result = mysqli_query($mysqli, "SELECT * FROM  cmpatientsregistration WHERE SER
         var row = table.insertRow(rowCount);
         row.innerHTML = row1;
         document.getElementById('mytable_rows').value = rowCount;
-
     }
 
     function dostg(thisid) {
