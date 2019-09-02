@@ -2762,12 +2762,11 @@ $result = mysqli_query($mysqli, "SELECT * FROM  cmpatientsregistration WHERE SER
                 break;
         }
 
-        var len = event.getElementsByTagName("optGroup").length;
-        for(var i=0; i < len; i++)
-            event.getElementsByTagName("optgroup")[i].style.display = "none";
-
-            desc.style.display = "inline"; 
-        }
+        var nodes = event.getElementsByTagName("optgroup");
+        for(var i=0; i < nodes.lenght; i++)
+            nodes[i].style.display = "none";
+        
+        desc.style.display = "inline"; 
     }
 </script>
     <script>
