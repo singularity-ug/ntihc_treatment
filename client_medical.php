@@ -2762,7 +2762,7 @@ $result = mysqli_query($mysqli, "SELECT * FROM  cmpatientsregistration WHERE SER
                 break;
         }
 
-        var nodes = event.getElementById("p_descs").getElementsByTagName("optgroup");
+        var nodes = document.getElementById("p_descs").getElementsByTagName("optgroup");
 
         for(var i=0; i<nodes.length; i++){
             nodes[i].style.display = "none";
