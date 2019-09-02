@@ -41,7 +41,7 @@ $stssb ="";
 if( $result = $connect->query("SELECT DISTINCT MEDICALTOPIC FROM medicalproblems"))
 { 
   while ($row = $result->fetch_assoc() ) {  
-       $stssb=$stssb. "<option onclick='filterProblemDescriptions(this.innerHTML)'>" . $row['MEDICALTOPIC'] . "</option>";   
+       $stssb=$stssb. "<option>" . $row['MEDICALTOPIC'] . "</option>";   
     }
 }
 $connect->close();
@@ -2775,7 +2775,7 @@ $result = mysqli_query($mysqli, "SELECT * FROM  cmpatientsregistration WHERE SER
         var table = document.getElementById(tableId);
         var rowCount = table.rows.length;
 
-        var selects = '<select  name="c_' + rowCount + '" id="c_' + rowCount + '" required="required" ' +
+        var selects = '<select  onchange='filterProblemDescriptions(this.value)' name="c_' + rowCount + '" id="c_' + rowCount + '" required="required" ' +
             'style= "margin-left: 0px;margin-top: 5px;height:20px; width:100%; background-color:transparent;" >' +
             '<?php echo $stssb; ?>' +
             '</select>';
