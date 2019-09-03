@@ -2769,6 +2769,8 @@ $result = mysqli_query($mysqli, "SELECT * FROM  cmpatientsregistration WHERE SER
         }
 
         desc.style.display = "inline"; 
+
+        document.getElementById("p_descs").value = ""
     }
 </script>
     <script>
