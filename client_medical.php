@@ -38,7 +38,7 @@ $connect->close();
 <?php
 $connect = new mysqli("localhost", "root", "toor2", "patientmgt");
 $stssb ="";
-if( $result = $connect->query("SELECT MEDICALTOPIC FROM medicalproblems GROUP BY MEDICALTOPIC"))
+if( $result = $connect->query("SELECT DISTINCT MEDICALTOPIC FROM medicalproblems"))
 { 
   while ($row = $result->fetch_assoc() ) {  
        $stssb=$stssb. "<option>" . $row['MEDICALTOPIC'] . "</option>";   
@@ -49,13 +49,18 @@ $connect->close();
 
 <!-- Return SIDE EFFECTS Medical Category Options-->
 <?php
-$connect = new mysqli("localhost", "root", "toor2", "patientmgt");
-$art ="";
-if( $result = $connect->query("SELECT * FROM medicalproblems WHERE MEDICALTOPIC ='ART'"))
-{ while ($row = $result->fetch_assoc() ) {   $art=$art. "<option>" . $row['MEDICALPROBLEM'] . "</option>";   }
-  }
-$connect->close();
+    $connect = new mysqli("localhost", "root", "toor2", "patientmgt");
+    $art ="";
+    if( $result = $connect->query("SELECT * FROM medicalproblems WHERE MEDICALTOPIC ='ART'"))
+    { 
+        while ($row = $result->fetch_assoc() ) 
+        {   
+            $art=$art. "<option>" . $row['MEDICALPROBLEM'] . "</option>";   
+        }
+    }
+    $connect->close();
 ?>
+
 <!-- Return SIDE EFFECTS Medical Category Options-->
 <?php
 $connect = new mysqli("localhost", "root", "toor2", "patientmgt");
@@ -142,6 +147,7 @@ $connect->close();
     <!-- Tell the browser to be responsive to screen width -->
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
     <!-- Bootstrap 3.3.6 -->
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <link rel="stylesheet" href="admin/assets/bootstrap/css/bootstrap.css">
     <!-- Bootstrap 3.3.6 -->
     <link rel="stylesheet" href="admin/bootstrap/css/bootstrap.min.css">
@@ -1331,20 +1337,23 @@ $result = mysqli_query($mysqli, "SELECT * FROM  clientsexamination WHERE TIMESTA
                 style="font-family: arial; font-size: 12px; text-align:left;border: 0px;" width="100%">
                 <thead>
                     <tr>
-                        <?php include('client_medical_vb.js'); ?>
-
-                        <th style="width:40%;border:0px;">Vist by </th>
-                        <th style="width:60%;border:0px;"> <select name="VISTBY" id="cboOptions"
-                                onChange="showDiv('div',this)" required="required"
+                        <th style="width:40%;border:0px;">Problem Type  </th>
+                        <th style="width:60%;border:0px;"> <select name="EXAMPICKERDESC" id="cboOptions"
+                                onChange="showDiv2('div',this)" required="required"
                                 style="width:100%; font-weight:normal; background-color:transparent;">
-                                <option value="1"> </option>
-                                <option value="SELF">SELF</option>
-                                <option value="ESCORTED">ESCORTED</option>
+                                <option value="2"> </option>
+                                <option value="GENERAL">MEDICAL EXAMINATION</option>
+                                <option value="ART">ART</option>
+                                <!--option value="PREGNANCY">PREGNANCY</option-->
+                                <!--option value="BODY CHANGES">BODY CHANGES</option-->
+                                <!--option value="SEXUAL HEALTH">SEXUAL HEALTH</option-->
+                                <!--option value="STI">STI</option-->
+                                <!--option value="SGBV">SGBV</option-->
                             </select>
+                        </th>
                         </th>
                     </tr>
             </table>
-
 
             <div id="div1" class="text" style="display:none;"> </div>
             <div id="divSELF" class="text" style="display:none;"> </div>
@@ -1390,27 +1399,25 @@ $result = mysqli_query($mysqli, "SELECT * FROM  clientsexamination WHERE TIMESTA
         <div class="col-sm-6" style=" background-color:transparent;">
 
             <?php include('client_medical_pro.js'); ?>
+
             <table border="1" cellpadding="4" cellspacing="0"
                 style="font-family: arial; font-size: 12px; text-align:left;border: 0px;" width="100%">
                 <thead>
                     <tr>
-                        <th style="width:40%;border:0px;">Problem category </th>
-                        <th style="width:60%;border:0px;"> <select name="EXAMPICKERDESC" id="cboOptions"
-                                onChange="showDiv2('div',this)" required="required"
+                        <?php include('client_medical_vb.js'); ?>
+
+                        <th style="width:40%;border:0px;">Visit By </th>
+                        <th style="width:60%;border:0px;"> <select name="VISTBY" id="cboOptions"
+                                onChange="showDiv('div',this)" required="required"
                                 style="width:100%; font-weight:normal; background-color:transparent;">
-                                <option value="2"> </option>
-                                <option value="GENERAL">MEDICAL EXAMINATION</option>
-                                <option value="ART">ART</option>
-                                <!--option value="PREGNANCY">PREGNANCY</option-->
-                                <!--option value="BODY CHANGES">BODY CHANGES</option-->
-                                <!--option value="SEXUAL HEALTH">SEXUAL HEALTH</option-->
-                                <!--option value="STI">STI</option-->
-                                <!--option value="SGBV">SGBV</option-->
+                                <option value="1"> </option>
+                                <option value="SELF">SELF</option>
+                                <option value="ESCORTED">ESCORTED</option>
                             </select>
-                        </th>
                         </th>
                     </tr>
             </table>
+
             <p></p>
 
             <div id="div2" class="text" style="display:none;"> </div>
@@ -2724,43 +2731,68 @@ $result = mysqli_query($mysqli, "SELECT * FROM  cmpatientsregistration WHERE SER
     }, 2000);
     </script>
 
+<script>
+    function filterProblemDescriptions(event){
+        var desc = document.getElementById("p_art");
+        var value = event.value;
+        switch(value){
+            case "ART":
+                desc = document.getElementById("p_art");
+                break;
+            case "GYNAECOLOGICAL CONDITIONS":
+                desc = document.getElementById("p_gyn");
+                break;
+            case "BODY CHANGES":
+                desc = document.getElementById("p_bcs");
+                break;
+            case "SGBV CASES":
+                desc = document.getElementById("p_sgb");
+                break;
+            case "GENERAL":
+                desc = document.getElementById("p_genn");
+                break;
+            case "PREGNANCY":
+                desc = document.getElementById("p_pre");
+                break;
+            case "STI/STD":
+                desc = document.getElementById("p_sti");
+                break;
+            case "SIDE EFFECTS DRUG TOXICITIES ON ART":
+                desc = document.getElementById("p_sed");
+                break;
+        }
+
+        var nodes = document.getElementById("p_descs").getElementsByTagName("optgroup");
+
+        for(var i=0; i<nodes.length; i++){
+            nodes[i].style.display = "none";
+        }
+
+        desc.style.display = "inline"; 
+
+        document.getElementById("p_descs").value = ""
+    }
+</script>
     <script>
     function addRow12(tableId) {
         var table = document.getElementById(tableId);
         var rowCount = table.rows.length;
 
-        var selects = '<select  name="c_' + rowCount + '" id="c_' + rowCount + '" required="required" ' +
+        var selects = '<select onchange="filterProblemDescriptions(this)" name="c_' + rowCount + '" id="c_' + rowCount + '" required="required" ' +
             'style= "margin-left: 0px;margin-top: 5px;height:20px; width:100%; background-color:transparent;" >' +
-            '<option><?php echo $stssb; ?> </option>' +
+            '<?php echo $stssb; ?>' +
             '</select>';
 
-
-        var s1 = '<select  name="p_' + rowCount + '" id="p_' + rowCount + '" required="required" ' +
+        var s1 = '<select id="p_descs" "name="p_' + rowCount + '" id="p_' + rowCount + '" required="required" ' +
             ' style= "margin-left: 0px;margin-top: 5px;height:20px; width:100%; background-color:transparent" >' +
-            '<optgroup label="ART"> </option>' +
-            '<option><?php echo $art; ?></option>' +
-            '</optgroup>' +
-            '<optgroup label="BODY CHANGES"> </option>' +
-            '<option><?php echo $bcs; ?></option>' +
-            '</optgroup>' +
-            '<optgroup label="GENERAL"> </option>' +
-            '<option><?php echo $genn; ?></option>' +
-            '</optgroup>' +
-            '<optgroup label="GYNAECOLOGICAL CONDITIONS"> </option>' +
-            '<option><?php echo $gyn; ?></option>' +
-            '</optgroup>' +
-            '<optgroup label="PREGNANCY"> </option>' +
-            '<option><?php echo $pre; ?></option>' +
-            '</optgroup>' +
-            '<optgroup label="SGBV CASES"> </option>' +
-            '<option><?php echo $sgb; ?></option>' +
-            '</optgroup>' +
-            '<optgroup label="SIDE EFFECTS DRUG TOXICITIES ON ART"> </option>' +
-            '<option><?php echo $sed; ?></option>' +
-            '</optgroup>' +
-            '<optgroup label="STI/STD"> </option>' +
-            '<option><?php echo $sti; ?></option>' +
-            '</optgroup>' +
+            '<optgroup label="ART" id="p_art"> <?php echo $art; ?> </optgroup>' +
+            '<optgroup label="BODY CHANGES" id="p_bcs"> <?php echo $bcs; ?> </optgroup>' +
+            '<optgroup label="GENERAL" id="p_genn"> <?php echo $genn; ?> </optgroup>' +
+            '<optgroup label="GYNAECOLOGICAL CONDITIONS" id="p_gyn"> <?php echo $gyn; ?> </optgroup>' +
+            '<optgroup label="PREGNANCY" id="p_pre"> <?php echo $pre; ?> </optgroup>' +
+            '<optgroup label="SGBV CASES" id="p_sgb"> <?php echo $sgb; ?> </optgroup>' +
+            '<optgroup label="SIDE EFFECTS DRUG TOXICITIES ON ART"  id="p_sed"> <?php echo $sed; ?> </optgroup>' +
+            '<optgroup label="STI/STD" id="p_sti"> <?php echo $sti; ?> </optgroup>' +
             '</Select>';
 
         var row1 = '<td><input type="checkbox" checked=""></td>' +
@@ -2770,7 +2802,6 @@ $result = mysqli_query($mysqli, "SELECT * FROM  cmpatientsregistration WHERE SER
         var row = table.insertRow(rowCount);
         row.innerHTML = row1;
         document.getElementById('mytable_rows').value = rowCount;
-
     }
 
     function dostg(thisid) {
