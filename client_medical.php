@@ -1825,7 +1825,7 @@ $result = mysqli_query($mysqli, "SELECT * FROM  clientsexamination WHERE TIMESTA
                         <td style="border:0px; width:58%;"> <select name="TROOM_INITIATION" id="cboOptions"
                                 onChange="showDiv8('div',this)" required="required"
                                 style="width:100%; font-weight:normal; background-color:transparent;height: 20px; border-radius: 8px;text-align:left; font-size:9px;">
-                                <option value="8"></option>
+                                <option value="8" require="required"></option>
                                 <option value="OFF">DISABLE LAB REQUEST</option>
                                 <option value="ON">GENERATE REQUEST</option>
                             </select> </td>

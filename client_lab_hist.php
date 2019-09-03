@@ -1877,11 +1877,6 @@ $date = date("Y-m-d").' 00:00:00';
                 </center>
         </form>
 
-
-
-
-
-
         <BR>
     </div>
     </div>
@@ -1890,15 +1885,8 @@ $date = date("Y-m-d").' 00:00:00';
     </div>
     <div class="col-sm-12" style="background-color:transparent;">
         <br>
-
-
-
-
     </div>
     </div>
-
-
-
     <div class="row">
         <div class="col-lg-12">
             <div class="modal" id="impres2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
@@ -1929,10 +1917,7 @@ $date = date("Y-m-d").' 00:00:00';
                             <div class="col-sm-12">
                                 <BR>
 
-
-
                             </div>
-
 
                         </div>
                         <div class="modal-footer">
@@ -1942,8 +1927,6 @@ $date = date("Y-m-d").' 00:00:00';
                 </div>
             </div>
         </div>
-
-
 
         <!-- /.content -->
     </div>

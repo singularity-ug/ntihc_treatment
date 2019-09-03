@@ -1460,44 +1460,33 @@ $result = mysqli_query($mysqli, "SELECT * FROM  cmpatientsregistration WHERE
                         <th>LAB RESULTS</th>
                     </tr>
                 </thead>
+               
                 <tbody>
-                    <tr>
-                        <td><input type="checkbox" checked="checked"></td>
+                        <?php  $tot = count($dnx); $s=0; $totals =0;
+                                                 for($s=0;$s<$tot;$s++){ 
+                                                             $totals += intval($fqx[$s]);?>
+                        <tr>
+                            <td><input type="checkbox" checked="checked" /></td>
 
-                        <td> <input name="aa[]" type="text" value="2019-08-29 09:13:09" readonly=""
-                                style="width:100%; background-color:transparent; "></td>
+                            <td> <input name="aa[]" type="text" value="<?php echo $aa[$s]; ?>" readonly=""
+                                    style="width:100%; background-color:transparent; " /></td>
 
-                        <td> <input name="dnx[]" type="text" value="URINE ANALYSIS" required=""
-                                style="width:100%; background-color:transparent; ">
-                        </td>
+                            <td> <input name="dnx[]" type="text" value="<?php  echo $dnx[$s]; ?>" required=""
+                                    style="width:100%; background-color:transparent; " />
+                            </td>
 
-                        <td> <select name="fqx[]" type="text" value="" required=""
-                                style="width:100%; background-color:#fff; ">
-                                <option value=""></option>
+                            <td> <select name="fqx[]" type="text" value="<?php echo $fqx[$s]; ?>" required=""
+                                    style="width:100%; background-color:#fff; " />
+                                <option value="<?php echo $fqx[$s]; ?>"><?php echo $fqx[$s]; ?></option>
                                 <option>NEGATIVE</option>
                                 <option>POSTIVE</option>
-                            </select>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td><input type="checkbox" checked="checked"></td>
+                                </select>
+                            </td>
 
-                        <td> <input name="aa[]" type="text" value="2019-08-29 09:13:09" readonly=""
-                                style="width:100%; background-color:transparent; "></td>
+                        </tr>
+                        <?php } ?>
+                    </tbody>
 
-                        <td> <input name="dnx[]" type="text" value="BLOOD SLIDE FOR MALARIA" required=""
-                                style="width:100%; background-color:transparent; ">
-                        </td>
-
-                        <td> <select name="fqx[]" type="text" value="" required=""
-                                style="width:100%; background-color:#fff; ">
-                                <option value=""></option>
-                                <option>NEGATIVE</option>
-                                <option>POSTIVE</option>
-                            </select>
-                        </td>
-                    </tr>
-                </tbody>
             </table>
             <input type="hidden" name="RSVNID" value="5d676a24a97b5">
             <input type="hidden" name="NTIHCNO" value="IS/45">
