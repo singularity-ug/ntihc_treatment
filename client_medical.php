@@ -2735,6 +2735,12 @@ $result = mysqli_query($mysqli, "SELECT * FROM  cmpatientsregistration WHERE SER
     function filterProblemDescriptions(event){
         var desc = document.getElementById("p_art");
         var value = event.value;
+
+        var dest_name = event.id;
+        dest_name =  "p" + dest_name.substring(1);
+        var p_desc = document.getElementsByName(dest_name)[0];
+        var nodes = p_desc.getElementsByTagName("optgroup");
+
         switch(value){
             case "ART":
                 desc = document.getElementById("p_art");
@@ -2761,21 +2767,16 @@ $result = mysqli_query($mysqli, "SELECT * FROM  cmpatientsregistration WHERE SER
                 desc = document.getElementById("p_sed");
                 break;
         }
-        var dest_name = event.id;
-        dest_name =  "p" + dest_name.substring(1);
-        var alt = document.getElementsByName(dest_name)[0];
-        alert(alt);
-        var nodes = document.getElementsByName(dest_name)[0].getElementsByTagName("optgroup");
+      
        
-        
-
         for(var i=0; i<nodes.length; i++){
             nodes[i].style.display = "none";
         }
 
-        desc.style.display = "inline"; 
-
-        document.getElementById("p_descs").value = ""
+        //desc.style.display = "inline"; 
+        p_desc.style.display = "inline"; 
+        //document.getElementById("p_descs").value = ""
+        p_desc.value = "";
     }
 </script>
     <script>
