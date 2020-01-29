@@ -2733,49 +2733,47 @@ $result = mysqli_query($mysqli, "SELECT * FROM  cmpatientsregistration WHERE SER
 
 <script>
     function filterProblemDescriptions(event){
-        var desc = document.getElementById("p_art");
+        var desc = "";
         var value = event.value;
 
-        var dest_name = event.id;
-        dest_name =  "p" + dest_name.substring(1);
+        var id_postfix = event.id.substring(1);
+        var dest_name =  "p" + id_postfix;
         var p_desc = document.getElementsByName(dest_name)[0];
         var nodes = p_desc.getElementsByTagName("optgroup");
-
+        
         switch(value){
             case "ART":
-                desc = document.getElementById("p_art");
+                desc = document.getElementById("p_art" + id_postfix);
                 break;
             case "GYNAECOLOGICAL CONDITIONS":
-                desc = document.getElementById("p_gyn");
+                desc = document.getElementById("p_gyn" + id_postfix);
                 break;
             case "BODY CHANGES":
-                desc = document.getElementById("p_bcs");
+                desc = document.getElementById("p_bcs" + id_postfix);
                 break;
             case "SGBV CASES":
-                desc = document.getElementById("p_sgb");
+                desc = document.getElementById("p_sgb" + id_postfix);
                 break;
             case "GENERAL":
-                desc = document.getElementById("p_genn");
+                desc = document.getElementById("p_genn" + id_postfix);
                 break;
             case "PREGNANCY":
-                desc = document.getElementById("p_pre");
+                desc = document.getElementById("p_pre" + id_postfix);
                 break;
             case "STI/STD":
-                desc = document.getElementById("p_sti");
+                desc = document.getElementById("p_sti" + id_postfix);
                 break;
             case "SIDE EFFECTS DRUG TOXICITIES ON ART":
-                desc = document.getElementById("p_sed");
+                desc = document.getElementById("p_sed" + id_postfix);
                 break;
         }
-      
-       
+
         for(var i=0; i<nodes.length; i++){
             nodes[i].style.display = "none";
         }
 
-        //desc.style.display = "inline"; 
-        p_desc.style.display = "inline"; 
-        //document.getElementById("p_descs").value = ""
+        desc.style.display = "inline"; 
+
         p_desc.value = "";
     }
 </script>
@@ -2791,14 +2789,14 @@ $result = mysqli_query($mysqli, "SELECT * FROM  cmpatientsregistration WHERE SER
 
         var s1 = '<select id="p_descs" name="p_' + rowCount + '" id="p_' + rowCount + '" required="required" ' +
             ' style= "margin-left: 0px;margin-top: 5px;height:20px; width:100%; background-color:transparent" >' +
-            '<optgroup label="ART" id="p_art"> <?php echo $art; ?> </optgroup>' +
-            '<optgroup label="BODY CHANGES" id="p_bcs"> <?php echo $bcs; ?> </optgroup>' +
-            '<optgroup label="GENERAL" id="p_genn"> <?php echo $genn; ?> </optgroup>' +
-            '<optgroup label="GYNAECOLOGICAL CONDITIONS" id="p_gyn"> <?php echo $gyn; ?> </optgroup>' +
-            '<optgroup label="PREGNANCY" id="p_pre"> <?php echo $pre; ?> </optgroup>' +
-            '<optgroup label="SGBV CASES" id="p_sgb"> <?php echo $sgb; ?> </optgroup>' +
-            '<optgroup label="SIDE EFFECTS DRUG TOXICITIES ON ART"  id="p_sed"> <?php echo $sed; ?> </optgroup>' +
-            '<optgroup label="STI/STD" id="p_sti"> <?php echo $sti; ?> </optgroup>' +
+            '<optgroup label="ART" id="p_art_' + rowCount + '"> <?php echo $art; ?> </optgroup>' +
+            '<optgroup label="BODY CHANGES" id="p_bcs_' + rowCount + '"> <?php echo $bcs; ?> </optgroup>' +
+            '<optgroup label="GENERAL" id="p_genn_' + rowCount + '"> <?php echo $genn; ?> </optgroup>' +
+            '<optgroup label="GYNAECOLOGICAL CONDITIONS" id="p_gyn_' + rowCount + '"> <?php echo $gyn; ?> </optgroup>' +
+            '<optgroup label="PREGNANCY" id="p_pre_' + rowCount + '"> <?php echo $pre; ?> </optgroup>' +
+            '<optgroup label="SGBV CASES" id="p_sgb_' + rowCount + '"> <?php echo $sgb; ?> </optgroup>' +
+            '<optgroup label="SIDE EFFECTS DRUG TOXICITIES ON ART"  id="p_sed_' + rowCount + '"> <?php echo $sed; ?> </optgroup>' +
+            '<optgroup label="STI/STD" id="p_sti_' + rowCount + '"> <?php echo $sti; ?> </optgroup>' +
             '</Select>';
 
         var row1 = '<td><input type="checkbox" checked=""></td>' +
