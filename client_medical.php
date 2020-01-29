@@ -2761,7 +2761,8 @@ $result = mysqli_query($mysqli, "SELECT * FROM  cmpatientsregistration WHERE SER
                 desc = document.getElementById("p_sed");
                 break;
         }
-        var dest_name = "p_" + event.id.substring(1);
+        var dest_name = event.id;
+        dest_name =  "p_" + dest_name.substring(1).trim();
         var nodes = document.getElementsByName(dest_name)[0].getElementsByTagName("optgroup");
        
         
