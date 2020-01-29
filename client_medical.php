@@ -2763,6 +2763,7 @@ $result = mysqli_query($mysqli, "SELECT * FROM  cmpatientsregistration WHERE SER
         }
         var dest_name = event.id;
         dest_name =  "p" + dest_name.substring(1);
+        alert(dest_name);
         var nodes = document.getElementsByName(dest_name)[0].getElementsByTagName("optgroup");
        
         
