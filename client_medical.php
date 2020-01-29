@@ -2763,8 +2763,8 @@ $result = mysqli_query($mysqli, "SELECT * FROM  cmpatientsregistration WHERE SER
         }
         var dest_name = event.id;
         dest_name =  "p" + dest_name.substring(1);
-        //var alt = document.getElementsByName(dest_name)[0];
-        alert("'" + dest_name + "'");
+        var alt = document.getElementsByName(dest_name)[0];
+        alert(alt);
         var nodes = document.getElementsByName(dest_name)[0].getElementsByTagName("optgroup");
        
         
@@ -2788,7 +2788,7 @@ $result = mysqli_query($mysqli, "SELECT * FROM  cmpatientsregistration WHERE SER
             '<?php echo $stssb; ?>' +
             '</select>';
 
-        var s1 = '<select id="p_descs" "name="p_' + rowCount + '" id="p_' + rowCount + '" required="required" ' +
+        var s1 = '<select id="p_descs" name="p_' + rowCount + '" id="p_' + rowCount + '" required="required" ' +
             ' style= "margin-left: 0px;margin-top: 5px;height:20px; width:100%; background-color:transparent" >' +
             '<optgroup label="ART" id="p_art"> <?php echo $art; ?> </optgroup>' +
             '<optgroup label="BODY CHANGES" id="p_bcs"> <?php echo $bcs; ?> </optgroup>' +
