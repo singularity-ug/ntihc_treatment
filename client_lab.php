@@ -839,7 +839,34 @@ $connect->close();
  require('v2/header_cm.php');
  ?-->
 
-   
+    <div class="panel-body">
+
+        <div class="col-md-6" style="background-color:transparent;">
+
+            <table border="1" cellpadding="4" cellspacing="0"
+                style="font-family: arial; font-size: 12px; border:0px;text-align:left;border: 0px;" width="100%">
+                <thead>
+                    <tr>
+                        <td style="width:16%; border: 0px;">
+                            <img src="assets/img/ntihclog2.png" width="70" height="90" style="border: 0px; ">
+                        </td>
+
+                        <td style="width:28%; border: 0px;">
+                            <a href="client_management.php">
+                                <center><img src="database icons/Medical-54-512.png" width="100" height="100" class=" "
+                                        style=" height:30px; width:30px; background-color:transparent">
+                                    Dashboard&nbsp;&nbsp;&nbsp;</center>
+                            </a>
+                            <div class="pull-right box-tools"> </div>
+        </div>
+        <p></p>
+        <a href="client_lab.php?d1=0&d2=0">
+            <center><img src="database icons/59449894425chart-512.png" width="100" height="100" class=" "
+                    style=" height:30px; width:30px; background-color:transparent">
+                Reports&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</center>
+        </a>
+        <div class="pull-right box-tools"> </div>
+    </div>
     </td>
 
     <td style="width:28%; border: 1px;"> <a href="client_lab_history.php">
