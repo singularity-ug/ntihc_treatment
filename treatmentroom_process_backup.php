@@ -1,4 +1,26 @@
-<?php error_reporting(E_ALL ^ E_DEPRECATED); ?>
+<?php error_reporting(E_ALL ^ E_DEPRECATED); 
+  session_start();
+  session_regenerate_id();
+  $nameofuser = '';
+  $desc       = "";
+  $dept       = "";
+  $pf       = "";
+  $rm         = "";
+  if(isset($_SESSION['USERID'])){
+    $nameofuser = $_SESSION['USERID'];
+    $desc = $_SESSION['DESC'];
+    $dept = $_SESSION['DEPT'];
+    $pf = $_SESSION['STAFNO'];
+    $rm = $_SESSION['MREPEAT'];
+}
+
+else{
+  $_SESSION = array();
+  session_destroy();
+  header('location:index.php');
+}
+
+?>
 
 <?php 
 if(isset($_POST['NTIHCNO'])){

@@ -22,10 +22,12 @@ session_start();
                  $desc     = $row['Description'];
                  $name     = $row['Name'];
                  $username = $row['Username'];
+                 $uid = $row['id'];
                  $dept     = $row['Dept'];
           }
           $_SESSION = array();
           $_SESSION['USERID'] = $username;
+          $_SESSION['ID'] = $uid;
           $_SESSION['NAME']   = $name;
           $_SESSION['DESC']   = $desc;
           $_SESSION['DEPT']   = $dept;
