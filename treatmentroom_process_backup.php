@@ -6,12 +6,15 @@
   $dept       = "";
   $pf       = "";
   $rm         = "";
+  $uid = "";
+
   if(isset($_SESSION['USERID'])){
     $nameofuser = $_SESSION['USERID'];
     $desc = $_SESSION['DESC'];
     $dept = $_SESSION['DEPT'];
     $pf = $_SESSION['STAFNO'];
     $rm = $_SESSION['MREPEAT'];
+    $uid = $_SESSION['UID'];
 }
 
 else{
