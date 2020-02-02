@@ -2827,7 +2827,7 @@ $result = mysqli_query($mysqli, "SELECT * FROM  cmpatientsregistration WHERE SER
             '" required="required" ' +
             ' style= "margin-left: 0px;margin-top: 5px;height:20px; width:100%; background-color:transparent" >' +
             '<option></option>' +
-            '<option><?php   echo $stss; ?></option>' +
+            '<?php   echo $stss; ?>' +
             '</select>';
 
         var fq = '<input type="hidden" onkeyup="dostg(this.id)" onchange="dostg(this.id)"  name="fq_' + rowCount +
