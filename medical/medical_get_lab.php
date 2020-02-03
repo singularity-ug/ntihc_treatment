@@ -248,7 +248,7 @@ else{
  $res = $conn->query($sql);
     ?>
 	   
-	   <p>Required Tests</p>
+	   <p><strong>Required Tests</strong></p>
 	  <table class="table table-table table tabled" id="mytable2" style="font-weight:normal; ">
     <thead>
       <tr>  
