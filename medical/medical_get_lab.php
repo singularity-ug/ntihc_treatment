@@ -233,7 +233,7 @@ else{
    $aa    = array();
    $dd    = array();  
   $DATECREATED = '';
-  $NTIHCNO = '';   
+  //$NTIHCNO = '';   
   
   
  $servername = "localhost";
@@ -267,8 +267,7 @@ else{
 		</td>
         <td>
             <input type="text" value="<?php echo $test; ?>" readonly="true" style= "width:100%; background-color:#fff; "/>
-		</td> 
-        <td>&nbsp</td>                                          
+		</td>                                          
     </tr>
   <?php } ?>
 </tbody>
