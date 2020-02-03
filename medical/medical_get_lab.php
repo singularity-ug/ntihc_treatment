@@ -246,20 +246,32 @@ else{
  $sql  = "SELECT TEST_TYPE, TIMESTAMP FROM examination_lab_request WHERE NTIHCNO = '$id' AND STATUS = 0";
   
  $res = $conn->query($sql);
+
+      function getStatusString($status_int){
+        if($status_int == 0)
+            return "Not Started";
+        else if($status_int == 1)
+            return "Not Done";
+        else { 
+            return "Done";
+        }
+      }
     ?>
 	   
 	   <p><strong>Required Tests</strong></p>
 	  <table class="table table-table table tabled" id="mytable2" style="font-weight:normal; ">
     <thead>
       <tr>  
-	   <th>CREATED DATE</th>
-       <th>TEST DESCRIPTION </th>   
+	   <th>DATE OF REQUEST</th>
+       <th>TEST DESCRIPTION</th>
+       <th>STATUS</th>  
       </tr>
       </thead>
       <tbody>
  <?php while($row=$res->fetch_assoc()){
         $test = $row['TEST_TYPE'];  
-        $timestamp = $row['TIMESTAMP'];  	 
+        $timestamp = $row['TIMESTAMP'];
+        $status = getStatusString($row['STATUS']);  	 
      ?>
     <tr>
         <td>
@@ -267,7 +279,10 @@ else{
 		</td>
         <td>
             <input type="text" value="<?php echo $test; ?>" readonly="true" style= "width:100%; background-color:#fff; "/>
-		</td>                                          
+		</td>
+        <td>
+        <input type="text" value="<?php echo $status; ?>" readonly="true" style= "width:100%; background-color:#fff; "/>
+        </td>                                          
     </tr>
   <?php } ?>
 </tbody>
