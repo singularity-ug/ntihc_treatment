@@ -565,7 +565,6 @@ else{
                     <div id="divOUTREACH" class="text" style="display:none;"> </div>
                     <div id="divMOONLIGHT" class="text" style="display:none;"> </div>
                     <div id="divOTHER SERVICES" class="text" style="display:none;"> </div>
-
                     <div id="divPREGNANCY RELATED SERVICES" class="text" style="display:none;">
                         <table border="1" cellpadding="4" cellspacing="0"
                             style="font-family: arial; font-size: 12px; border:0px;text-align:left;margin-top:5px;"
@@ -582,6 +581,7 @@ else{
                                         <option>PNC</option>
                                         <option>FP</option>
                                         <option>PAC</option>
+                                        </td>
                                         </select>
                                 </tr>
                         </table>
