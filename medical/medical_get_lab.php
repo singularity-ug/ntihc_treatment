@@ -253,8 +253,7 @@ else{
     <thead>
       <tr>  
 	   <th>CREATED DATE</th>
-       <th>TEST DESCRIPTION </th>  
-	   <th>STATUS</th>  
+       <th>TEST DESCRIPTION </th>   
       </tr>
       </thead>
       <tbody>
@@ -268,7 +267,8 @@ else{
 		</td>
         <td>
             <input type="text" value="<?php echo $test; ?>" readonly="true" style= "width:100%; background-color:#fff; "/>
-		</td>                                           
+		</td> 
+        <td>&nbsp</td>                                          
     </tr>
   <?php } ?>
 </tbody>
