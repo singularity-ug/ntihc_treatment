@@ -2,6 +2,17 @@
   //error_reporting(E_ALL ^ E_DEPRECATED); 
   session_start();
   session_regenerate_id();
+
+  //Console log function: Buyinza David
+  function debug_to_console($data) {
+    $output = $data;
+    if (is_array($output))
+        $output = implode(',', $output);
+
+    echo "<script>console.log('Debug Objects: " . $output . "' );</script>";
+  }
+
+
   $nameofuser = '';
   $desc       = "";
   $dept       = "";
@@ -273,6 +284,7 @@ $rsns      = intval($rowsss1);
  *  */ 
 
 $tests = $_POST['test'];
+debug_to_console($tests);
 if(is_array($tests)){
   foreach($tests as $test){
     $sql = "INSERT INTO `examination_lab_request`(`EXID`, `REQUESTING_UNIT`, `TEST_TYPE`) 
