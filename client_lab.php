@@ -824,17 +824,27 @@ $connect->close();
 
     }, 1000);
     </script>
+
+
 </head>
 
-<body class="hold-transition skin-blue sidebar-mini" style="background:url(assets/img/pattern/4326703-white-background-wallpapero.jpg);">
+<body class="hold-transition skin-blue sidebar-mini"
+    style="background:url(assets/img/pattern/4326703-white-background-wallpapero.jpg);">
 
-    <?php require('admin/connect/config.php'); ?>
+    <?php
+  require('admin/connect/config.php');
+  ?>
 
-    <!--?php require('v2/header_cm.php'); ?-->
+    <!--?php
+ require('v2/header_cm.php');
+ ?-->
 
     <div class="panel-body">
+
         <div class="col-md-6" style="background-color:transparent;">
-            <table border="1" cellpadding="4" cellspacing="0" style="font-family: arial; font-size: 12px; border:0px;text-align:left;border: 0px;" width="100%">
+
+            <table border="1" cellpadding="4" cellspacing="0"
+                style="font-family: arial; font-size: 12px; border:0px;text-align:left;border: 0px;" width="100%">
                 <thead>
                     <tr>
                         <td style="width:16%; border: 0px;">
@@ -845,130 +855,134 @@ $connect->close();
                             <a href="client_management.php">
                                 <center><img src="database icons/Medical-54-512.png" width="100" height="100" class=" "
                                         style=" height:30px; width:30px; background-color:transparent">
-                                    Dashboard&nbsp;&nbsp;&nbsp;
-                                </center>
+                                    Dashboard&nbsp;&nbsp;&nbsp;</center>
                             </a>
                             <div class="pull-right box-tools"> </div>
-                        </td>
         </div>
         <p></p>
         <a href="client_lab.php?d1=0&d2=0">
             <center><img src="database icons/59449894425chart-512.png" width="100" height="100" class=" "
                     style=" height:30px; width:30px; background-color:transparent">
-                Reports&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            </center>
+                Reports&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</center>
         </a>
         <div class="pull-right box-tools"> </div>
-  
+    </div>
+    </td>
 
-    <td style="width:28%; border: 1px;"> 
-        <a href="client_lab_history.php">
+    <td style="width:28%; border: 1px;"> <a href="client_lab_history.php">
             <center><img src="database icons/social_network-512.png" width="100" height="100" class=" "
                     style=" height:30px; width:30px; background-color:transparent">
-                Client&nbsp;history 
-            </center>
+                Client&nbsp;history </center>
         </a>
         <div class="pull-right box-tools"> </div>
-        
+        </div>
         <p></p>
-
         <a href="client_lab.php">
             <center><img src="database icons/Subscribe-HR-Human-Resource-Management-Software-Core-HR-Large.png"
                     width="100" height="100" class=" " style=" height:30px; width:30px; background-color:transparent">
-                Requisition&nbsp; &nbsp; 
-            </center>
+                Requisition&nbsp; &nbsp; </center>
         </a>
         <div class="pull-right box-tools"> </div>
+        </div>
     </td>
 
-    <td style="width:10%; border: 1px;"> </td>
+    <td style="width:10%; border: 1px;">
+    </td>
     </tbody>
     </table>
 
-    <div class="col-md-6" style=" background-color:transparent;">
+
     </div>
-    
+
+    <div class="col-md-6" style=" background-color:transparent;">
+
+
+    </div>
+    </div>
 
     <div class="col-md-5" style=" background-color:transparent;">
         <ul class="nav nav-tabs" style="border: 0px;">
             <div class="col-md-6" style=" background-color:transparent;">
-                <table border="1" cellpadding="4" cellspacing="0" style="font-family: arial; font-size: 12px; border:0px;text-align:left;border: 0px;" width="100%">
+                <table border="1" cellpadding="4" cellspacing="0"
+                    style="font-family: arial; font-size: 12px; border:0px;text-align:left;border: 0px;" width="100%">
                     <thead>
                         <tr>
-                            <td style="width:33.33333333%; border: 0px; background-color:transparent;"> 
-                                <a data-toggle="tab" href="#tab1">
-                                    <center><img src="database icons/queue-512.png" width="100" height="100" class=" "style=" height:30px; width:30px; background-color:transparent"> <br />
-                                        <a href="client_management.php">
-                                            Incoming 
-                                            <b class="data-taggle" class="tooltip" title="No. of clients due for medical services">
+                            <td style="width:33.33333333%; border: 0px; background-color:transparent;"> <a
+                                    data-toggle="tab" href="#tab1">
+                                    <center><img src="database icons/queue-512.png" width="100" height="100" class=" "
+                                            style=" height:30px; width:30px; background-color:transparent"> <br>
+                                        <a href="client_management.php">Incoming <b class="data-taggle" class="tooltip"
+                                                title="No. of clients due for medical services">
                                                 &nbsp;
                                                 <?php 
-                                                    include('client_medical_conn.php');
-                                                    $date = date("Y-m-d").' 00:00:00';
-                                                        $result = $db->prepare("SELECT * FROM cmpatientsregistration WHERE TIMESTAMP >='$date' AND
-                                                        LABVIST ='1' AND TESTSTATUS ='NOT STARTED' GROUP BY NTIHCNO
-                                                                                ORDER BY NTIHCNO DESC");
-                                                    $result->execute();
-                                                    $rowcount1 = $result->rowcount(); 
-                                                    echo $rowcount1;
-                                                ?>
-                                            </b>
-                                        </a>
-                                    </center>
+      include('client_medical_conn.php');
+      $date = date("Y-m-d").' 00:00:00';
+        $result = $db->prepare("SELECT * FROM cmpatientsregistration WHERE TIMESTAMP >='$date' AND
+        LABVIST ='1' AND TESTSTATUS ='NOT STARTED' GROUP BY NTIHCNO
+                                ORDER BY NTIHCNO DESC");
+        $result->execute();
+        $rowcount1 = $result->rowcount(); 
+       ?>
+                                                <?php echo $rowcount1;?>
+                                        </a> </b></center>
                                 </a>
                             </td>
 
                             <td style="width:33.33333333%;border:0px ; background-color:transparent;">
                                 <a data-toggle="tab" href="#tab2">
-                                    <center><img src="database icons/icon-resources-staffing.png" width="100" height="100" class=" " style=" height:30px; width:30px; background-color:transparent"> <br>
+                                    <center><img src="database icons/icon-resources-staffing.png" width="100"
+                                            height="100" class=" "
+                                            style=" height:30px; width:30px; background-color:transparent"> <br>
                                         Completed
                                         <?php 
-                                            include('client_medical_conn.php');
-                                            $date = date("Y-m-d").' 00:00:00';
-                                            $result = $db->prepare("SELECT * FROM cmpatientsregistration WHERE TIMESTAMP >='$date' AND
-                                            LABVIST ='1' AND TESTSTATUS ='COMPLETED'
-                                                                    ORDER BY NTIHCNO DESC");
-                                            $result->execute();
-                                            $rowcount3 = $result->rowcount();
-                                            echo $rowcount3; 
-                                        ?>
-                                    </center>
+      include('client_medical_conn.php');
+      $date = date("Y-m-d").' 00:00:00';
+        $result = $db->prepare("SELECT * FROM cmpatientsregistration WHERE TIMESTAMP >='$date' AND
+        LABVIST ='1' AND TESTSTATUS ='COMPLETED'
+                                ORDER BY NTIHCNO DESC");
+        $result->execute();
+        $rowcount3 = $result->rowcount(); 
+       ?>
+                                        <?php echo $rowcount3;?>
+                                        <center>
                                 </a>
+
                             </td>
 
                             <td style="width:33.33333333%;border: 0px ; background-color:transparent;">
                                 <a data-toggle="tab" href="#tab3">
-                                    <center> <img src="database icons/press-nozbe.png" width="100" height="100" class=" " style=" height:30px; width:30px; background-color:transparent" /> <br>
+                                    <center><img src="database icons/press-nozbe.png" width="100" height="100" class=" "
+                                            style=" height:30px; width:30px; background-color:transparent"> <br>
                                         Pending &nbsp;
                                         <?php 
-                                            include('client_medical_conn.php');
-                                            $date = date("Y-m-d").' 00:00:00';
-                                            $result = $db->prepare("SELECT * FROM cmpatientsregistration WHERE  
-                                            LABVIST ='1' AND TESTSTATUS ='NOT STARTED' ORDER BY NTIHCNO DESC");
-                                            $result->execute();
-                                            $rowcount2 = $result->rowcount(); 
-                                            echo $rowcount2;
-                                        ?>
-                                    </center>
+      include('client_medical_conn.php');
+      $date = date("Y-m-d").' 00:00:00';
+        $result = $db->prepare("SELECT * FROM cmpatientsregistration WHERE  
+        LABVIST ='1' AND TESTSTATUS ='NOT STARTED' ORDER BY NTIHCNO DESC");
+        $result->execute();
+        $rowcount2 = $result->rowcount(); 
+       ?>
+                                        <?php echo $rowcount2;?>
+                                        <center>
                                 </a>
+
                             </td>
-                        </tr>
-                    </tbody>
+
+                            </tbody>
                 </table>
             </div>
             <div class="col-md-6" style=" background-color:transparent;"> </div>
         </ul>
-
         <div class="panel-body">
             <div class="widget-content tab-content" style="border:0px;">
                 <div id="tab1" class="tab-pane active">
+
                     <div id="dialog-window" style="background-color:transparent;">
                         <div id="scrollable-content" style="background-color:transparent;">
                             <ul>
-                                <div class="" id="medicalvists" style="margin-left: -41px;">
-                                </div>
-                            </ul>
+                                <div class="" id="medicalvists" style="margin-left: -41px;"></div>
                         </div>
+                        </ul>
                     </div>
 
                     <div id="footer" style="text-align:left; border:0px;">
@@ -1001,54 +1015,63 @@ $connect->close();
                         style="font-weight:normal; font-size:9px; width:100%; background-color:transparent;">
                         <thead>
                             <tr>
+
                                 <th style="background-color:transparent;">VIST DATE</th>
                                 <th style="background-color:transparent;">NTIHC.NO</th>
                                 <th style="background-color:transparent;">CLIENT&nbsp;NAME</th>
                                 <th colspan="2" style="background-color:transparent; text-align:center;">ACTION</th>
                             </tr>
-                        </thead>
+                            </tfoot>
                         <tbody>
+
                             <script>
-                                function postclient(myid) 
-                                {
-                                    var dtsxxc = myid.split("***");
-                                    document.getElementById("myNTIHCNO").value = dtsxxc[0];
-                                    document.getElementById("myID").value = dtsxxc[1];
-                                    document.getElementById("myAGE1").value = dtsxxc[2];
-                                    document.getElementById("myAGEGP").value = dtsxxc[3];
-                                    document.getElementById("mySEX").value = dtsxxc[4];
-                                    document.getElementById("myRSVNID").value = dtsxxc[5];
-                                }
+                            function postclient(myid) {
+                                var dtsxxc = myid.split("***");
+                                document.getElementById("myNTIHCNO").value = dtsxxc[0];
+                                document.getElementById("myID").value = dtsxxc[1];
+                                document.getElementById("myAGE1").value = dtsxxc[2];
+                                document.getElementById("myAGEGP").value = dtsxxc[3];
+                                document.getElementById("mySEX").value = dtsxxc[4];
+                                document.getElementById("myRSVNID").value = dtsxxc[5];
+                            }
                             </script>
 
                             <?php 
-                                include_once("updatecmgt/config.php");
-                                $date = date("Y-m-d").' 00:00:00'; 
-                                $result = mysqli_query($mysqli, "SELECT * FROM  cmpatientsregistration WHERE TIMESTAMP >='$date' AND
-                                                            LABVIST ='1' AND TESTSTATUS ='COMPLETED'  
-                                                    GROUP BY NTIHCNO ORDER BY TIMESTAMP");
+include_once("updatecmgt/config.php");
+
+$date = date("Y-m-d").' 00:00:00'; 
+$result = mysqli_query($mysqli, "SELECT * FROM  cmpatientsregistration WHERE TIMESTAMP >='$date' AND
+                               LABVIST ='1' AND TESTSTATUS ='COMPLETED'  
+                      GROUP BY NTIHCNO ORDER BY TIMESTAMP");
+  
+  while($res = mysqli_fetch_array($result)) {
+  $dtsxxc = $res['RID']."***".$res['NTIHCNO']."***".$res['AGE1']."***".$res['AGE_GROUP']."***".$res['SEX']."***".$res['RSVNID']."***".$res['DATECREATED'];
+    echo "<tr>"; 
+    echo "<td>".$res['TIMESTAMP']."</td>"; 
+    echo "<td>".$res['NTIHCNO']."</td>"; 
+    echo "<td>".$res['CLIENTNAME']."</td>";  
     
-                                while($res = mysqli_fetch_array($result)) 
-                                {
-                                    $dtsxxc = $res['RID']."***".$res['NTIHCNO']."***".$res['AGE1']."***".$res['AGE_GROUP']."***".$res['SEX']."***".$res['RSVNID']."***".$res['DATECREATED'];
-                                    echo "<tr>"; 
-                                    echo "<td>".$res['TIMESTAMP']."</td>"; 
-                                    echo "<td>".$res['NTIHCNO']."</td>"; 
-                                    echo "<td>".$res['CLIENTNAME']."</td>";  
-                                    echo '<td> &nbsp;&nbsp;   &nbsp;&nbsp; 
-                                            <a id="510__'.$dtsxxc.'" href="javascript:void(0)"  onclick="getvistdata(this.id)" data-toggle="tooltip" title="Quick view" 
-                                                <span class="glyphicon glyphicon-user"> </span>
-                                            </a> &nbsp;&nbsp; 
-                                        </td>'; 
-                                    echo "<td><a href=\"client_lab_hist_lapse.php?NTIHCNO=$res[NTIHCNO]\">CLICK</a>  </td>";       
-                                }
-                            ?>
+    echo '<td>    
+     &nbsp;&nbsp;   &nbsp;&nbsp; 
+    <a id="510__'.$dtsxxc.'" href="javascript:void(0)"  onclick="getvistdata(this.id)" data-toggle="tooltip" 
+    title="Quick view" 
+    <span class="glyphicon glyphicon-user"> </span></a> &nbsp;&nbsp; 
+       
+    </td>'; 
+     echo "<td><a href=\"client_lab_hist_lapse.php?NTIHCNO=$res[NTIHCNO]\">CLICK</a>  </td>";       
+  }
+     
+    ?>
                         </tbody>
                     </table>
-                </div>
 
+
+
+                </div>
                 <div id="tab3" class="tab-pane">
-                    <table id="myhistory" class="table table-tabled table-bordered" style="font-weight:normal; font-size:9px; width:100%; margin-top:10px;">
+
+                    <table id="myhistory" class="table table-tabled table-bordered"
+                        style="font-weight:normal; font-size:9px; width:100%; margin-top:10px;">
                         <thead>
                             <tr>
                                 <th style="">DATE</th>
@@ -1057,234 +1080,475 @@ $connect->close();
                                 <th style="">ACTION</th>
 
                             </tr>
-                        </thead>
+                            </tfoot>
                         <tbody>
+
                             <?php
-                                include_once("updatecmgt/config.php");
-                                $date = date("Y-m-d").' 00:00:00';
-                                $result = mysqli_query($mysqli, "SELECT * FROM  cmpatientsregistration WHERE  
-                                                            LABVIST ='1' AND TESTSTATUS ='NOT STARTED' AND LABOREDRSTATUS='NULL'
-                                                    GROUP BY NTIHCNO ORDER BY TIMESTAMP"); 
-                                while($res = mysqli_fetch_array($result)) 
-                                {
-                                    $dtsxxcW = $res['NTIHCNO']."***".$res['RID']."***".$res['AGE1']."***".$res['AGE_GROUP']."***".$res['SEX']."***".$res['RSVNID']."***".$res['DATECREATED'];
-                                    echo "<tr>"; 
-                                    echo "<td>".$res['TIMESTAMP']."</td>"; 
-                                    echo "<td>".$res['NTIHCNO']."</td>"; 
-                                    echo "<td>".$res['CLIENTNAME']."</td>";  
-                                    echo '<td>    
-                                    <a id="11409__'.$dtsxxcW.'" href="javascript:void(0)"  onclick="getstuffclientel(this.id)" data-toggle="tooltip" title="Start service"
-                                    <span class="glyphicon glyphicon-ok"> </span></a> &nbsp;    
-                                    <a id="11509__'.$dtsxxcW.'" href="medical/medical_data.php?q='.$res['NTIHCNO'].'__'.$res['DATECREATED'].'" data-toggle="tooltip" title="History"
-                                        <span class="glyphicon glyphicon-edit"> </span></a> 
-                                
-                                    </td>';       
-                                }  
-                            ?>
+include_once("updatecmgt/config.php");
+
+$date = date("Y-m-d").' 00:00:00';
+
+$result = mysqli_query($mysqli, "SELECT * FROM  cmpatientsregistration WHERE  
+                               LABVIST ='1' AND TESTSTATUS ='NOT STARTED' AND LABOREDRSTATUS='NULL'
+                      GROUP BY NTIHCNO ORDER BY TIMESTAMP");
+  
+  while($res = mysqli_fetch_array($result)) {
+  $dtsxxcW = $res['NTIHCNO']."***".$res['RID']."***".$res['AGE1']."***".$res['AGE_GROUP']."***".$res['SEX']."***".$res['RSVNID']."***".$res['DATECREATED'];
+    echo "<tr>"; 
+    echo "<td>".$res['TIMESTAMP']."</td>"; 
+    echo "<td>".$res['NTIHCNO']."</td>"; 
+    echo "<td>".$res['CLIENTNAME']."</td>";  
+    
+    echo '<td>    
+    
+    <a id="11409__'.$dtsxxcW.'" href="javascript:void(0)"  onclick="getstuffclientel(this.id)" data-toggle="tooltip" title="Start service"
+    <span class="glyphicon glyphicon-ok"> </span></a> &nbsp;    
+    <a id="11509__'.$dtsxxcW.'" href="medical/medical_data.php?q='.$res['NTIHCNO'].'__'.$res['DATECREATED'].'" data-toggle="tooltip" title="History"
+        <span class="glyphicon glyphicon-edit"> </span></a> 
+  
+    </td>';       
+  }
+     
+    ?>
+
+
                         </tbody>
                     </table>
+
                 </div>
 
-                <div class="panel-body" style="font-weight: normal; width: 100%; background-color: transparent; border: 1px solid rgb(222, 212, 211); box-shadow: 3px 2px 0px 0px rgba(12, 12, 12, 0.1) !important; border-radius: 11px;">
-                    <table border="1" cellpadding="4" cellspacing="0" style="font-family: arial; font-size: 11px;border: 0px;  text-align:left;" width="100%">
+                <div class="panel-body"
+                    style="font-weight: normal; width: 100%;   
+          background-color: transparent; border: 1px solid rgb(222, 212, 211); box-shadow: 3px 2px 0px 0px rgba(12, 12, 12, 0.1) !important; border-radius: 11px;">
+
+                    <table border="1" cellpadding="4" cellspacing="0"
+                        style="font-family: arial; font-size: 11px;border: 0px;  text-align:left;" width="100%">
                         <thead>
                             <tr>
-                                <th style="width:39%; text-align:left; border:0px;"> 
-                                    <strong>Clients&nbsp;due&nbsp;for Testing</strong>
-                                </th>
+                                <th style="width:39%; text-align:left; border:0px;"> <strong>Clients&nbsp;due&nbsp;for
+                                        Testing</strong></th>
                                 <th style="width:10%; text-align:left; border:0px;">
-                                    <b style="text-align:center; font-size:40px;font-size: 15px;border-radius: 11px;" class="button 5">
+                                    <b style="text-align:center; font-size:40px;font-size: 15px;border-radius: 11px;"
+                                        class="button 5">
                                         <?php 
-                                            include('client_medical_conn.php');
-                                            $date = date("Y-m-d").' 00:00:00';
-                                            $result = $db->prepare("SELECT * FROM cmpatientsregistration WHERE TIMESTAMP >='$date' AND
-                                            LABVIST ='1' AND TESTSTATUS ='NOT STARTED' 
-                                                                    ORDER BY NTIHCNO DESC");
-                                            $result->execute();
-                                            $rowcount1 = $result->rowcount(); 
-                                            echo $rowcount1;
-                                        ?>
-                                    </b>
-                                </th>
-                                <th style="width:2%; text-align:left; border:0px;"> 
-                                </th>
-                                <th style="width:39%; text-align:left; border:0px;">
-                                    <strong>No.&nbsp;completed clients</strong> 
-                                </th>
+      include('client_medical_conn.php');
+      $date = date("Y-m-d").' 00:00:00';
+        $result = $db->prepare("SELECT * FROM cmpatientsregistration WHERE TIMESTAMP >='$date' AND
+         LABVIST ='1' AND TESTSTATUS ='NOT STARTED' 
+                                ORDER BY NTIHCNO DESC");
+        $result->execute();
+        $rowcount1 = $result->rowcount(); 
+       ?>
+                                        <?php echo $rowcount1;?>
+                                        </td>
+                                <th style="width:2%; text-align:left; border:0px;"> </th>
+                                <th style="width:39%; text-align:left; border:0px;"><strong>No.&nbsp;completed
+                                        clients</strong> </th>
                                 <th style="width:10%; text-align:left; border:0px;">
-                                    <b style="text-align:center; font-size:40px;font-size: 15px;border-radius: 11px;" class="button 5">
+                                    <b style="text-align:center; font-size:40px;font-size: 15px;border-radius: 11px;"
+                                        class="button 5">
                                         <?php 
-                                            include('client_medical_conn.php');
-                                            $date = date("Y-m-d").' 00:00:00';
-                                            $result = $db->prepare("SELECT * FROM cmpatientsregistration WHERE TIMESTAMP >='$date' AND
-                                                                LABVIST ='1' AND TESTSTATUS ='COMPLETED' AND LABOREDRSTATUS='NULL'
-                                                        GROUP BY NTIHCNO ORDER BY DATECREATED");
-                                            $result->execute();
-                                            $rowcount2 = $result->rowcount(); 
-                                            echo $rowcount2;?>
+      include('client_medical_conn.php');
+      $date = date("Y-m-d").' 00:00:00';
+        $result = $db->prepare("SELECT * FROM cmpatientsregistration WHERE TIMESTAMP >='$date' AND
+                               LABVIST ='1' AND TESTSTATUS ='COMPLETED' AND LABOREDRSTATUS='NULL'
+                      GROUP BY NTIHCNO ORDER BY DATECREATED");
+        $result->execute();
+        $rowcount2 = $result->rowcount(); 
+       ?>
+                                        <?php echo $rowcount2;?>
                                     </b>
-                                </th>
+                                    </td>
                             </tr>
-                        </thead>
                     </table>
                 </div>
             </div>
         </div>
     </div>
 
-    <div class="col-md-1" style=" background-color:transparent;">
-    </div>
-    
+    <div class="col-md-1" style=" background-color:transparent;"></div>
     <div class="col-md-7" style=" background-color:transparent;">
-        <center style="color:#000; font-weight:bold; font-size:12px;font:bold 16px 'Aleo'; text-shadow:1px 1px 3px #000; color:#fff;">
-            Clients Management - Laboratory
-        </center><br>
 
-        <div class="" id="dem">
-        </div>
 
+        <center
+            style="color:#000; font-weight:bold; font-size:12px;font:bold 16px 'Aleo'; text-shadow:1px 1px 3px #000; color:#fff;">
+            Clients Management - Laboratory</center><br>
+
+        <div class="" id="dem"> </div>
         <script>
-            function getstuffclientel(jose) 
-            {
-                var odno = ((jose.split("__")[1]).split("***"))[0];
-                var ddt = jose.split("__")[1];
-                postclient(ddt);
-                $.ajax({
-                    type: 'POST',
-                    data: {
-                        bb: odno
-                    },
-                    url: 'medical/medical_get_lab.php?q=' + odno,
-                    success: function(data) {
-                        $('#dem').html(data);
-                        $("#demm").modal("show");
-                    }
-                });
-            }
+        function getstuffclientel(jose) {
+            var odno = ((jose.split("__")[1]).split("***"))[0];
+            var ddt = jose.split("__")[1];
+            postclient(ddt);
+            $.ajax({
+                type: 'POST',
+                data: {
+                    bb: odno
+                },
+                url: 'medical/medical_get_lab.php?q=' + odno,
+                success: function(data) {
+                    $('#dem').html(data);
+                    $("#demm").modal("show");
+                }
+            });
+        }
         </script>
 
         <form class="form-horizontal" action="laboratory_process.php" method="post" style="height:auto;" />
-            <input type="hidden" name="NTIHCNO" id="myNTIHCNO" required="required" />
-            <input type="hidden" id="myID" name="RID" />
-            <input type="hidden" name="AGE1" id="myAGE1" />
-            <input type="hidden" id="myAGEGP" name="AGE_GROUP" />
-            <input type="hidden" id="myRSVNID" name="RSVNID" />
-            <input type="hidden" id="mySEX" name="SEX" />
-            <input type="hidden" name="TESTSTATUS" id="TESTSTATUS" value="PROGRESSING" />
-            <input type="hidden" name="LABOREDRSTATUS" id="LABOREDRSTATUS" value="COMPLETED" />
-            <input type="hidden" id="REGISTERACCOUNT" name="REGISTERACCOUNT" value="<?php echo $rm; ?>" />
-            <input type="hidden" name="TIMEOUT" id="CHECKIN">
 
-            <table border="1" cellpadding="4" cellspacing="0" style="font-family: arial; font-size: 12px; text-align:left; border:0px; background-color:transparent;" width="100%">
+        <input type="hidden" name="NTIHCNO" id="myNTIHCNO" required="required">
+
+        <input type="hidden" id="myID" name="RID">
+
+        <input type="hidden" name="AGE1" id="myAGE1">
+
+        <input type="hidden" id="myAGEGP" name="AGE_GROUP">
+
+        <input type="hidden" id="myRSVNID" name="RSVNID">
+
+        <input type="hidden" id="mySEX" name="SEX">
+
+
+        <input type="hidden" name="TESTSTATUS" id="TESTSTATUS" value="PROGRESSING" />
+
+        <input type="hidden" name="LABOREDRSTATUS" id="LABOREDRSTATUS" value="COMPLETED" />
+        <input type="hidden" id="REGISTERACCOUNT" name="REGISTERACCOUNT" value="<?php echo $rm; ?>">
+
+        <input type="hidden" name="TIMEOUT" id="CHECKIN">
+
+        <table border="1" cellpadding="4" cellspacing="0"
+            style="font-family: arial; font-size: 12px; text-align:left; border:0px; background-color:transparent;"
+            width="100%">
+            <thead>
+                <tr>
+                    <th style="width:20%;border:0px;">Test date </th>
+                    <th style="width:28%;border:0px;"> <input type="date" name="DATECREATED" id="myDATECREATED"
+                            required="required" style="width:100%; font-weight:normal; background-color:transparent;">
+                    </th>
+
+                    <th style="width:4%;border:0px;"> </th>
+
+                    <th style="width:20%;border:0px;">Requesting unit</th>
+                    <td style="width:28%;"><input type="text" name="REQUESTINGUNIT" id="myREQUESTINGUNIT"
+                            style="width:100%; text-align:left;background-color:transparent;"></td>
+                </tr>
+                <tr>
+                    </tbody>
+        </table>
+
+        <table border="1" cellpadding="4" cellspacing="0"
+            style="font-family: arial; font-size: 12px;  text-align:left; border:0px; background-color:transparent;"
+            width="100%">
+            <thead>
+                <tr>
+                    <th style="width:20%;border:0px;">Initiated by </th>
+                    <th style="width:28%;border:0px;"> <input type="text" name="SERVICEPROVIDER" id="mySERVICEPROVIDER"
+                            required="required" style="width:100%; font-weight:normal; background-color:transparent;">
+                    </th>
+
+                    <th style="width:4%;border:0px;"> </th>
+
+                    <th style="width:20%;border:0px;">Vist type</th>
+                    <td style="width:28%;"><input type="text" name="VISTTYPE" id="myVISTTYPE"
+                            style="width:100%; font-weight:normal; background-color:transparent;"> </th>
+                </tr>
+                <tr>
+                    </tbody>
+        </table>
+
+        <input type="hidden" id="myCLIENTNAME" name="NAME">
+
+        <br>
+
+
+        <input type="button" onClick="addRow16('mytable1')" value="Add" style="border-radius:9px;" />
+        <input type="button" onClick="deleteRow16('mytable1')" value="Remove" style="border-radius:9px;" />
+        <input type="hidden" id="mytable_rows1" value="0">
+        <p></p>
+
+        <table class="table table-table table tabled" id="mytable1" style="font-weight:normal; ">
+            <thead>
+                <tr>
+                    <th>*</th>
+                    <th>SPECIMEN</th>
+                    <th>HEAMATOLOGY/SEROLOGY</th>
+                    <th>MALARIA</th>
+                    <th>STOOL MICROSCOPY</th>
+                    <th>URINE MICROSCOPY</th>
+                    <th>SWABS.TYPE</th>
+                    <th>WET.PREP</th>
+                    <th>GRAM STAIN</th>
+                </tr>
+            </thead>
+            <tbody>
+
+            </tbody>
+        </table>
+
+        <br />
+
+
+        <br />
+
+        <table border="1" cellpadding="4" cellspacing="0" style="font-family: arial; font-size: 12px; 
+  text-align:left; border:0px; background-color:transparent;" width="100%">
+            <thead>
+                <tr>
+                    <th style="width:20%;border:0px;">Lab technician </th>
+                    <th style="width:28%;border:0px;"> <input type="text" name="TESTEDBY" id="TESTEDBY"
+                            value="<?php echo $nameofuser; ?>"
+                            style="width:100%; font-weight:normal; background-color:transparent;"> </th>
+
+                    <th style="width:4%;border:0px;"> </th>
+
+                    <th style="width:20%;border:0px;">Title</th>
+                    <td style="width:28%;"> <input type="text" name="TECHTITLE" id="TECHTITLE"
+                            value="<?php echo $desc; ?>"
+                            style="width:100%; font-weight:normal; background-color:transparent;"></td>
+                </tr>
+                <tr>
+                    </tbody>
+        </table>
+
+        <br>
+        <center>
+            <input type="submit" name="button" id="button" value="Save" style="border-radius:9px;" />
+        </center>
+
+        </form>
+
+
+        <BR>
+
+        <div class="panel-body"
+            style="font-weight: normal; width: 100%;   
+          background-color: transparent; border: 1px solid rgb(222, 212, 211); box-shadow: 3px 2px 0px 0px rgba(12, 12, 12, 0.1) !important; border-radius: 11px;">
+            <legend style="color:#000; font-weight:bold; font-size:12px;">HIV results</legend>
+            <table style="font-family: arial; font-size: 12px;	
+	 text-align:left; border:0px; background-color:transparent;" width="100%" cellspacing="0" cellpadding="4" border="1">
                 <thead>
                     <tr>
-                        <th style="width:20%;border:0px;">Test date </th>
-                        <th style="width:28%;border:0px;"> 
-                            <input type="date" name="DATECREATED" id="myDATECREATED" required="required" style="width:100%; font-weight:normal; background-color:transparent;" />
-                        </th>
-                        <th style="width:4%;border:0px;"> </th>
-                        <th style="width:20%;border:0px;">Requesting unit</th>
-                        <td style="width:28%;">
-                            <input type="text" name="REQUESTINGUNIT" id="myREQUESTINGUNIT" style="width:100%; text-align:left;background-color:transparent;" />
+                        <th style="width:25%;border:0px;"></th>
+                        <th style="width:25%;border:0px;">HIV Test 1 </th>
+                        <th style="width:25%;border:0px;"> HIV Test 2 </th>
+                        <th style="width:25%;border:0px;">HIV Test 3</th>
+                    </tr>
+                    <tr> </tr>
+                </thead>
+            </table>
+
+            <table style="font-family: arial; font-size: 12px;	
+	 text-align:left; border:0px; background-color:transparent;" width="100%" cellspacing="0" cellpadding="4" border="1">
+                <thead>
+                    <tr>
+                        <th style="width:25%;border:0px;">Kit name</th>
+                        <th style="width:25%;border:0px;">Determine </th>
+                        <th style="width:25%;border:0px;">Start Pack </th>
+                        <th style="width:25%;border:0px;">Unigold</th>
+                    </tr>
+                    <tr> </tr>
+                </thead>
+            </table>
+
+            <table style="font-family: arial; font-size: 12px;	
+	 text-align:left; border:0px; background-color:transparent;" width="100%" cellspacing="0" cellpadding="4" border="1">
+                <thead>
+                    <tr>
+                        <th style="width:25%;border:0px;">Lot No </th>
+                        <th style="width:25%;border:0px;"> <input type="text" name="LOTA" id="LOTA" value=""
+                                style="width:100%; font-weight:normal; background-color:transparent;"> </th>
+
+                        <th style="width:25%;border:0px;"> <input type="text" name="LOTB" id="LOTB" value=""
+                                style="width:100%; font-weight:normal; background-color:transparent;"> </th>
+
+                        <td style="width:25%;"><input type="text" name="LOTC" id="LOTC" value=""
+                                style="width:100%; font-weight:normal; background-color:transparent;">
                         </td>
                     </tr>
+                    <tr> </tr>
                 </thead>
             </table>
 
-            <table border="1" cellpadding="4" cellspacing="0" style="font-family: arial; font-size: 12px;  text-align:left; border:0px; background-color:transparent;" width="100%">
+            <table style="font-family: arial; font-size: 12px;	
+	 text-align:left; border:0px; background-color:transparent;" width="100%" cellspacing="0" cellpadding="4" border="1">
                 <thead>
                     <tr>
-                        <th style="width:20%;border:0px;">Initiated by </th>
-                        <th style="width:28%;border:0px;"> 
-                            <input type="text" name="SERVICEPROVIDER" id="mySERVICEPROVIDER" required="required" style="width:100%; font-weight:normal; background-color:transparent;" />
-                        </th>
-                        <th style="width:4%;border:0px;"> </th>
-                        <th style="width:20%;border:0px;">Vist type</th>
-                        <th style="width:28%;">
-                            <input type="text" name="VISTTYPE" id="myVISTTYPE" style="width:100%; font-weight:normal; background-color:transparent;" /> 
+                        <th style="width:25%;border:0px;">Expiry date</th>
+                        <th style="width:25%;border:0px;"> <input type="date" name="EXPIRYDATET1" id="EXPIRYDATET1"
+                                value="" style="width:100%; font-weight:normal; background-color:transparent;"> </th>
+
+                        <th style="width:25%;border:0px;"> <input type="date" name="EXPIRYDATE2" id="EXPIRYDATE2"
+                                value="" style="width:100%; font-weight:normal; background-color:transparent;"> </th>
+
+                        <td style="width:25%;"><input type="date" name="EXPIRYDATET3" id="EXPIRYDATET3" value=""
+                                style="width:100%; font-weight:normal; background-color:transparent;">
+                        </td>
+                    </tr>
+                    <tr> </tr>
+                </thead>
+            </table>
+
+            <table style="font-family: arial; font-size: 12px;	
+	 text-align:left; border:0px; background-color:transparent;" width="100%" cellspacing="0" cellpadding="4" border="1">
+                <thead>
+                    <tr>
+                        <th style="width:25%;border:0px;">Reactivity</th>
+                        <th style="width:25%;border:0px;"> <select id="REACTIVITYT1" name="REACTIVITYT1" value=""
+                                style="width:100%; font-weight:normal; background-color:transparent;">
+                                <option value=""> </option>
+                                <option>NR</option>
+                                <option>R</option>
+                                <option>INV</option>
+                                <option>NT</option>
+                            </select> </th>
+
+                        <th style="width:25%;border:0px;"> <select id="REACTIVITYT2" name="REACTIVITYT2" value=""
+                                style="width:100%; font-weight:normal; background-color:transparent;">
+                                <option value=""> </option>
+                                <option>NR</option>
+                                <option>R</option>
+                                <option>INV</option>
+                                <option>NT</option>
+                            </select> </th>
+
+                        <th style="width:25%;border:0px;"> <select id="REACTIVITYT3" name="REACTIVITYT3" value=""
+                                style="width:100%; font-weight:normal; background-color:transparent;">
+                                <option value=""> </option>
+                                <option>NR</option>
+                                <option>R</option>
+                                <option>INV</option>
+                                <option>NT</option>
+                            </select> </th>
+                    </tr>
+                    <tr> </tr>
+                </thead>
+            </table>
+
+            <br>
+
+            <table style="font-family: arial; font-size: 12px;	
+	 text-align:left; border:0px; background-color:transparent;" width="100%" cellspacing="0" cellpadding="4" border="1">
+                <thead>
+                    <tr>
+                        <th style="width:25%;border:0px;">Final reactivity </th>
+                        <th style="width75%;border:0px;"> <select name="FINALREACTIVITY" id="FINALREACTIVITY" value=""
+                                style="width:100%; font-weight:normal; background-color:transparent;">
+                                <option value=""> </option>
+                                <option>
+                                </option>
+                                <option>NEGATIVE</option>
+                                <option>POSITIVE</option>
+                                <option>INV</option>
+                                <option>INDETERMINATE</option>
+                            </select>
                         </th>
                     </tr>
                 </thead>
             </table>
+        </div>
+        <br>
 
-            <input type="hidden" id="myCLIENTNAME" name="NAME" />
+        <!-- Other results-->
 
-            <br />
-
-            <input type="button" onClick="addRow16('mytable1')" value="Add" style="border-radius:9px;" />
-            <input type="button" onClick="deleteRow16('mytable1')" value="Remove" style="border-radius:9px;" />
-            <input type="hidden" id="mytable_rows1" value="0" />
-            
-            <p></p>
-
-            <table class="table table-table table tabled" id="mytable1" style="font-weight:normal; ">
+        <div class="panel-body"
+            style="font-weight: normal; width: 100%;   
+          background-color: transparent; border: 1px solid rgb(222, 212, 211); box-shadow: 3px 2px 0px 0px rgba(12, 12, 12, 0.1) !important; border-radius: 11px;">
+            <legend style="color:#000; font-weight:bold; font-size:12px;">GENERAL results</legend>
+            <table class="table table-table table tabled" id="mytable2" style="font-weight:normal; ">
                 <thead>
                     <tr>
                         <th>*</th>
-                        <th>SPECIMEN</th>
-                        <th>HEAMATOLOGY/SEROLOGY</th>
-                        <th>MALARIA</th>
-                        <th>STOOL MICROSCOPY</th>
-                        <th>URINE MICROSCOPY</th>
-                        <th>SWABS.TYPE</th>
-                        <th>WET.PREP</th>
-                        <th>GRAM STAIN</th>
+                        <th>CREATED DATE</th>
+                        <th>TEST DESCRIPTION </th>
+                        <th>LAB RESULTS</th>
                     </tr>
                 </thead>
                 <tbody>
+                    <tr>
+                        <td><input type="checkbox" checked="checked"></td>
 
+                        <td> <input name="aa[]" type="text" value="2019-08-29 09:13:09" readonly=""
+                                style="width:100%; background-color:transparent; "></td>
+
+                        <td> <input name="dnx[]" type="text" value="URINE ANALYSIS" required=""
+                                style="width:100%; background-color:transparent; ">
+                        </td>
+
+                        <td> <select name="fqx[]" type="text" value="" required=""
+                                style="width:100%; background-color:#fff; ">
+                                <option value=""></option>
+                                <option>NEGATIVE</option>
+                                <option>POSTIVE</option>
+                            </select>
+                        </td>
+
+
+
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox" checked="checked"></td>
+
+                        <td> <input name="aa[]" type="text" value="2019-08-29 09:13:09" readonly=""
+                                style="width:100%; background-color:transparent; "></td>
+
+                        <td> <input name="dnx[]" type="text" value="BLOOD SLIDE FOR MALARIA" required=""
+                                style="width:100%; background-color:transparent; ">
+                        </td>
+
+                        <td> <select name="fqx[]" type="text" value="" required=""
+                                style="width:100%; background-color:#fff; ">
+                                <option value=""></option>
+                                <option>NEGATIVE</option>
+                                <option>POSTIVE</option>
+                            </select>
+                        </td>
+
+
+
+                    </tr>
                 </tbody>
             </table>
 
-            <br />
-            <br />
 
-            <table border="1" cellpadding="4" cellspacing="0" style="font-family: arial; font-size: 12px; text-align:left; border:0px; background-color:transparent;" width="100%">
-                <thead>
-                    <tr>
-                        <th style="width:20%;border:0px;">Lab technician </th>
-                        <th style="width:28%;border:0px;"> 
-                            <input type="text" name="TESTEDBY" id="TESTEDBY" value="<?php echo $nameofuser; ?>" style="width:100%; font-weight:normal; background-color:transparent;"> 
-                        </th>
-                        <th style="width:4%;border:0px;"> </th>
-                        <th style="width:20%;border:0px;">Title</th>
-                        <th style="width:28%;"> <input type="text" name="TECHTITLE" id="TECHTITLE" value="<?php echo $desc; ?>" style="width:100%; font-weight:normal; background-color:transparent;">
-                        </th>
-                    </tr>
-                    
-                </thead>
-            </table>
 
-            <br />
 
+            <input type="hidden" name="RSVNID" value="5d676a24a97b5">
+            <input type="hidden" name="NTIHCNO" value="IS/45">
+            <input type="hidden" name="TESTSTATUS" value="COMPLETED">
+            <input type="hidden" name="LABTIMEOUT" id="CHECKOUT" value="9:58:04">
             <center>
-                <input type="submit" name="button" id="button" value="Save" style="border-radius:9px;" />
+                <input type="submit" name="buttonsend" id="button" value="Save results" style="border-radius:9px;">
             </center>
-        </form>
 
-        <br />       
-        <br /> 
+            <br>
+        </div>
+
+        <!--End of other results -->
+        <br>
+
     </div>
-
+    </div>
     <div class="col-sm-12">
         <div class="panel-body">
-            <center style="color:#000; font-weight:bold; font-size:12px;font:bold 14px 'Aleo'; text-shadow:1px 1px 3px #000; color:#fff;" >
-                Clients due for urgent results &nbsp;&nbsp; 
-                <?php 
-                    include('client_medical_conn.php');
-                    $date = date("Y-m-d").' 00:00:00';
-                    $result = $db->prepare("SELECT * FROM cmpatientsregistration WHERE TIMESTAMP >='$date' AND
-                                        LABVIST ='1' AND TESTSTATUS ='PROGRESSING' 
-                                GROUP BY NTIHCNO ORDER BY DATECREATED");
-                    $result->execute();
-                    $rowcount5 = $result->rowcount(); 
-                    echo $rowcount5;
-                ?> 
-            </center>
 
-            <table id="exampleXY" class="table table-tabled table-bordered" style="font-weight:normal; font-size:9px; width:100%; background-color:transparent;">
+            <center
+                style="color:#000; font-weight:bold; font-size:12px;font:bold 14px 'Aleo'; text-shadow:1px 1px 3px #000; color:#fff;">
+                Clients due for urgent results &nbsp;&nbsp; <?php 
+      include('client_medical_conn.php');
+      $date = date("Y-m-d").' 00:00:00';
+        $result = $db->prepare("SELECT * FROM cmpatientsregistration WHERE TIMESTAMP >='$date' AND
+                               LABVIST ='1' AND TESTSTATUS ='PROGRESSING' 
+                      GROUP BY NTIHCNO ORDER BY DATECREATED");
+        $result->execute();
+        $rowcount5 = $result->rowcount(); 
+       ?>
+                <?php echo $rowcount5;?> </center>
+
+            <table id="exampleXY" class="table table-tabled table-bordered"
+                style="font-weight:normal; font-size:9px; width:100%; background-color:transparent;">
                 <thead>
                     <tr>
+
                         <th style="background-color:transparent;">VIST DATE</th>
                         <th style="background-color:transparent;">NTIHC&nbsp;NO.</th>
                         <th style="background-color:transparent;">CLIENT&nbsp;NAME</th>
@@ -1293,57 +1557,63 @@ $connect->close();
                         <th style="background-color:transparent;">STATUS</th>
                         <th colspan="2" style="background-color:transparent; text-align:center;">ACTION</th>
                     </tr>
-                </thead>
-                
+                    </tfoot>
                 <tbody>
+
                     <script>
-                        function postclient(myid) 
-                        {
-                            var dtsxxcqX = myid.split("***");
-                            document.getElementById("myNTIHCNO").value = dtsxxcqX[0];
-                            document.getElementById("myID").value = dtsxxcqX[1];
-                            document.getElementById("myAGE1").value = dtsxxcqX[2];
-                            document.getElementById("myAGEGP").value = dtsxxcqX[3];
-                            document.getElementById("mySEX").value = dtsxxcqX[4];
-                            document.getElementById("myRSVNID").value = dtsxxcqX[5];
-                        }
+                    function postclient(myid) {
+                        var dtsxxcqX = myid.split("***");
+                        document.getElementById("myNTIHCNO").value = dtsxxcqX[0];
+                        document.getElementById("myID").value = dtsxxcqX[1];
+                        document.getElementById("myAGE1").value = dtsxxcqX[2];
+                        document.getElementById("myAGEGP").value = dtsxxcqX[3];
+                        document.getElementById("mySEX").value = dtsxxcqX[4];
+                        document.getElementById("myRSVNID").value = dtsxxcqX[5];
+                    }
                     </script>
 
                     <?php 
-                        include_once("updatecmgt/config.php");
-                        $date = date("Y-m-d").' 00:00:00'; 
-                        $result = mysqli_query($mysqli, "SELECT * FROM  cmpatientsregistration WHERE  
-                                                    LABVIST ='1' AND TESTSTATUS ='PROGRESSING' 
-                                            GROUP BY NTIHCNO ORDER BY TIMESTAMP");
-                        while($res = mysqli_fetch_array($result)) 
-                        {
-                            $dtsxxcqX = $res['RID']."***".$res['NTIHCNO']."***".$res['AGE1']."***".$res['AGE_GROUP']."***".$res['SEX']."***".$res['RSVNID']."***".$res['DATECREATED'];
-                            echo "<tr>"; 
-                            echo "<td>".$res['TIMESTAMP']."</td>"; 
-                            echo "<td>".$res['NTIHCNO']."</td>"; 
-                            echo "<td>".$res['CLIENTNAME']."</td>";
-                            echo "<td>".$res['SERVICEPROVIDER']."</td>";
-                            echo "<td>".$res['REQUESTINGUNIT']."</td>"; 
-                            echo "<td>".$res['TESTSTATUS']."</td>";  
-                            
-                            echo '<td>    
-                            &nbsp;&nbsp;   &nbsp;&nbsp; 
-                            <a id="5__'.$dtsxxcqX.'" href="javascript:void(0)"  onclick="getvistdata(this.id)" data-toggle="tooltip" 
-                            title="Quick view" 
-                            <span class="glyphicon glyphicon-user"> </span></a> &nbsp;&nbsp; 
-                            
-                            </td>'; 
-                            echo "<td><a href=\"client_lab_hist.php?NTIHCNO=$res[NTIHCNO]\">Add results</a>  </td>";       
-                        }
-                    ?>
+include_once("updatecmgt/config.php");
+
+$date = date("Y-m-d").' 00:00:00'; 
+$result = mysqli_query($mysqli, "SELECT * FROM  cmpatientsregistration WHERE  
+                               LABVIST ='1' AND TESTSTATUS ='PROGRESSING' 
+                      GROUP BY NTIHCNO ORDER BY TIMESTAMP");
+  
+  while($res = mysqli_fetch_array($result)) {
+  $dtsxxcqX = $res['RID']."***".$res['NTIHCNO']."***".$res['AGE1']."***".$res['AGE_GROUP']."***".$res['SEX']."***".$res['RSVNID']."***".$res['DATECREATED'];
+    echo "<tr>"; 
+    echo "<td>".$res['TIMESTAMP']."</td>"; 
+    echo "<td>".$res['NTIHCNO']."</td>"; 
+    echo "<td>".$res['CLIENTNAME']."</td>";
+    echo "<td>".$res['SERVICEPROVIDER']."</td>";
+    echo "<td>".$res['REQUESTINGUNIT']."</td>"; 
+    echo "<td>".$res['TESTSTATUS']."</td>";  
+    
+    echo '<td>    
+     &nbsp;&nbsp;   &nbsp;&nbsp; 
+    <a id="5__'.$dtsxxcqX.'" href="javascript:void(0)"  onclick="getvistdata(this.id)" data-toggle="tooltip" 
+    title="Quick view" 
+    <span class="glyphicon glyphicon-user"> </span></a> &nbsp;&nbsp; 
+       
+    </td>'; 
+     echo "<td><a href=\"client_lab_hist.php?NTIHCNO=$res[NTIHCNO]\">Add results</a>  </td>";       
+  }
+     
+    ?>
                 </tbody>
             </table>
+
+
         </div>
     </div>
 
+
+
     <div class="row">
         <div class="col-lg-12">
-            <div class="modal" id="impres2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal" id="impres2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+                aria-hidden="true">
                 <div class="modal-dialog">
                     <div class="modal-content" style="width: 1000px; margin-left: -220px;">
                         <div class="modal-header" style="background-color:transparent;">
@@ -1351,23 +1621,30 @@ $connect->close();
                             <h4 class="modal-title" id="myModalLabel"> </h4>
                         </div>
                         <div class="modal-body">
+
+
                             <div class="" id="getvist"> </div>
                             <script>
-                                function getvistdata(jose) 
-                                {
-                                    var odno = ((jose.split("__")[1]).split("***"))[1];
-                                    $.ajax(
-                                    {
-                                        type: 'POST',
-                                        url: 'medical/getepisode_labtests.php?q=' + odno,
-                                        success: function(data) {
-                                            $('#getvist').html(data);
-                                            $("#impres2").modal("show");
-                                        }
-                                    });
-                                }
+                            function getvistdata(jose) {
+                                var odno = ((jose.split("__")[1]).split("***"))[1];
+                                $.ajax({
+                                    type: 'POST',
+                                    url: 'medical/getepisode_labtests.php?q=' + odno,
+                                    success: function(data) {
+                                        $('#getvist').html(data);
+                                        $("#impres2").modal("show");
+                                    }
+                                });
+                            }
                             </script>
-                            <div class="col-sm-12"> <BR> </div>
+                            <div class="col-sm-12">
+                                <BR>
+
+
+
+                            </div>
+
+
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -1376,6 +1653,9 @@ $connect->close();
                 </div>
             </div>
         </div>
+
+
+
         <!-- /.content -->
     </div>
     <!-- /.content-wrapper -->
@@ -1455,12 +1735,13 @@ $connect->close();
         });
     }, 2000);
     </script>
-</body>
-</html>
 
+
+</body>
+
+</html>
 <script>
-function calcsubtt(tableId) 
-{
+function calcsubtt(tableId) {
     var table = document.getElementById(tableId);
     var rowCount = table.rows.length;
     var sum = 0;
@@ -1469,13 +1750,15 @@ function calcsubtt(tableId)
         sum = sum + parseFloat(table.rows[x].cells[5].childNodes[0].value);
     }
     document.getElementById("SUBTOTAL").value = '' + sum;
+
 }
 
 
-function addRow16(tableId) 
-{
+function addRow16(tableId) {
+
     var table = document.getElementById(tableId);
     var rowCount = table.rows.length;
+
     var s1aa = '<select name="dnx[]" id="dnx' + rowCount + '"  autocomplete="off" required="required" ' +
         'style= "margin-left:0px' + 'background-color:transparent; width:100%;">' +
         '<option> </option>' +
@@ -1562,8 +1845,7 @@ function addRow16(tableId)
     calcsubtt(tableId);
 }
 
-function deleteRow16(tableID) 
-{
+function deleteRow16(tableID) {
     var table = document.getElementById(tableID);
     var rowCount = table.rows.length;
     for (var i = 1; i < rowCount; i++) { //0
