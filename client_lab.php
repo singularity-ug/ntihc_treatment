@@ -824,27 +824,17 @@ $connect->close();
 
     }, 1000);
     </script>
-
-
 </head>
 
-<body class="hold-transition skin-blue sidebar-mini"
-    style="background:url(assets/img/pattern/4326703-white-background-wallpapero.jpg);">
+<body class="hold-transition skin-blue sidebar-mini" style="background:url(assets/img/pattern/4326703-white-background-wallpapero.jpg);">
 
-    <?php
-  require('admin/connect/config.php');
-  ?>
+    <?php require('admin/connect/config.php'); ?>
 
-    <!--?php
- require('v2/header_cm.php');
- ?-->
+    <!--?php require('v2/header_cm.php'); ?-->
 
     <div class="panel-body">
-
         <div class="col-md-6" style="background-color:transparent;">
-
-            <table border="1" cellpadding="4" cellspacing="0"
-                style="font-family: arial; font-size: 12px; border:0px;text-align:left;border: 0px;" width="100%">
+            <table border="1" cellpadding="4" cellspacing="0" style="font-family: arial; font-size: 12px; border:0px;text-align:left;border: 0px;" width="100%">
                 <thead>
                     <tr>
                         <td style="width:16%; border: 0px;">
@@ -855,71 +845,67 @@ $connect->close();
                             <a href="client_management.php">
                                 <center><img src="database icons/Medical-54-512.png" width="100" height="100" class=" "
                                         style=" height:30px; width:30px; background-color:transparent">
-                                    Dashboard&nbsp;&nbsp;&nbsp;</center>
+                                    Dashboard&nbsp;&nbsp;&nbsp;
+                                </center>
                             </a>
                             <div class="pull-right box-tools"> </div>
+                        </td>
         </div>
         <p></p>
         <a href="client_lab.php?d1=0&d2=0">
             <center><img src="database icons/59449894425chart-512.png" width="100" height="100" class=" "
                     style=" height:30px; width:30px; background-color:transparent">
-                Reports&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</center>
+                Reports&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            </center>
         </a>
         <div class="pull-right box-tools"> </div>
     </div>
-    </td>
 
-    <td style="width:28%; border: 1px;"> <a href="client_lab_history.php">
+    <td style="width:28%; border: 1px;"> 
+        <a href="client_lab_history.php">
             <center><img src="database icons/social_network-512.png" width="100" height="100" class=" "
                     style=" height:30px; width:30px; background-color:transparent">
-                Client&nbsp;history </center>
+                Client&nbsp;history 
+            </center>
         </a>
         <div class="pull-right box-tools"> </div>
-        </div>
+        
         <p></p>
+
         <a href="client_lab.php">
             <center><img src="database icons/Subscribe-HR-Human-Resource-Management-Software-Core-HR-Large.png"
                     width="100" height="100" class=" " style=" height:30px; width:30px; background-color:transparent">
-                Requisition&nbsp; &nbsp; </center>
+                Requisition&nbsp; &nbsp; 
+            </center>
         </a>
         <div class="pull-right box-tools"> </div>
-        </div>
     </td>
 
-    <td style="width:10%; border: 1px;">
-    </td>
+    <td style="width:10%; border: 1px;"> </td>
     </tbody>
     </table>
 
-
-    </div>
-
     <div class="col-md-6" style=" background-color:transparent;">
-
-
     </div>
-    </div>
+    
 
     <div class="col-md-5" style=" background-color:transparent;">
         <ul class="nav nav-tabs" style="border: 0px;">
             <div class="col-md-6" style=" background-color:transparent;">
-                <table border="1" cellpadding="4" cellspacing="0"
-                    style="font-family: arial; font-size: 12px; border:0px;text-align:left;border: 0px;" width="100%">
+                <table border="1" cellpadding="4" cellspacing="0" style="font-family: arial; font-size: 12px; border:0px;text-align:left;border: 0px;" width="100%">
                     <thead>
                         <tr>
-                            <td style="width:33.33333333%; border: 0px; background-color:transparent;"> <a
-                                    data-toggle="tab" href="#tab1">
-                                    <center><img src="database icons/queue-512.png" width="100" height="100" class=" "
-                                            style=" height:30px; width:30px; background-color:transparent"> <br>
-                                        <a href="client_management.php">Incoming <b class="data-taggle" class="tooltip"
-                                                title="No. of clients due for medical services">
-                                                &nbsp;
-                                                <?php 
-      include('client_medical_conn.php');
-      $date = date("Y-m-d").' 00:00:00';
-        $result = $db->prepare("SELECT * FROM cmpatientsregistration WHERE TIMESTAMP >='$date' AND
-        LABVIST ='1' AND TESTSTATUS ='NOT STARTED' GROUP BY NTIHCNO
-                                ORDER BY NTIHCNO DESC");
+                            <td style="width:33.33333333%; border: 0px; background-color:transparent;"> 
+                                <a data-toggle="tab" href="#tab1">
+                                    <center><img src="database icons/queue-512.png" width="100" height="100" class=" "style=" height:30px; width:30px; background-color:transparent"> <br>
+                                        <a href="client_management.php">Incoming <b class="data-taggle" class="tooltip" title="No. of clients due for medical services">
+                                            &nbsp;
+                                            <?php 
+            include('client_medical_conn.php');
+            $date = date("Y-m-d").' 00:00:00';
+                $result = $db->prepare("SELECT * FROM cmpatientsregistration WHERE TIMESTAMP >='$date' AND
+                LABVIST ='1' AND TESTSTATUS ='NOT STARTED' GROUP BY NTIHCNO
+                                        ORDER BY NTIHCNO DESC");
         $result->execute();
         $rowcount1 = $result->rowcount(); 
        ?>
@@ -1036,9 +1022,8 @@ $connect->close();
                             }
                             </script>
 
-                            <?php 
+<?php 
 include_once("updatecmgt/config.php");
-
 $date = date("Y-m-d").' 00:00:00'; 
 $result = mysqli_query($mysqli, "SELECT * FROM  cmpatientsregistration WHERE TIMESTAMP >='$date' AND
                                LABVIST ='1' AND TESTSTATUS ='COMPLETED'  
@@ -1109,7 +1094,7 @@ $result = mysqli_query($mysqli, "SELECT * FROM  cmpatientsregistration WHERE
     </td>';       
   }
      
-    ?>
+?>
 
 
                         </tbody>
@@ -1320,210 +1305,7 @@ $result = mysqli_query($mysqli, "SELECT * FROM  cmpatientsregistration WHERE
 
         <BR>
 
-        <div class="panel-body"
-            style="font-weight: normal; width: 100%;   
-          background-color: transparent; border: 1px solid rgb(222, 212, 211); box-shadow: 3px 2px 0px 0px rgba(12, 12, 12, 0.1) !important; border-radius: 11px;">
-            <legend style="color:#000; font-weight:bold; font-size:12px;">HIV results</legend>
-            <table style="font-family: arial; font-size: 12px;	
-	 text-align:left; border:0px; background-color:transparent;" width="100%" cellspacing="0" cellpadding="4" border="1">
-                <thead>
-                    <tr>
-                        <th style="width:25%;border:0px;"></th>
-                        <th style="width:25%;border:0px;">HIV Test 1 </th>
-                        <th style="width:25%;border:0px;"> HIV Test 2 </th>
-                        <th style="width:25%;border:0px;">HIV Test 3</th>
-                    </tr>
-                    <tr> </tr>
-                </thead>
-            </table>
-
-            <table style="font-family: arial; font-size: 12px;	
-	 text-align:left; border:0px; background-color:transparent;" width="100%" cellspacing="0" cellpadding="4" border="1">
-                <thead>
-                    <tr>
-                        <th style="width:25%;border:0px;">Kit name</th>
-                        <th style="width:25%;border:0px;">Determine </th>
-                        <th style="width:25%;border:0px;">Start Pack </th>
-                        <th style="width:25%;border:0px;">Unigold</th>
-                    </tr>
-                    <tr> </tr>
-                </thead>
-            </table>
-
-            <table style="font-family: arial; font-size: 12px;	
-	 text-align:left; border:0px; background-color:transparent;" width="100%" cellspacing="0" cellpadding="4" border="1">
-                <thead>
-                    <tr>
-                        <th style="width:25%;border:0px;">Lot No </th>
-                        <th style="width:25%;border:0px;"> <input type="text" name="LOTA" id="LOTA" value=""
-                                style="width:100%; font-weight:normal; background-color:transparent;"> </th>
-
-                        <th style="width:25%;border:0px;"> <input type="text" name="LOTB" id="LOTB" value=""
-                                style="width:100%; font-weight:normal; background-color:transparent;"> </th>
-
-                        <td style="width:25%;"><input type="text" name="LOTC" id="LOTC" value=""
-                                style="width:100%; font-weight:normal; background-color:transparent;">
-                        </td>
-                    </tr>
-                    <tr> </tr>
-                </thead>
-            </table>
-
-            <table style="font-family: arial; font-size: 12px;	
-	 text-align:left; border:0px; background-color:transparent;" width="100%" cellspacing="0" cellpadding="4" border="1">
-                <thead>
-                    <tr>
-                        <th style="width:25%;border:0px;">Expiry date</th>
-                        <th style="width:25%;border:0px;"> <input type="date" name="EXPIRYDATET1" id="EXPIRYDATET1"
-                                value="" style="width:100%; font-weight:normal; background-color:transparent;"> </th>
-
-                        <th style="width:25%;border:0px;"> <input type="date" name="EXPIRYDATE2" id="EXPIRYDATE2"
-                                value="" style="width:100%; font-weight:normal; background-color:transparent;"> </th>
-
-                        <td style="width:25%;"><input type="date" name="EXPIRYDATET3" id="EXPIRYDATET3" value=""
-                                style="width:100%; font-weight:normal; background-color:transparent;">
-                        </td>
-                    </tr>
-                    <tr> </tr>
-                </thead>
-            </table>
-
-            <table style="font-family: arial; font-size: 12px;	
-	 text-align:left; border:0px; background-color:transparent;" width="100%" cellspacing="0" cellpadding="4" border="1">
-                <thead>
-                    <tr>
-                        <th style="width:25%;border:0px;">Reactivity</th>
-                        <th style="width:25%;border:0px;"> <select id="REACTIVITYT1" name="REACTIVITYT1" value=""
-                                style="width:100%; font-weight:normal; background-color:transparent;">
-                                <option value=""> </option>
-                                <option>NR</option>
-                                <option>R</option>
-                                <option>INV</option>
-                                <option>NT</option>
-                            </select> </th>
-
-                        <th style="width:25%;border:0px;"> <select id="REACTIVITYT2" name="REACTIVITYT2" value=""
-                                style="width:100%; font-weight:normal; background-color:transparent;">
-                                <option value=""> </option>
-                                <option>NR</option>
-                                <option>R</option>
-                                <option>INV</option>
-                                <option>NT</option>
-                            </select> </th>
-
-                        <th style="width:25%;border:0px;"> <select id="REACTIVITYT3" name="REACTIVITYT3" value=""
-                                style="width:100%; font-weight:normal; background-color:transparent;">
-                                <option value=""> </option>
-                                <option>NR</option>
-                                <option>R</option>
-                                <option>INV</option>
-                                <option>NT</option>
-                            </select> </th>
-                    </tr>
-                    <tr> </tr>
-                </thead>
-            </table>
-
-            <br>
-
-            <table style="font-family: arial; font-size: 12px;	
-	 text-align:left; border:0px; background-color:transparent;" width="100%" cellspacing="0" cellpadding="4" border="1">
-                <thead>
-                    <tr>
-                        <th style="width:25%;border:0px;">Final reactivity </th>
-                        <th style="width75%;border:0px;"> <select name="FINALREACTIVITY" id="FINALREACTIVITY" value=""
-                                style="width:100%; font-weight:normal; background-color:transparent;">
-                                <option value=""> </option>
-                                <option>
-                                </option>
-                                <option>NEGATIVE</option>
-                                <option>POSITIVE</option>
-                                <option>INV</option>
-                                <option>INDETERMINATE</option>
-                            </select>
-                        </th>
-                    </tr>
-                </thead>
-            </table>
-        </div>
-        <br>
-
-        <!-- Other results-->
-
-        <div class="panel-body"
-            style="font-weight: normal; width: 100%;   
-          background-color: transparent; border: 1px solid rgb(222, 212, 211); box-shadow: 3px 2px 0px 0px rgba(12, 12, 12, 0.1) !important; border-radius: 11px;">
-            <legend style="color:#000; font-weight:bold; font-size:12px;">GENERAL results</legend>
-            <table class="table table-table table tabled" id="mytable2" style="font-weight:normal; ">
-                <thead>
-                    <tr>
-                        <th>*</th>
-                        <th>CREATED DATE</th>
-                        <th>TEST DESCRIPTION </th>
-                        <th>LAB RESULTS</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td><input type="checkbox" checked="checked"></td>
-
-                        <td> <input name="aa[]" type="text" value="2019-08-29 09:13:09" readonly=""
-                                style="width:100%; background-color:transparent; "></td>
-
-                        <td> <input name="dnx[]" type="text" value="URINE ANALYSIS" required=""
-                                style="width:100%; background-color:transparent; ">
-                        </td>
-
-                        <td> <select name="fqx[]" type="text" value="" required=""
-                                style="width:100%; background-color:#fff; ">
-                                <option value=""></option>
-                                <option>NEGATIVE</option>
-                                <option>POSTIVE</option>
-                            </select>
-                        </td>
-
-
-
-                    </tr>
-                    <tr>
-                        <td><input type="checkbox" checked="checked"></td>
-
-                        <td> <input name="aa[]" type="text" value="2019-08-29 09:13:09" readonly=""
-                                style="width:100%; background-color:transparent; "></td>
-
-                        <td> <input name="dnx[]" type="text" value="BLOOD SLIDE FOR MALARIA" required=""
-                                style="width:100%; background-color:transparent; ">
-                        </td>
-
-                        <td> <select name="fqx[]" type="text" value="" required=""
-                                style="width:100%; background-color:#fff; ">
-                                <option value=""></option>
-                                <option>NEGATIVE</option>
-                                <option>POSTIVE</option>
-                            </select>
-                        </td>
-
-
-
-                    </tr>
-                </tbody>
-            </table>
-
-
-
-
-            <input type="hidden" name="RSVNID" value="5d676a24a97b5">
-            <input type="hidden" name="NTIHCNO" value="IS/45">
-            <input type="hidden" name="TESTSTATUS" value="COMPLETED">
-            <input type="hidden" name="LABTIMEOUT" id="CHECKOUT" value="9:58:04">
-            <center>
-                <input type="submit" name="buttonsend" id="button" value="Save results" style="border-radius:9px;">
-            </center>
-
-            <br>
-        </div>
-
-        <!--End of other results -->
+       
         <br>
 
     </div>
