@@ -859,7 +859,7 @@ $connect->close();
             </center>
         </a>
         <div class="pull-right box-tools"> </div>
-    </div>
+  
 
     <td style="width:28%; border: 1px;"> 
         <a href="client_lab_history.php">
