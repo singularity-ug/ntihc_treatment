@@ -271,15 +271,13 @@ $rsns      = intval($rowsss1);
  * Generating / Saving lab requestion
  *  */ 
 
-$tests = $_POST['test']
-
+$tests = $_POST['test'];
 if(is_array($tests)){
   foreach($tests as $test){
     $sql = "INSERT INTO `examination_lab_request`(`EXID`, `REQUESTING_UNIT`, `TEST_TYPE`) 
     VALUES ($exid,$REQUESTINGUNIT,$test)";
-    if ($connect->query($sql)) {
-      //  echo "<br /> something  didnt go  wrong : ";
-    }
+    if ($connect->query($sql))
+      ;//  echo "<br /> something  didnt go  wrong : ";
     else {
       echo "something went wrong : 1".$connect->error;
     }
