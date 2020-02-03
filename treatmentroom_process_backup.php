@@ -7,6 +7,7 @@
   $pf       = "";
   $rm         = "";
   $uid = "";
+  $exid = "";
 
   if(isset($_SESSION['USERID'])){
     $nameofuser = $_SESSION['USERID'];
@@ -147,6 +148,7 @@ if( $result = $connect->query("SELECT VISITS , AGE ,  SEX, FIRSTNAME, LASTNAME, 
 
   $sql="INSERT INTO `patientmgt`.`clientsexamination` (`TIMESTAMP`,
                                                        `NTIHCNO`,
+                                                       `UID`,
                                                        `DATECREATED`,
                                                        `VISTBY`,
                                                        `MEDICALTOPIC`,
@@ -171,6 +173,7 @@ if( $result = $connect->query("SELECT VISITS , AGE ,  SEX, FIRSTNAME, LASTNAME, 
 										 
                                                VALUES (CURRENT_TIMESTAMP,
                                                        '$fnam',
+                                                       '$uid',
                                                        '$datt',
                                                        '$urgtyn',
                                                        '$cat',
@@ -196,6 +199,7 @@ if( $result = $connect->query("SELECT VISITS , AGE ,  SEX, FIRSTNAME, LASTNAME, 
           //GENERATE THE QUERY TO INSERT AND UPDATE THE NUMBER OF VISITS.
           if ($connect->query($sql)) {
           //  echo "<br /> something  didnt go  wrong : ";
+              $exid = $connect->insert_id;
           }
 
           else {
@@ -261,21 +265,46 @@ if( $result = $connect->query("SELECT VISITS , AGE ,  SEX, FIRSTNAME, LASTNAME, 
 														    WHERE `RID` = '$rid'");	}	                 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 $rsns      = intval($rowsss1);
+
+/**
+ * Author: Buyinza David
+ * Generating / Saving lab requestion
+ *  */ 
+
+$tests = $_POST['test']
+
+if(is_array($tests)){
+  foreach($tests as $test){
+    $sql = "INSERT INTO `examination_lab_request`(`EXID`, `REQUESTING_UNIT`, `TEST_TYPE`) 
+    VALUES ($exid,$REQUESTINGUNIT,$test)";
+    if ($connect->query($sql)) {
+      //  echo "<br /> something  didnt go  wrong : ";
+    }
+    else {
+      echo "something went wrong : 1".$connect->error;
+    }
+  }
+}
+
+
+
+ //End Lab Request
+
+
    if($rsns>0){
      $x=1;
         for ($x=1; $x <= $rsns; $x++) {
-                   $dns  = trim($_POST['dn_'.$x]);        // Test desc
-			       $fqc  = trim($_POST['fq_'.$x]);       //  Lab results 
-                   $qty  = trim($_POST['qty_'.$x]);       // Action tkn
-             $sql ="INSERT INTO `laborders` (`TIMESTAMP`,
+            $dns  = trim($_POST['dn_'.$x]);        // Test desc
+			      $fqc  = trim($_POST['fq_'.$x]);       //  Lab results 
+            $qty  = trim($_POST['qty_'.$x]);       // Action tkn
+            $sql  = "INSERT INTO `laborders` (`TIMESTAMP`,
                                 `DATECREATED`,
                                 `NTIHCNO`,
+                                `TESTDESCRIPTION`,
+								                `LABRESULTS`, 
+                                `ACTIONTAKEN`,
 								 
-                                 `TESTDESCRIPTION`,
-								 `LABRESULTS`, 
-                                 `ACTIONTAKEN`,
-								 
-								 `RSVNID`, `REQUESTINGUNIT`, `TROOM_INITIATION`, `LABTIMEIN`,
+								                `RSVNID`, `REQUESTINGUNIT`, `TROOM_INITIATION`, `LABTIMEIN`,
                                  `NAME`, 
                                  `AGE1`,
 								 `AGE_GROUP`,
@@ -354,7 +383,7 @@ else {
                                  '$hp',
                                  '$name',
                                  '$AGE1',
-								 '$AGE_GROUP',
+								                '$AGE_GROUP',
                                  '$SEX',
                                  '$sch',
 								 '$sedb',
