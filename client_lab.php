@@ -824,17 +824,27 @@ $connect->close();
 
     }, 1000);
     </script>
+
+
 </head>
 
-<body class="hold-transition skin-blue sidebar-mini" style="background:url(assets/img/pattern/4326703-white-background-wallpapero.jpg);">
+<body class="hold-transition skin-blue sidebar-mini"
+    style="background:url(assets/img/pattern/4326703-white-background-wallpapero.jpg);">
 
-    <?php require('admin/connect/config.php'); ?>
+    <?php
+  require('admin/connect/config.php');
+  ?>
 
-    <!--?php require('v2/header_cm.php'); ?-->
+    <!--?php
+ require('v2/header_cm.php');
+ ?-->
 
     <div class="panel-body">
+
         <div class="col-md-6" style="background-color:transparent;">
-            <table border="1" cellpadding="4" cellspacing="0" style="font-family: arial; font-size: 12px; border:0px;text-align:left;border: 0px;" width="100%">
+
+            <table border="1" cellpadding="4" cellspacing="0"
+                style="font-family: arial; font-size: 12px; border:0px;text-align:left;border: 0px;" width="100%">
                 <thead>
                     <tr>
                         <td style="width:16%; border: 0px;">
@@ -845,67 +855,71 @@ $connect->close();
                             <a href="client_management.php">
                                 <center><img src="database icons/Medical-54-512.png" width="100" height="100" class=" "
                                         style=" height:30px; width:30px; background-color:transparent">
-                                    Dashboard&nbsp;&nbsp;&nbsp;
-                                </center>
+                                    Dashboard&nbsp;&nbsp;&nbsp;</center>
                             </a>
                             <div class="pull-right box-tools"> </div>
-                        </td>
         </div>
         <p></p>
         <a href="client_lab.php?d1=0&d2=0">
             <center><img src="database icons/59449894425chart-512.png" width="100" height="100" class=" "
                     style=" height:30px; width:30px; background-color:transparent">
-                Reports&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            </center>
+                Reports&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</center>
         </a>
         <div class="pull-right box-tools"> </div>
     </div>
+    </td>
 
-    <td style="width:28%; border: 1px;"> 
-        <a href="client_lab_history.php">
+    <td style="width:28%; border: 1px;"> <a href="client_lab_history.php">
             <center><img src="database icons/social_network-512.png" width="100" height="100" class=" "
                     style=" height:30px; width:30px; background-color:transparent">
-                Client&nbsp;history 
-            </center>
+                Client&nbsp;history </center>
         </a>
         <div class="pull-right box-tools"> </div>
-        
+        </div>
         <p></p>
-
         <a href="client_lab.php">
             <center><img src="database icons/Subscribe-HR-Human-Resource-Management-Software-Core-HR-Large.png"
                     width="100" height="100" class=" " style=" height:30px; width:30px; background-color:transparent">
-                Requisition&nbsp; &nbsp; 
-            </center>
+                Requisition&nbsp; &nbsp; </center>
         </a>
         <div class="pull-right box-tools"> </div>
+        </div>
     </td>
 
-    <td style="width:10%; border: 1px;"> </td>
+    <td style="width:10%; border: 1px;">
+    </td>
     </tbody>
     </table>
 
-    <div class="col-md-6" style=" background-color:transparent;">
+
     </div>
-    
+
+    <div class="col-md-6" style=" background-color:transparent;">
+
+
+    </div>
+    </div>
 
     <div class="col-md-5" style=" background-color:transparent;">
         <ul class="nav nav-tabs" style="border: 0px;">
             <div class="col-md-6" style=" background-color:transparent;">
-                <table border="1" cellpadding="4" cellspacing="0" style="font-family: arial; font-size: 12px; border:0px;text-align:left;border: 0px;" width="100%">
+                <table border="1" cellpadding="4" cellspacing="0"
+                    style="font-family: arial; font-size: 12px; border:0px;text-align:left;border: 0px;" width="100%">
                     <thead>
                         <tr>
-                            <td style="width:33.33333333%; border: 0px; background-color:transparent;"> 
-                                <a data-toggle="tab" href="#tab1">
-                                    <center><img src="database icons/queue-512.png" width="100" height="100" class=" "style=" height:30px; width:30px; background-color:transparent"> <br>
-                                        <a href="client_management.php">Incoming <b class="data-taggle" class="tooltip" title="No. of clients due for medical services">
-                                            &nbsp;
-                                            <?php 
-            include('client_medical_conn.php');
-            $date = date("Y-m-d").' 00:00:00';
-                $result = $db->prepare("SELECT * FROM cmpatientsregistration WHERE TIMESTAMP >='$date' AND
-                LABVIST ='1' AND TESTSTATUS ='NOT STARTED' GROUP BY NTIHCNO
-                                        ORDER BY NTIHCNO DESC");
+                            <td style="width:33.33333333%; border: 0px; background-color:transparent;"> <a
+                                    data-toggle="tab" href="#tab1">
+                                    <center><img src="database icons/queue-512.png" width="100" height="100" class=" "
+                                            style=" height:30px; width:30px; background-color:transparent"> <br>
+                                        <a href="client_management.php">Incoming <b class="data-taggle" class="tooltip"
+                                                title="No. of clients due for medical services">
+                                                &nbsp;
+                                                <?php 
+      include('client_medical_conn.php');
+      $date = date("Y-m-d").' 00:00:00';
+        $result = $db->prepare("SELECT * FROM cmpatientsregistration WHERE TIMESTAMP >='$date' AND
+        LABVIST ='1' AND TESTSTATUS ='NOT STARTED' GROUP BY NTIHCNO
+                                ORDER BY NTIHCNO DESC");
         $result->execute();
         $rowcount1 = $result->rowcount(); 
        ?>
@@ -1022,8 +1036,9 @@ $connect->close();
                             }
                             </script>
 
-<?php 
+                            <?php 
 include_once("updatecmgt/config.php");
+
 $date = date("Y-m-d").' 00:00:00'; 
 $result = mysqli_query($mysqli, "SELECT * FROM  cmpatientsregistration WHERE TIMESTAMP >='$date' AND
                                LABVIST ='1' AND TESTSTATUS ='COMPLETED'  
@@ -1094,7 +1109,7 @@ $result = mysqli_query($mysqli, "SELECT * FROM  cmpatientsregistration WHERE
     </td>';       
   }
      
-?>
+    ?>
 
 
                         </tbody>
