@@ -1109,7 +1109,7 @@ $result = mysqli_query($mysqli, "SELECT * FROM  cmpatientsregistration WHERE
     </td>';       
   }
      
-    ?>
+?>
 
 
                         </tbody>

@@ -287,8 +287,8 @@ $tests = $_POST['test'];
 debug_to_console($tests);
 
   foreach($tests as $test){
-    $sql = "INSERT INTO `examination_lab_request`(`EXID`, `REQUESTING_UNIT`, `TEST_TYPE`) 
-    VALUES ('$exid','$REQUESTINGUNIT','$test')";
+    $sql = "INSERT INTO `examination_lab_request`(`EXID`, `NTIHCNO`, `REQUESTING_UNIT`, `TEST_TYPE`) 
+    VALUES ('$exid','$fnam','$REQUESTINGUNIT','$test')";
     if ($connect->query($sql))
       ;//  echo "<br /> something  didnt go  wrong : ";
     else {
