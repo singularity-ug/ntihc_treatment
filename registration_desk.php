@@ -18,8 +18,7 @@ else{
   $_SESSION = array();
   session_destroy();
   header('location:index.php');
-}
- ?>
+}?>
 
 
 <!DOCTYPE html>
@@ -516,7 +515,7 @@ else{
                         width="100%">
                         <thead>
                             <tr>
-                                <th style="width:40%;  border:0px;background-color:transparent;">User initial</th>
+                                <th style="width:40%; border:0px;background-color:transparent;">User initial</th>
                                 <td
                                     style="width:60%;border:0px; background-color:transparent; text-transform: uppercase;">
                                     <input type="text" name="USERINITIAL" id="USERINITIAL"
@@ -528,38 +527,33 @@ else{
                 </div>
 
                 <div class="col-sm-6">
-                    <table border="1" cellpadding="4" cellspacing="0"
-                        style="font-family: arial; font-size: 12px; border:0px;text-align:left;" width="100%">
+                    <table border="1" cellpadding="4" cellspacing="0" style="font-family: arial; font-size: 12px; border:0px;text-align:left;" width="100%">
                         <thead>
                             <tr>
-                                <th style="width:40%;  border:0px;background-color:transparent;">Visit date </th>
+                                <th style="width:40%; border:0px;background-color:transparent;">Visit Date</th>
                                 <td style="width:60%;border:0px; background-color:transparent;">
-                                    <input type="date" name="EXAMDATE" id="EXAMDATE"
-                                        value="<?php echo (new DateTime())->format('Y-m-d'); ?>" required="required"
-                                        style="font-size:10px;width:100%; background-color:transparent; " /> </td>
+                                    <input type="date" name="EXAMDATE" id="EXAMDATE" value="<?php echo (new DateTime())->format('Y-m-d'); ?>" required="required"
+                                        style="font-size:10px;width:100%; background-color:transparent;" /> </td>
 
                             </tr>
                     </table>
                 </div>
 
                 <div class="col-sm-6"> <?php include('reactant.js'); ?>
-                    <table border="1" cellpadding="4" cellspacing="0"
-                        style="font-family: arial; font-size: 12px; border:0px;text-align:left;margin-top:5px;"
-                        width="100%">
+
+                    <table border="1" cellpadding="4" cellspacing="0" style="font-family: arial; font-size: 12px; border:0px;text-align:left; margin-top:5px;" width="100%">
                         <thead>
                             <tr>
-                                <th style="width:40%; border:0px;background-color: transparent;">Service type </th>
+                                <th style="width:40%; border:0px;background-color: transparent;">Service Type</th>
                                 <td style="width:60%;border:0px; background-color:transparent;">
-                                    <select name="SERVICETYPE" id="cboOptions" onChange="showDiv('div',this)"
-                                        required="required"
-                                        style="font-size:10px; width:100%; background-color:transparent; " />
-                                    <option value=""></option>
-                                    <option value="MEDICAL SERVICES">MEDICAL SERVICES</option>
-                                    <option value="COUNSELLING SERVICES">COUNSELLING SERVICES</option>
-                                    <option value="PREGNANCY RELATED SERVICES">MATERNAL HEALTH SERVICES </option>
-                                    <option value="OUTREACH">OUTREACH</option>
-                                    <option value="MOONLIGHT">MOONLIGHT</option>
-                                    <option value="OTHER SERVICES">OTHER SERVICES</option>
+                                    <select name="SERVICETYPE" id="cboOptions" onChange="showDiv('div',this)" required="required" style="font-size:10px; width:100%; background-color:transparent;" />
+                                        <option value=""></option>
+                                        <option value="MEDICAL SERVICES">MEDICAL SERVICES</option>
+                                        <option value="COUNSELLING SERVICES">COUNSELLING SERVICES</option>
+                                        <option value="PREGNANCY RELATED SERVICES">MATERNAL HEALTH SERVICES </option>
+                                        <option value="OUTREACH">OUTREACH</option>
+                                        <option value="MOONLIGHT">MOONLIGHT</option>
+                                        <option value="OTHER SERVICES">OTHER SERVICES</option>
                                     </select>
                                 </td>
                             </tr>
