@@ -243,7 +243,7 @@ else{
 
  $conn = new mysqli($servername, $username, $password, $dbname);
 
- $sql  = "SELECT TESTTYPE, TIMESTAMP FROM examination_lab_request WHERE NTIHCNO = '$id' AND STATUS = 0";
+ $sql  = "SELECT TEST_TYPE, TIMESTAMP FROM examination_lab_request WHERE NTIHCNO = '$id' AND STATUS = 0";
   
  $res = $conn->query($sql);
     ?>
