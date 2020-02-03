@@ -258,7 +258,7 @@ else{
       </thead>
       <tbody>
  <?php while($row=$res->fetch_assoc()){
-        $test = $row['TESTTYPE'];  
+        $test = $row['TEST_TYPE'];  
         $timestamp = $row['TIMESTAMP'];  	 
      ?>
     <tr>
