@@ -541,44 +541,43 @@ else{
 
                 <div class="col-sm-6"> 
 
-                <script type="text/javascript">
-function showDiv(prefix,chooser) 
-{
-        for(var i=0; i<chooser.options.length; i++) 
-		{
-        	var div = document.getElementById(prefix+chooser.options[i].value);
-            div.style.display = 'none';
-        }
+                    <script type="text/javascript">
+                        function showDiv(prefix,chooser) 
+                        {
+                            for(var i=0; i<chooser.options.length; i++) 
+                            {
+                                var div = document.getElementById(prefix+chooser.options[i].value);
+                                div.style.display = 'none';
+                            }
+                            
+		                    var selectedOption = (chooser.options[chooser.selectedIndex].value);
  
-		var selectedOption = (chooser.options[chooser.selectedIndex].value);
-		
+                            if(selectedOption == "1")
+                            {
+                                displayDiv(prefix,"1");
+                            }
+                            else if(selectedOption == "PREGNANCY_RELATED_SERVICES")
+                            {
+                                displayDiv(prefix,"PREGNANCY_RELATED_SERVICES");
+                            }
+                            else if(selectedOption == "MEDICAL SERVICES")
+                            {
+                                displayDiv(prefix,"MEDICAL SERVICES");
+                            }
+                            else if(selectedOption == "COUNSELLING SERVICES")
+                            {
+                                displayDiv(prefix,"COUNSELLING SERVICES");
+                            }
+                            else if(selectedOption == "OUTREACH")
+                            {
+                                displayDiv(prefix,"OUTREACH");
+                            }
+                            else if(selectedOption == "OTHER SERVICES")
+                            {
+                                displayDiv(prefix,"OTHER SERVICES");
+                            }
  
-		if(selectedOption == "1")
-		{
-			displayDiv(prefix,"1");
-		}
-		else if(selectedOption == "PREGNANCY RELATED SERVICES")
-		{
-			displayDiv(prefix,"PREGNANCY RELATED SERVICES");
-		}
-		else if(selectedOption == "MEDICAL SERVICES")
-		{
-			displayDiv(prefix,"MEDICAL SERVICES");
-		}
-		else if(selectedOption == "COUNSELLING SERVICES")
-		{
-			displayDiv(prefix,"COUNSELLING SERVICES");
-		}
-		else if(selectedOption == "OUTREACH")
-		{
-			displayDiv(prefix,"OUTREACH");
-		}
-		else if(selectedOption == "OTHER SERVICES")
-		{
-			displayDiv(prefix,"OTHER SERVICES");
-		}
- 
-}
+                        }
  
 function displayDiv(prefix,suffix) 
 {
@@ -600,7 +599,7 @@ function displayDiv(prefix,suffix)
                                         <option value=""></option>
                                         <option value="MEDICAL SERVICES">MEDICAL SERVICES</option>
                                         <option value="COUNSELLING SERVICES">COUNSELLING SERVICES</option>
-                                        <option value="PREGNANCY RELATED SERVICES">MATERNAL HEALTH SERVICES </option>
+                                        <option value="PREGNANCY_RELATED_SERVICES">MATERNAL HEALTH SERVICES </option>
                                         <option value="OUTREACH">OUTREACH</option>
                                         <option value="MOONLIGHT">MOONLIGHT</option>
                                         <option value="OTHER SERVICES">OTHER SERVICES</option>
@@ -615,7 +614,7 @@ function displayDiv(prefix,suffix)
                     <div id="divOUTREACH" class="text" style="display:none;"> </div>
                     <div id="divMOONLIGHT" class="text" style="display:none;"> </div>
                     <div id="divOTHER SERVICES" class="text" style="display:none;"> </div>
-                    <div id="divPREGNANCY RELATED SERVICES" class="text" style="display:none;">
+                    <div id="divPREGNANCY_RELATED_SERVICES" class="text" style="display:none;">
                         <table border="1" cellpadding="4" cellspacing="0"
                             style="font-family: arial; font-size: 12px; border:0px;text-align:left;margin-top:5px;"
                             width="100%">
