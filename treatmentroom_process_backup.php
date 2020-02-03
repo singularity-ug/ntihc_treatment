@@ -42,6 +42,7 @@ else{
 if(isset($_POST['NTIHCNO'])){
 $datt   = trim($_POST['DATECREATED']);
 $fnam   = trim($_POST['NTIHCNO']);
+$saved_ntihc_no = $fnam;
 $urgtyn  = trim($_POST['VISTBY']);
 $chknn   = "";//trim($_POST['REASONFORTEST']);
 $urgemp    = trim($_POST['URGENCYTYPE']);

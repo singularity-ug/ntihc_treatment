@@ -1016,7 +1016,7 @@ $connect->close();
                         <thead>
                             <tr>
 
-                                <th style="background-color:transparent;">VIST DATES</th>
+                                <th style="background-color:transparent;">VIST DATE</th>
                                 <th style="background-color:transparent;">NTIHC.NO</th>
                                 <th style="background-color:transparent;">CLIENT&nbsp;NAME</th>
                                 <th colspan="2" style="background-color:transparent; text-align:center;">ACTION</th>
