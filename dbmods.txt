@@ -1,0 +1,5 @@
+Database Modifications:
+	
+Mod: Table Modified
+	Table: clientsexamination
+	moddification {	added column CENO, int, pk, auto }

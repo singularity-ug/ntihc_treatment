@@ -1,9 +1,48 @@
-<?php error_reporting(E_ALL ^ E_DEPRECATED); ?>
+<?php 
+  //error_reporting(E_ALL ^ E_DEPRECATED); 
+  session_start();
+  session_regenerate_id();
+
+  //Console log function: Buyinza David
+  function debug_to_console($data) {
+    $output = $data;
+    if (is_array($output))
+        $output = implode(',', $output);
+
+    echo "<script>console.log('Debug Objects: " . $output . "' );</script>";
+  }
+
+
+  $nameofuser = '';
+  $desc       = "";
+  $dept       = "";
+  $pf       = "";
+  $rm         = "";
+  $uid = "";
+  $exid = "";
+
+  if(isset($_SESSION['USERID'])){
+    $nameofuser = $_SESSION['USERID'];
+    $desc = $_SESSION['DESC'];
+    $dept = $_SESSION['DEPT'];
+    $pf = $_SESSION['STAFNO'];
+    $rm = $_SESSION['MREPEAT'];
+    $uid = $_SESSION['UID'];
+}
+
+else{
+  $_SESSION = array();
+  session_destroy();
+  header('location:index.php');
+}
+
+?>
 
 <?php 
 if(isset($_POST['NTIHCNO'])){
 $datt   = trim($_POST['DATECREATED']);
 $fnam   = trim($_POST['NTIHCNO']);
+$saved_ntihc_no = $fnam;
 $urgtyn  = trim($_POST['VISTBY']);
 $chknn   = "";//trim($_POST['REASONFORTEST']);
 $urgemp    = trim($_POST['URGENCYTYPE']);
@@ -122,6 +161,7 @@ if( $result = $connect->query("SELECT VISITS , AGE ,  SEX, FIRSTNAME, LASTNAME, 
 
   $sql="INSERT INTO `patientmgt`.`clientsexamination` (`TIMESTAMP`,
                                                        `NTIHCNO`,
+                                                       `UID`,
                                                        `DATECREATED`,
                                                        `VISTBY`,
                                                        `MEDICALTOPIC`,
@@ -146,6 +186,7 @@ if( $result = $connect->query("SELECT VISITS , AGE ,  SEX, FIRSTNAME, LASTNAME, 
 										 
                                                VALUES (CURRENT_TIMESTAMP,
                                                        '$fnam',
+                                                       '$uid',
                                                        '$datt',
                                                        '$urgtyn',
                                                        '$cat',
@@ -171,6 +212,7 @@ if( $result = $connect->query("SELECT VISITS , AGE ,  SEX, FIRSTNAME, LASTNAME, 
           //GENERATE THE QUERY TO INSERT AND UPDATE THE NUMBER OF VISITS.
           if ($connect->query($sql)) {
           //  echo "<br /> something  didnt go  wrong : ";
+              $exid = $connect->insert_id;
           }
 
           else {
@@ -236,21 +278,44 @@ if( $result = $connect->query("SELECT VISITS , AGE ,  SEX, FIRSTNAME, LASTNAME, 
 														    WHERE `RID` = '$rid'");	}	                 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 $rsns      = intval($rowsss1);
+
+/**
+ * Author: Buyinza David
+ * Generating / Saving lab requestion
+ *  */ 
+
+$tests = $_POST['test'];
+debug_to_console($tests);
+
+  foreach($tests as $test){
+    $sql = "INSERT INTO `examination_lab_request`(`EXID`, `NTIHCNO`, `REQUESTING_UNIT`, `TEST_TYPE`) 
+    VALUES ('$exid','$fnam','$REQUESTINGUNIT','$test')";
+    if ($connect->query($sql))
+      ;//  echo "<br /> something  didnt go  wrong : ";
+    else {
+      echo "something went wrong : 1".$connect->error;
+    }
+  }
+
+
+
+ //End Lab Request
+
+
    if($rsns>0){
      $x=1;
         for ($x=1; $x <= $rsns; $x++) {
-                   $dns  = trim($_POST['dn_'.$x]);        // Test desc
-			       $fqc  = trim($_POST['fq_'.$x]);       //  Lab results 
-                   $qty  = trim($_POST['qty_'.$x]);       // Action tkn
-             $sql ="INSERT INTO `laborders` (`TIMESTAMP`,
+            $dns  = trim($_POST['dn_'.$x]);        // Test desc
+			      $fqc  = trim($_POST['fq_'.$x]);       //  Lab results 
+            $qty  = trim($_POST['qty_'.$x]);       // Action tkn
+            $sql  = "INSERT INTO `laborders` (`TIMESTAMP`,
                                 `DATECREATED`,
                                 `NTIHCNO`,
+                                `TESTDESCRIPTION`,
+								                `LABRESULTS`, 
+                                `ACTIONTAKEN`,
 								 
-                                 `TESTDESCRIPTION`,
-								 `LABRESULTS`, 
-                                 `ACTIONTAKEN`,
-								 
-								 `RSVNID`, `REQUESTINGUNIT`, `TROOM_INITIATION`, `LABTIMEIN`,
+								                `RSVNID`, `REQUESTINGUNIT`, `TROOM_INITIATION`, `LABTIMEIN`,
                                  `NAME`, 
                                  `AGE1`,
 								 `AGE_GROUP`,
@@ -329,7 +394,7 @@ else {
                                  '$hp',
                                  '$name',
                                  '$AGE1',
-								 '$AGE_GROUP',
+								                '$AGE_GROUP',
                                  '$SEX',
                                  '$sch',
 								 '$sedb',

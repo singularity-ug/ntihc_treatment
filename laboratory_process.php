@@ -118,7 +118,8 @@ $TECHTITLE  = trim($_POST['TECHTITLE']);
 											 `LABVISTSDONE` = '1' 
 									         WHERE `RSVNID` = '$RSVNID'"); 
 
-                                  $conn->query($sql1);
+								  $conn->query($sql1);
+								  $conn->query("UPDATE examination_lab_request SET STATUS = 1 WHERE NTIHCNO = '$NTIHCNO' AND STATUS = 0");
 
 						}
 						}

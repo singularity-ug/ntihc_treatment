@@ -233,7 +233,7 @@ else{
    $aa    = array();
    $dd    = array();  
   $DATECREATED = '';
-  $NTIHCNO = '';   
+  //$NTIHCNO = '';   
   
   
  $servername = "localhost";
@@ -243,58 +243,49 @@ else{
 
  $conn = new mysqli($servername, $username, $password, $dbname);
 
- $sql  = "SELECT * FROM laborders WHERE NTIHCNO = '$id' GROUP BY NTIHCNO, DATECREATED ORDER BY NTIHCNO, DATECREATED";
+ $sql  = "SELECT RQID, TEST_TYPE, TIMESTAMP FROM examination_lab_request WHERE NTIHCNO = '$id' AND STATUS = 0";
   
  $res = $conn->query($sql);
 
-     while($row=$res->fetch_assoc()){
-	 
-     $RSVNID          = $row['RSVNID'];  
-	 $DATECREATED      = $row['DATECREATED'];  
-	 $dnx[]    = $row['TESTDESCRIPTION'];
-     $fqx[]       = $row['LABRESULTS']; 
-	 $aa[]    = $row['TIMESTAMP'];
-     $dd[]       = $row['TESTSTATUS'];  
-     $NTIHCNO  = $row['NTIHCNO']; 
-	 
-      } 
-     ?>
+      function getStatusString($status_int){
+        if($status_int == 0)
+            return "Not Started";
+        else { 
+            return "Done";
+        }
+      }
+    ?>
 	   
-	   
+	   <p><strong>Required Tests</strong></p>
 	  <table class="table table-table table tabled" id="mytable2" style="font-weight:normal; ">
     <thead>
       <tr>  
-       <th>*</th>
-	   <th>CREATED DATE</th>
-       <th>TEST DESCRIPTION </th>  
-       <th>LAB RESULTS</th>
-	   <th>STATUS</th>  
+	   <th>DATE OF REQUEST</th>
+       <th>TEST DESCRIPTION</th>
+       <th>STATUS</th>  
       </tr>
       </thead>
       <tbody>
- <?php  $tot = count($dnx); $s=0; $totals =0;
-                                                 for($s=0;$s<$tot;$s++){ 
-                                                             $totals += intval($fqx[$s]);?>
-                                                            <tr >
-                                                  <td><input type="checkbox" checked="checked" /></td>
-												   
-												  <td> <input  name="aa[]" type="text" value="<?php echo $aa[$s]; ?>" readonly=""  
-												  readonly="" style= "width:100%; background-color:#fff; "/></td> 
-												  
-                <td> <input name="dnx[]"  type="text" value="<?php  echo $dnx[$s]; ?>" readonly=""
-												 style= "width:100%; background-color:#fff; "/>
-                                                 </td> 
-												 
-												 <td> <input  name="fqx[]" type="text" value="<?php echo $fqx[$s]; ?>" readonly=""  
-												  style= "width:100%; background-color:#fff; "/></td> 
-												  
-												  <td> <input  name="dd[]" type="text" value="<?php echo $dd[$s]; ?>" readonly=""  
-												  style= "width:100%; background-color:#fff; "/></td> 
-                                                   
-                                              </tr>
-                                              <?php } ?>
-                                       </tbody>
-                                </table>  
+ <?php while($row=$res->fetch_assoc()){
+        $test = $row['TEST_TYPE'];  
+        $timestamp = $row['TIMESTAMP'];
+        $status = getStatusString($row['STATUS']);  
+        $rqid = $row['RQID'];	 
+     ?>
+    <tr>
+        <td>
+            <input type="text" value="<?php echo $timestamp; ?>" readonly="true" style= "width:100%; background-color:#fff; "/>
+        </td>
+        <td>
+            <input type="text" value="<?php echo $test; ?>" readonly="true" style= "width:100%; background-color:#fff; "/>
+		</td>
+        <td>
+        <input type="text" value="<?php echo $status; ?>" readonly="true" style= "width:100%; background-color:#fff; "/>
+        </td>                                     
+    </tr>
+  <?php } ?>
+</tbody>
+        </table>  
       
     </tbody>
   </table>  

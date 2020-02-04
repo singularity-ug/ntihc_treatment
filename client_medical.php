@@ -2823,11 +2823,11 @@ $result = mysqli_query($mysqli, "SELECT * FROM  cmpatientsregistration WHERE SER
         var rowCount = table.rows.length;
         var ttt = "<?php   echo $stss; ?>";
 
-        var s1 = '<select name="dn_' + rowCount + '" onKeyUp="domee(this)" id="dn_' + rowCount +
+        var s1 = '<select name="test[] onKeyUp="domee(this)" id="dn_' + rowCount +
             '" required="required" ' +
             ' style= "margin-left: 0px;margin-top: 5px;height:20px; width:100%; background-color:transparent" >' +
             '<option></option>' +
-            '<option><?php   echo $stss; ?></option>' +
+            '<?php   echo $stss; ?>' +
             '</select>';
 
         var fq = '<input type="hidden" onkeyup="dostg(this.id)" onchange="dostg(this.id)"  name="fq_' + rowCount +
