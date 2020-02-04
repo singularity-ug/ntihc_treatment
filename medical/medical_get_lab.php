@@ -243,7 +243,7 @@ else{
 
  $conn = new mysqli($servername, $username, $password, $dbname);
 
- $sql  = "SELECT TEST_TYPE, TIMESTAMP FROM examination_lab_request WHERE NTIHCNO = '$id' AND STATUS = 0";
+ $sql  = "SELECT RQID, TEST_TYPE, TIMESTAMP FROM examination_lab_request WHERE NTIHCNO = '$id' AND STATUS = 0";
   
  $res = $conn->query($sql);
 
@@ -271,18 +271,20 @@ else{
  <?php while($row=$res->fetch_assoc()){
         $test = $row['TEST_TYPE'];  
         $timestamp = $row['TIMESTAMP'];
-        $status = getStatusString($row['STATUS']);  	 
+        $status = getStatusString($row['STATUS']);  
+        $rqid = $row['RQID'];	 
      ?>
     <tr>
         <td>
             <input type="text" value="<?php echo $timestamp; ?>" readonly="true" style= "width:100%; background-color:#fff; "/>
+        </td>
+        <td>
+            <input name="lab_req_id[]" type="text" value="<?php echo $test; ?>" readonly="true" style= "width:100%; background-color:#fff; "/>
 		</td>
         <td>
-            <input type="text" value="<?php echo $test; ?>" readonly="true" style= "width:100%; background-color:#fff; "/>
-		</td>
-        <td>
-        <input type="text" value="<?php echo $status; ?>" readonly="true" style= "width:100%; background-color:#fff; "/>
-        </td>                                          
+        <input name="lab_req_id[]" type="text" value="<?php echo $status; ?>" readonly="true" style= "width:100%; background-color:#fff; "/>
+        </td>
+        <input name="lab_req_id[]" type="hidden" value="<?php echo $rqid; ?>" />                                          
     </tr>
   <?php } ?>
 </tbody>
