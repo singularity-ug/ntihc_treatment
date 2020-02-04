@@ -223,8 +223,7 @@ else{
 	
 <hr />
 
- <form class="form-horizontal"  method="post" action="tollfree.php" style="height: auto;background-color:transparent;"> 
-
+ 
   <?php 
   $id = $id ;  
   $RSVNID = ''; 
@@ -291,6 +290,4 @@ else{
         </table>  
       
     </tbody>
-  </table>  
-    
-  </form>   
+  </table>     
