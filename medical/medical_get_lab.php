@@ -250,8 +250,6 @@ else{
       function getStatusString($status_int){
         if($status_int == 0)
             return "Not Started";
-        else if($status_int == 1)
-            return "Not Done";
         else { 
             return "Done";
         }
@@ -279,12 +277,11 @@ else{
             <input type="text" value="<?php echo $timestamp; ?>" readonly="true" style= "width:100%; background-color:#fff; "/>
         </td>
         <td>
-            <input name="lab_req_id[]" type="text" value="<?php echo $test; ?>" readonly="true" style= "width:100%; background-color:#fff; "/>
+            <input type="text" value="<?php echo $test; ?>" readonly="true" style= "width:100%; background-color:#fff; "/>
 		</td>
         <td>
-        <input name="lab_req_id[]" type="text" value="<?php echo $status; ?>" readonly="true" style= "width:100%; background-color:#fff; "/>
-        </td>
-        <input name="lab_req_id[]" type="hidden" value="<?php echo $rqid; ?>" />                                          
+        <input type="text" value="<?php echo $status; ?>" readonly="true" style= "width:100%; background-color:#fff; "/>
+        </td>                                     
     </tr>
   <?php } ?>
 </tbody>
