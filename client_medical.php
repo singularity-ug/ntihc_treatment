@@ -1357,7 +1357,41 @@ $result = mysqli_query($mysqli, "SELECT * FROM  clientsexamination WHERE TIMESTA
 
             <div id="div1" class="text" style="display:none;"> </div>
             <div id="divSELF" class="text" style="display:none;"> </div>
-            
+            <div id="divESCORTED" class="text" style="display:none;">
+                <P></P>
+                <table border="1" cellpadding="4" cellspacing="0"
+                    style="font-family: arial; font-size: 12px; text-align:left;border: 0px;" width="100%">
+                    <thead>
+                        <tr>
+
+                            <th style="width:40%; text-align:left; border:0px;color:#d70000;">Specify</th>
+                            <th style="width:60%; text-align:left;border:0px;">
+                                <select name="ESCORTEDBY" id="ESCORTEDBY"
+                                    style="text-transform: uppercase; width:100%; background-color:transparent;width:100%;" />
+                                <option></option>
+                                <option>MOTHER</option>
+                                <option>FATHER</option>
+                                <option>UNCLE</option>
+                                <option>AUNT</option>
+                                <option>GRAND PARENT</option>
+                                <option>BROTHER</option>
+                                <option>SISTER</option>
+                                <option>GUARDIAN</option>
+                                <option>TEACHER</option>
+                                <option>SCHOOL MATRON</option>
+                                <option>SENIOR MAN</option>
+                                <option>SENIOR WOMAN TEACHER</option>
+                                <option>FRIEND</option>
+                                <option>HUSBAND</option>
+                                <option>WIFE</option>
+                                <option>BOY FRIEND</option>
+                                <option>GIRL FRIEND</option>
+                                </select>
+
+                            </th>
+                        </tr>
+                </table>
+            </div>
             <P></P>
         </div>
 
@@ -1407,42 +1441,6 @@ $result = mysqli_query($mysqli, "SELECT * FROM  clientsexamination WHERE TIMESTA
 
             </div>
         </div>
-        
-        <div id="divESCORTED" class="text" style="display:none;">
-                <P></P>
-                <table border="1" cellpadding="4" cellspacing="0"
-                    style="font-family: arial; font-size: 12px; text-align:left;border: 0px;" width="100%">
-                    <thead>
-                        <tr>
-
-                            <th style="width:40%; text-align:left; border:0px;color:#d70000;">Specify</th>
-                            <th style="width:60%; text-align:left;border:0px;">
-                                <select name="ESCORTEDBY" id="ESCORTEDBY"
-                                    style="text-transform: uppercase; width:100%; background-color:transparent;width:100%;" />
-                                <option></option>
-                                <option>MOTHER</option>
-                                <option>FATHER</option>
-                                <option>UNCLE</option>
-                                <option>AUNT</option>
-                                <option>GRAND PARENT</option>
-                                <option>BROTHER</option>
-                                <option>SISTER</option>
-                                <option>GUARDIAN</option>
-                                <option>TEACHER</option>
-                                <option>SCHOOL MATRON</option>
-                                <option>SENIOR MAN</option>
-                                <option>SENIOR WOMAN TEACHER</option>
-                                <option>FRIEND</option>
-                                <option>HUSBAND</option>
-                                <option>WIFE</option>
-                                <option>BOY FRIEND</option>
-                                <option>GIRL FRIEND</option>
-                                </select>
-
-                            </th>
-                        </tr>
-                </table>
-            </div>
 
 
         <div class="col-sm-12" style=" background-color:transparent;">
