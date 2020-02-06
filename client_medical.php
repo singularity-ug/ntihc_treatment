@@ -1357,36 +1357,7 @@ $result = mysqli_query($mysqli, "SELECT * FROM  clientsexamination WHERE TIMESTA
 
             <div id="div1" class="text" style="display:none;"> </div>
             <div id="divSELF" class="text" style="display:none;"> </div>
-           
-
-
-            <P></P>
-        </div>
-
-        <?php include('client_medical_dyn.js'); ?>
-        <div class="col-sm-6" style=" background-color:transparent;">
-
-            <?php include('client_medical_pro.js'); ?>
-
-            <table border="1" cellpadding="4" cellspacing="0"
-                style="font-family: arial; font-size: 12px; text-align:left;border: 0px;" width="100%">
-                <thead>
-                    <tr>
-                        <?php include('client_medical_vb.js'); ?>
-
-                        <th style="width:40%;border:0px;">Visit By </th>
-                        <th style="width:60%;border:0px;"> <select name="VISTBY" id="cboOptions"
-                                onChange="showDiv('div',this)" required="required"
-                                style="width:100%; font-weight:normal; background-color:transparent;">
-                                <option value="1"> </option>
-                                <option value="SELF">SELF</option>
-                                <option value="ESCORTED">ESCORTED</option>
-                            </select>
-                        </th>
-                    </tr>
-
-                    <tr>
-                    <div id="divESCORTED" class="text" style="display:none;">
+            <div id="divESCORTED" class="text" style="display:none;">
                 <P></P>
                 <table border="1" cellpadding="4" cellspacing="0"
                     style="font-family: arial; font-size: 12px; text-align:left;border: 0px;" width="100%">
@@ -1421,9 +1392,32 @@ $result = mysqli_query($mysqli, "SELECT * FROM  clientsexamination WHERE TIMESTA
                         </tr>
                 </table>
             </div>
+
+            
+            <P></P>
+        </div>
+
+        <?php include('client_medical_dyn.js'); ?>
+        <div class="col-sm-6" style=" background-color:transparent;">
+
+            <?php include('client_medical_pro.js'); ?>
+
+            <table border="1" cellpadding="4" cellspacing="0"
+                style="font-family: arial; font-size: 12px; text-align:left;border: 0px;" width="100%">
+                <thead>
+                    <tr>
+                        <?php include('client_medical_vb.js'); ?>
+
+                        <th style="width:40%;border:0px;">Visit By </th>
+                        <th style="width:60%;border:0px;"> <select name="VISTBY" id="cboOptions"
+                                onChange="showDiv('div',this)" required="required"
+                                style="width:100%; font-weight:normal; background-color:transparent;">
+                                <option value="1"> </option>
+                                <option value="SELF">SELF</option>
+                                <option value="ESCORTED">ESCORTED</option>
+                            </select>
+                        </th>
                     </tr>
-
-
             </table>
 
             <p></p>
